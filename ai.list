@@ -9,3 +9,5 @@ DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,poe.com
 # New Bing
 DOMAIN-SUFFIX,bing.com
+# copy.ai
+DOMAIN-SUFFIX,copy.ai
