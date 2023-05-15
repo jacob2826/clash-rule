@@ -11,3 +11,5 @@ DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,bing.com
 # copy.ai
 DOMAIN-SUFFIX,copy.ai
+# Chatbot UI
+DOMAIN-SUFFIX,chatbotui.com
