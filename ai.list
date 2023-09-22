@@ -25,3 +25,6 @@ DOMAIN-SUFFIX,copy.ai
 
 # Chatbot UI
 DOMAIN-SUFFIX,chatbotui.com
+
+# Bard
+DOMAIN-SUFFIX,bard.google.com
