@@ -21,6 +21,7 @@ DOMAIN-SUFFIX,poe.com
 
 # New Bing
 DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,copilot.microsoft.com
 
 # copy.ai
 DOMAIN-SUFFIX,copy.ai
