@@ -1,3 +1,8 @@
+# IP Check
+DOMAIN-SUFFIX,ipleak.net
+DOMAIN-SUFFIX,dnsleaktest.com
+DOMAIN-SUFFIX,dnsleak.com
+
 # Poe
 DOMAIN-SUFFIX,poe.com
 
