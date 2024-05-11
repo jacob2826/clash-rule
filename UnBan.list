@@ -16,6 +16,7 @@ DOMAIN-SUFFIX,open.e.189.cn
 PROCESS-NAME,tailscale
 PROCESS-NAME,tailscaled
 DOMAIN-SUFFIX,tailscale.io
+DOMAIN-SUFFIX,tailscale.com
 
 # hostloc
 DOMAIN-SUFFIX,hostloc.com
