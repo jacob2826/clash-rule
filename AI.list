@@ -3,18 +3,15 @@ DOMAIN-SUFFIX,ipleak.net
 DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,dnsleak.com
 
-# Poe
-DOMAIN-SUFFIX,poe.com
-
 # New Bing
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,copilot.microsoft.com
 
-# copy.ai
-DOMAIN-SUFFIX,copy.ai
-
-# Chatbot UI
+# Others
 DOMAIN-SUFFIX,chatbotui.com
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,copy.ai
+DOMAIN-SUFFIX,poe.com
 
 # Bard
 DOMAIN-SUFFIX,bard.google.com
@@ -22,3 +19,19 @@ DOMAIN-SUFFIX,bard.google.com
 # Claude
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
+
+# OpenAI
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,meta.com
+DOMAIN,api.githubcopilot.com
+DOMAIN,api.app.prod.grazie.aws.intellij.net
+DOMAIN-SUFFIX,files.oaiusercontent.com
+DOMAIN-SUFFIX,prod.grazie.aws.intellij.net
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,ios.chat.openai.com
+DOMAIN-SUFFIX,grazie.ai
+DOMAIN-KEYWORD,openai
+DOMAIN-KEYWORD,chatgpt
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
