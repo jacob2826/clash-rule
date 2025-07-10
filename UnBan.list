@@ -20,3 +20,10 @@ DOMAIN-SUFFIX,tailscale.com
 
 # hostloc
 DOMAIN-SUFFIX,hostloc.com
+
+# RustDesk
+PROCESS-NAME,RustDesk
+DOMAIN-SUFFIX,rustdesk.com
+
+# Oray
+DOMAIN-SUFFIX,oray.net
