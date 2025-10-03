@@ -26,4 +26,6 @@ PROCESS-NAME,RustDesk
 DOMAIN-SUFFIX,rustdesk.com
 
 # Oray
+DOMAIN-SUFFIX,oray.com
 DOMAIN-SUFFIX,oray.net
+DOMAIN-KEYWORD,oray
