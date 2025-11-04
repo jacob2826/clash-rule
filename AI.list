@@ -21,6 +21,22 @@ DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 
 # OpenAI
+DOMAIN-KEYWORD,openai
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,meta.com
@@ -28,10 +44,9 @@ DOMAIN,api.githubcopilot.com
 DOMAIN,api.app.prod.grazie.aws.intellij.net
 DOMAIN-SUFFIX,files.oaiusercontent.com
 DOMAIN-SUFFIX,prod.grazie.aws.intellij.net
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,ios.chat.openai.com
 DOMAIN-SUFFIX,grazie.ai
-DOMAIN-KEYWORD,openai
 DOMAIN-KEYWORD,chatgpt
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,apple-relay.apple.com
+DOMAIN-SUFFIX,apple-relay.cloudflare.com
