@@ -29,3 +29,6 @@ DOMAIN-SUFFIX,rustdesk.com
 DOMAIN-SUFFIX,oray.com
 DOMAIN-SUFFIX,oray.net
 DOMAIN-KEYWORD,oray
+
+# cloudflared
+PROCESS-NAME,cloudflared
