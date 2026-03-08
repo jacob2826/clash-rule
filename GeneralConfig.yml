@@ -1,0 +1,4 @@
+fake-ip-filter:
+  - "oauth2.googleapis.com"
+  - "accounts.google.com"
+  - "*.googleapis.com"
