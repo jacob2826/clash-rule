@@ -17,6 +17,7 @@ PROCESS-NAME,tailscale
 PROCESS-NAME,tailscaled
 DOMAIN-SUFFIX,tailscale.io
 DOMAIN-SUFFIX,tailscale.com
+PROCESS-NAME-WILDCARD,*tailscale*
 
 # hostloc
 DOMAIN-SUFFIX,hostloc.com
@@ -32,3 +33,4 @@ DOMAIN-KEYWORD,oray
 
 # cloudflared
 PROCESS-NAME,cloudflared
+PROCESS-NAME-WILDCARD,*cloudflared*
