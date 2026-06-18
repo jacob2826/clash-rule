@@ -29,92 +29,112 @@ proxy-providers:
       interval: 300
 
 proxy-groups:
-  - name: 🚀 节点选择
+  - name: 节点选择
     type: select
-    proxies: [♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇰🇷 韩国节点, 🚀 手动选择, DIRECT]
-  - name: 🚀 手动选择
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+    proxies: [自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: 手动选择
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
     use: [default]
-  - name: ♻️ 自动选择
+  - name: 自动选择
     type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
     use: [default]
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 🤖 AI 服务
+  - name: AI 服务
     type: select
-    proxies: [🚀 节点选择, 🇺🇸 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇭🇰 香港节点, 🇨🇳 台湾节点, ♻️ 自动选择, 🚀 手动选择, DIRECT]
-  - name: 🎵 TikTok
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+    proxies: [节点选择, 美国节点, 日本节点, 新加坡节点, 香港节点, 台湾节点, 自动选择, 手动选择, DIRECT]
+  - name: TikTok
     type: select
-    proxies: [🚀 节点选择, 🇺🇸 美国节点, 🇯🇵 日本节点, 🇸🇬 新加坡节点, 🇭🇰 香港节点, 🇨🇳 台湾节点, ♻️ 自动选择, 🚀 手动选择, DIRECT]
-  - name: 📲 Telegram
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png
+    proxies: [节点选择, 美国节点, 日本节点, 新加坡节点, 香港节点, 台湾节点, 自动选择, 手动选择, DIRECT]
+  - name: Telegram
     type: select
-    proxies: [🚀 节点选择, ♻️ 自动选择, 🇸🇬 新加坡节点, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇰🇷 韩国节点, 🚀 手动选择, DIRECT]
-  - name: ▶️ YouTube
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+    proxies: [节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: YouTube
     type: select
-    proxies: [🚀 节点选择, ♻️ 自动选择, 🇸🇬 新加坡节点, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇰🇷 韩国节点, 🚀 手动选择, DIRECT]
-  - name: 🎬 Netflix
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+    proxies: [节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: Netflix
     type: select
-    proxies: [🎥 奈飞节点, 🚀 节点选择, ♻️ 自动选择, 🇸🇬 新加坡节点, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇰🇷 韩国节点, 🚀 手动选择, DIRECT]
-  - name: 🌍 国际媒体
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
+    proxies: [奈飞节点, 节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: 国际媒体
     type: select
-    proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇰🇷 韩国节点, 🚀 手动选择, DIRECT]
-  - name: Ⓜ️ 微软服务
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
+    proxies: [节点选择, 自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: 微软服务
     type: select
-    proxies: [DIRECT, 🚀 节点选择, 🇺🇸 美国节点, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🚀 手动选择]
-  - name: 🍎 苹果服务
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
+  - name: 苹果服务
     type: select
-    proxies: [DIRECT, 🚀 节点选择, 🇺🇸 美国节点, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🚀 手动选择]
-  - name: 🎮 游戏平台
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
+  - name: 游戏平台
     type: select
-    proxies: [DIRECT, 🚀 节点选择, 🇺🇸 美国节点, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🚀 手动选择]
-  - name: 🐟 兜底策略
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
+  - name: 兜底策略
     type: select
-    proxies: [🚀 节点选择, ♻️ 自动选择, DIRECT, 🇭🇰 香港节点, 🇨🇳 台湾节点, 🇸🇬 新加坡节点, 🇯🇵 日本节点, 🇺🇸 美国节点, 🇰🇷 韩国节点, 🚀 手动选择]
-  - name: 🇭🇰 香港节点
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+    proxies: [节点选择, 自动选择, DIRECT, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择]
+  - name: 香港节点
     type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
     use: [default]
     filter: (?i)(港|香港|深港|沪港|京港|hk|hkg|hong kong|hongkong)
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 🇨🇳 台湾节点
+  - name: 台湾节点
     type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
     use: [default]
     filter: (?i)(台|台湾|台北|新北|彰化|高雄|tw|twn|taiwan|taipei)
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 🇸🇬 新加坡节点
+  - name: 新加坡节点
     type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
     use: [default]
     filter: (?i)(新加坡|坡|狮城|星|sg|sgp|singapore)
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 🇯🇵 日本节点
+  - name: 日本节点
     type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
     use: [default]
     filter: (?i)(日本|东京|大阪|埼玉|jp|jpn|japan|tokyo|osaka)
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 🇺🇸 美国节点
+  - name: 美国节点
     type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
     use: [default]
-    filter: (?i)(美|美国|美西|美东|us|usa|united states|america|los angeles|san jose|seattle|chicago)
+    filter: '(?i)(美|美国|美西|美东|\b(?:us|usa|united states|america|los angeles|san jose|seattle|chicago)\b)'
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 150
-  - name: 🇰🇷 韩国节点
+  - name: 韩国节点
     type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
     use: [default]
     filter: (?i)(韩|韓|韩国|kr|korea|kor|seoul|首尔)
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: 🎥 奈飞节点
+  - name: 奈飞节点
     type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
     use: [default]
     filter: (?i)(nf|netflix|media|奈飞|解锁)
 
@@ -206,23 +226,23 @@ rule-providers:
 rules:
   - RULE-SET,custom-direct,DIRECT
   - GEOSITE,private,DIRECT
-  - RULE-SET,apple-ai,🤖 AI 服务
-  - RULE-SET,openai,🤖 AI 服务
-  - RULE-SET,gemini,🤖 AI 服务
-  - RULE-SET,claude,🤖 AI 服务
-  - RULE-SET,tiktok,🎵 TikTok
-  - RULE-SET,telegram,📲 Telegram
-  - RULE-SET,youtube,▶️ YouTube
-  - RULE-SET,netflix,🎬 Netflix
-  - GEOSITE,bahamut,🇨🇳 台湾节点
+  - RULE-SET,apple-ai,AI 服务
+  - RULE-SET,openai,AI 服务
+  - RULE-SET,gemini,AI 服务
+  - RULE-SET,claude,AI 服务
+  - RULE-SET,tiktok,TikTok
+  - RULE-SET,telegram,Telegram
+  - RULE-SET,youtube,YouTube
+  - RULE-SET,netflix,Netflix
+  - GEOSITE,bahamut,台湾节点
   - GEOSITE,bilibili,DIRECT
-  - RULE-SET,global-media,🌍 国际媒体
-  - GEOSITE,onedrive,Ⓜ️ 微软服务
-  - GEOSITE,microsoft,Ⓜ️ 微软服务
+  - RULE-SET,global-media,国际媒体
+  - GEOSITE,onedrive,微软服务
+  - GEOSITE,microsoft,微软服务
   - GEOSITE,apple-cn,DIRECT
-  - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,apple,苹果服务
   - GEOSITE,steam@cn,DIRECT
-  - GEOSITE,category-games,🎮 游戏平台
+  - GEOSITE,category-games,游戏平台
   - GEOSITE,cn,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
-  - MATCH,🐟 兜底策略
+  - MATCH,兜底策略
