@@ -2,6 +2,14 @@ dns:
   enable: true
   enhanced-mode: fake-ip
   fake-ip-filter:
+    # Google OAuth / Google APIs：登录与部分 API 回调对 fake-ip 兼容性较差。
     - "oauth2.googleapis.com"
     - "accounts.google.com"
     - ".googleapis.com"
+    # OpenAI realtime / voice 依赖 LiveKit TURN/STUN，避免 fake-ip 影响 UDP 建连。
+    - "+.livekit.cloud"
+    # Apple Intelligence / Private Relay 相关域名对解析链路更敏感。
+    - "apple-relay.apple.com"
+    - "apple-relay.mask.apple-dns.net"
+    - "gateway.fe2.apple-dns.net"
+    - "gateway.icloud.com"
