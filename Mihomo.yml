@@ -1,28 +1,28 @@
 # mihomo 配置模板：使用 rule-providers 组合维护中的上游规则。
-# 使用前把 proxy-providers.default.url 替换为你的订阅地址；如客户端已负责注入节点，可仅合并 dns / proxy-groups / rule-providers / rules 部分。
+# 使用前把 proxy-providers.subscription.url 替换为你的订阅地址；如客户端已负责注入节点，可仅合并 dns / proxy-groups / rule-providers / rules 部分。
 
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
-ipv6: true
+ipv6: false
 
 geodata-mode: true
 geodata-loader: standard
 geo-auto-update: true
 geo-update-interval: 24
 geox-url:
-  geosite: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite.dat
-  geoip: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip.dat
-  mmdb: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/country.mmdb
-  asn: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/GeoLite2-ASN.mmdb
+  geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+  asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
 
 proxy-providers:
-  default:
+  subscription:
     type: http
     url: https://example.com/your-subscription-url
     interval: 86400
-    path: ./providers/proxy/default.yaml
+    path: ./providers/proxy/subscription.yaml
     health-check:
       enable: true
       url: https://www.gstatic.com/generate_204
@@ -36,11 +36,11 @@ proxy-groups:
   - name: 手动选择
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
-    use: [default]
+    use: [subscription]
   - name: 自动选择
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
-    use: [default]
+    use: [subscription]
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -68,6 +68,14 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
     proxies: [节点选择, 自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: 谷歌FCM
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
+  - name: 微软Bing
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
   - name: 微软服务
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
@@ -87,7 +95,7 @@ proxy-groups:
   - name: 香港节点
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
-    use: [default]
+    use: [subscription]
     filter: (?i)(港|香港|深港|沪港|京港|hk|hkg|hong kong|hongkong)
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -95,7 +103,7 @@ proxy-groups:
   - name: 台湾节点
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
-    use: [default]
+    use: [subscription]
     filter: (?i)(台|台湾|台北|新北|彰化|高雄|tw|twn|taiwan|taipei)
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -103,7 +111,7 @@ proxy-groups:
   - name: 新加坡节点
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-    use: [default]
+    use: [subscription]
     filter: (?i)(新加坡|坡|狮城|星|sg|sgp|singapore)
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -111,7 +119,7 @@ proxy-groups:
   - name: 日本节点
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-    use: [default]
+    use: [subscription]
     filter: (?i)(日本|东京|大阪|埼玉|jp|jpn|japan|tokyo|osaka)
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -119,7 +127,7 @@ proxy-groups:
   - name: 美国节点
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-    use: [default]
+    use: [subscription]
     filter: '(?i)(美|美国|美西|美东|\b(?:us|usa|united states|america|los angeles|san jose|seattle|chicago)\b)'
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -127,7 +135,7 @@ proxy-groups:
   - name: 韩国节点
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
-    use: [default]
+    use: [subscription]
     filter: (?i)(韩|韓|韩国|kr|korea|kor|seoul|首尔)
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -135,13 +143,14 @@ proxy-groups:
   - name: 奈飞节点
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
-    use: [default]
+    use: [subscription]
     filter: (?i)(nf|netflix|media|奈飞|解锁)
 
 dns:
   enable: true
   enhanced-mode: fake-ip
   fake-ip-filter:
+    # 登录、实时音视频、Apple 中继域名不走 fake-ip。
     - oauth2.googleapis.com
     - accounts.google.com
     - +.googleapis.com
@@ -150,6 +159,25 @@ dns:
     - apple-relay.mask.apple-dns.net
     - gateway.fe2.apple-dns.net
     - gateway.icloud.com
+  ipv6: false
+  default-nameserver: &cn_dns
+    - 119.29.29.29
+    - 223.5.5.5
+  proxy-server-nameserver: *cn_dns
+  direct-nameserver: *cn_dns
+  nameserver: *cn_dns
+  fallback: &oversea_dns
+    - https://1.1.1.1/dns-query#节点选择
+    - https://8.8.8.8/dns-query#节点选择
+  nameserver-policy:
+    geosite:private: *cn_dns
+    geosite:cn: *cn_dns
+    geosite:geolocation-!cn: *oversea_dns
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
 
 rule-providers:
   custom-direct:
@@ -222,6 +250,41 @@ rule-providers:
     interval: 86400
     path: ./providers/rules/global-media.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml
+  google-fcm:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/google-fcm.list
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+  github:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    path: ./providers/rules/github.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+  bing:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/bing.list
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
+  onedrive:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    path: ./providers/rules/onedrive.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
+  microsoft:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    path: ./providers/rules/microsoft.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
 
 rules:
   - RULE-SET,custom-direct,DIRECT
@@ -237,8 +300,11 @@ rules:
   - GEOSITE,bahamut,台湾节点
   - GEOSITE,bilibili,DIRECT
   - RULE-SET,global-media,国际媒体
-  - GEOSITE,onedrive,微软服务
-  - GEOSITE,microsoft,微软服务
+  - RULE-SET,google-fcm,谷歌FCM
+  - RULE-SET,github,节点选择
+  - RULE-SET,bing,微软Bing
+  - RULE-SET,onedrive,微软服务
+  - RULE-SET,microsoft,微软服务
   - GEOSITE,apple-cn,DIRECT
   - GEOSITE,apple,苹果服务
   - GEOSITE,steam@cn,DIRECT
