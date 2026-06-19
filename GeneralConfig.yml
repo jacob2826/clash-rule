@@ -1,15 +1,34 @@
+ipv6: false
+
 dns:
   enable: true
   enhanced-mode: fake-ip
   fake-ip-filter:
-    # Google OAuth / Google APIs：登录与部分 API 回调对 fake-ip 兼容性较差。
+    # 登录、实时音视频、Apple 中继域名不走 fake-ip。
     - "oauth2.googleapis.com"
     - "accounts.google.com"
-    - ".googleapis.com"
-    # OpenAI realtime / voice 依赖 LiveKit TURN/STUN，避免 fake-ip 影响 UDP 建连。
+    - "+.googleapis.com"
     - "+.livekit.cloud"
-    # Apple Intelligence / Private Relay 相关域名对解析链路更敏感。
     - "apple-relay.apple.com"
     - "apple-relay.mask.apple-dns.net"
     - "gateway.fe2.apple-dns.net"
     - "gateway.icloud.com"
+  ipv6: false
+  default-nameserver: &cn_dns
+    - 119.29.29.29
+    - 223.5.5.5
+  proxy-server-nameserver: *cn_dns
+  direct-nameserver: *cn_dns
+  nameserver: *cn_dns
+  fallback: &oversea_dns
+    - https://1.1.1.1/dns-query#🚀 节点选择
+    - https://8.8.8.8/dns-query#🚀 节点选择
+  nameserver-policy:
+    geosite:private: *cn_dns
+    geosite:cn: *cn_dns
+    geosite:geolocation-!cn: *oversea_dns
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
