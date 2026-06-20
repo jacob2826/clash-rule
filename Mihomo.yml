@@ -41,6 +41,7 @@ proxy-groups:
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
     use: [subscription]
+    filter: 🇭🇰|🇺🇸|🇯🇵|🇳🇱|🇷🇺|🇩🇪|🇨🇭|🇫🇷|🇬🇧|🇸🇪|🇧🇬|🇦🇹|🇮🇪|🇹🇷|🇭🇺|🇰🇷|🇨🇳|🇨🇦|🇦🇺|🇦🇪|🇮🇳|🇮🇩|🇧🇷|🇦🇷|🇨🇱|🇸🇬
     exclude-filter: (?i)(traffic|expire|expiry|date|reset|days?\s+left|剩余|到期|过期|流量|重置|官网|套餐|\d+(?:\.\d+)?\s*[kmgt]i?b?\s*[|｜]\s*\d+(?:\.\d+)?\s*[kmgt]i?b?)
     url: https://www.gstatic.com/generate_204
     interval: 300
