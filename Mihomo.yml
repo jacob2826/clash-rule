@@ -13,9 +13,23 @@ geo-auto-update: true
 geo-update-interval: 24
 geox-url:
   geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
-  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
-  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
+  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb
   asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
+
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
 
 proxy-providers:
   subscription:
@@ -45,10 +59,22 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: AI 服务
+  - name: OpenAI
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
-    proxies: [节点选择, 美国节点, 日本节点, 新加坡节点, 香港节点, 台湾节点, 自动选择, 手动选择, DIRECT]
+    icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/OpenAI.png
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
+  - name: Gemini
+    type: select
+    icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/Gemini.png
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
+  - name: Claude
+    type: select
+    icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/Claude.png
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
+  - name: 其他 AI 服务
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AI.png
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
   - name: TikTok
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png
@@ -216,6 +242,20 @@ rule-providers:
     interval: 86400
     path: ./providers/rules/claude.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml
+  anthropic:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    path: ./providers/rules/anthropic.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml
+  copilot:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    path: ./providers/rules/copilot.yaml
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml
   tiktok:
     type: http
     behavior: classical
@@ -290,10 +330,15 @@ rule-providers:
 rules:
   - RULE-SET,custom-direct,DIRECT
   - GEOSITE,private,DIRECT
-  - RULE-SET,apple-ai,AI 服务
-  - RULE-SET,openai,AI 服务
-  - RULE-SET,gemini,AI 服务
-  - RULE-SET,claude,AI 服务
+  - RULE-SET,openai,OpenAI
+  - DOMAIN-SUFFIX,sora.com,OpenAI
+  - RULE-SET,gemini,Gemini
+  - RULE-SET,claude,Claude
+  - RULE-SET,anthropic,Claude
+  - RULE-SET,copilot,其他 AI 服务
+  - RULE-SET,apple-ai,其他 AI 服务
+  - GEOSITE,category-ai-chat-!cn,其他 AI 服务
+  - GEOSITE,category-ai-!cn,其他 AI 服务
   - RULE-SET,tiktok,TikTok
   - RULE-SET,telegram,Telegram
   - RULE-SET,youtube,YouTube
