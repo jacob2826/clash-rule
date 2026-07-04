@@ -8,6 +8,7 @@ dns:
     - "oauth2.googleapis.com"
     - "accounts.google.com"
     - "+.googleapis.com"
+    - "+.challenges.cloudflare.com"
     - "+.livekit.cloud"
     - "apple-relay.apple.com"
     - "apple-relay.mask.apple-dns.net"
