@@ -53,7 +53,7 @@ proxy-groups:
   - name: 节点选择
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
-    proxies: [自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, AI节点, 手动选择, DIRECT]
+    proxies: [自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
   - name: 手动选择
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
@@ -66,76 +66,66 @@ proxy-groups:
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
-  - name: AI节点
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AI.png
-    # 复用三个地区组的节点过滤结果；select 只展示检测结果，不自动跨地区切换。
-    proxies: [新加坡节点, 日本节点, 美国节点]
-    url: https://api.openai.com/v1/models
-    expected-status: 401
-    interval: 600
-    timeout: 8000
-    lazy: true
   - name: OpenAI
     type: select
     icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/OpenAI.png
-    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, AI节点, 节点选择, 自动选择, 手动选择, DIRECT]
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
   - name: Gemini
     type: select
     icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/Gemini.png
-    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, AI节点, 节点选择, 自动选择, 手动选择, DIRECT]
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
   - name: Claude
     type: select
     icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/Claude.png
-    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, AI节点, 节点选择, 自动选择, 手动选择, DIRECT]
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
   - name: 其他 AI 服务
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AI.png
-    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, AI节点, 节点选择, 自动选择, 手动选择, DIRECT]
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
   - name: TikTok
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png
-    proxies: [节点选择, 美国节点, 日本节点, 新加坡节点, 香港节点, 台湾节点, 自动选择, AI节点, 手动选择, DIRECT]
+    proxies: [节点选择, 美国节点, 日本节点, 新加坡节点, 香港节点, 台湾节点, 自动选择, 手动选择, DIRECT]
   - name: Telegram
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-    proxies: [节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, AI节点, 手动选择, DIRECT]
+    proxies: [节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
   - name: YouTube
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
-    proxies: [节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, AI节点, 手动选择, DIRECT]
+    proxies: [节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
   - name: Netflix
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
-    proxies: [奈飞节点, 节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, AI节点, 手动选择, DIRECT]
+    proxies: [奈飞节点, 节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
   - name: 国际媒体
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
-    proxies: [节点选择, 自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, AI节点, 手动选择, DIRECT]
+    proxies: [节点选择, 自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
   - name: 谷歌FCM
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
-    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, AI节点, 手动选择]
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
   - name: 微软Bing
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, AI节点, 手动选择]
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
   - name: 微软服务
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, AI节点, 手动选择]
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
   - name: 苹果服务
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
-    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, AI节点, 手动选择]
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
   - name: 游戏平台
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
-    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, AI节点, 手动选择]
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
   - name: 兜底策略
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
-    proxies: [节点选择, 自动选择, DIRECT, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, AI节点, 手动选择]
+    proxies: [节点选择, 自动选择, DIRECT, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择]
   - name: 香港节点
     type: url-test
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
