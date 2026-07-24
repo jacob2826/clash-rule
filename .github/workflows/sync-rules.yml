@@ -1,0 +1,101 @@
+name: Sync optimized rules
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Rebuild every provider even when upstream content is unchanged
+        required: false
+        type: boolean
+        default: false
+  push:
+    branches:
+      - main
+    paths:
+      - "AppleAI.list"
+      - "Mihomo.yml"
+      - "UnBan.list"
+      - "mihomo_v2.yml"
+      - "package.json"
+      - "package-lock.json"
+      - "rules/sources.json"
+      - "scripts/**"
+      - ".github/workflows/sync-rules.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-optimized-rules
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      RULE_SYNC_LOG_DIR: ${{ runner.temp }}/rule-sync
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Detect and rebuild changed rules
+        id: sync
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE_SYNC: ${{ github.event_name == 'push' || inputs.force == true }}
+        run: |
+          args=()
+          if [[ "$FORCE_SYNC" == "true" ]]; then
+            args+=(--force)
+          fi
+          node scripts/sync-rules.mjs "${args[@]}"
+
+      - name: Validate generated rules and V2 template
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          mkdir -p "$RULE_SYNC_LOG_DIR"
+          set -o pipefail
+          node scripts/validate-rules.mjs 2>&1 | tee "$RULE_SYNC_LOG_DIR/validation.log"
+
+      - name: Commit generated changes
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mihomo_v2.yml rules/generated rules/state rules/status/latest.json rules/status/latest.md
+          if git diff --cached --quiet; then
+            echo "No repository changes to commit."
+          else
+            git commit -m "Update optimized rules [skip ci]"
+            git push
+          fi
+
+      - name: Publish run summary
+        if: always()
+        run: |
+          if [[ -f "$RULE_SYNC_LOG_DIR/rule-sync-log.txt" ]]; then
+            cat "$RULE_SYNC_LOG_DIR/rule-sync-log.txt" >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf 'Rule sync stopped before a log file was created.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload diagnostic log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rule-sync-log-${{ github.run_id }}
+          path: ${{ env.RULE_SYNC_LOG_DIR }}/*
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,12 @@
+{
+  "name": "clash-rule-maintenance",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "rules:sync": "node scripts/sync-rules.mjs --force",
+    "rules:check": "node scripts/validate-rules.mjs"
+  },
+  "dependencies": {
+    "yaml": "2.9.0"
+  }
+}

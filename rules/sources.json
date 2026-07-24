@@ -1,0 +1,421 @@
+{
+  "version": 1,
+  "providers": [
+    {
+      "id": "custom-direct",
+      "policy": "DIRECT",
+      "sources": [
+        {
+          "id": "custom-direct-local",
+          "type": "local",
+          "path": "UnBan.list",
+          "behavior": "classical"
+        }
+      ]
+    },
+    {
+      "id": "apple-ai",
+      "policy": "其他 AI 服务",
+      "sources": [
+        {
+          "id": "apple-ai-local",
+          "type": "local",
+          "path": "AppleAI.list",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-apple-intelligence",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/apple-intelligence.list",
+          "behavior": "domain",
+          "mode": "audit"
+        }
+      ]
+    },
+    {
+      "id": "openai",
+      "policy": "OpenAI",
+      "sources": [
+        {
+          "id": "blackmatrix-openai",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/OpenAI/OpenAI.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-openai",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/openai.list",
+          "behavior": "domain",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "policy": "Gemini",
+      "sources": [
+        {
+          "id": "blackmatrix-gemini",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/Gemini/Gemini.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-google-gemini",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/google-gemini.list",
+          "behavior": "domain",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "claude",
+      "policy": "Claude",
+      "sources": [
+        {
+          "id": "blackmatrix-claude",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/Claude/Claude.yaml",
+          "behavior": "classical"
+        },
+        {
+          "id": "blackmatrix-anthropic",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/Anthropic/Anthropic.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-anthropic",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/anthropic.list",
+          "behavior": "domain",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "copilot",
+      "policy": "其他 AI 服务",
+      "sources": [
+        {
+          "id": "blackmatrix-copilot",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/Copilot/Copilot.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-github-copilot",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/github-copilot.list",
+          "behavior": "domain",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "tiktok",
+      "policy": "TikTok",
+      "sources": [
+        {
+          "id": "blackmatrix-tiktok",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/TikTok/TikTok.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-tiktok",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/tiktok.list",
+          "behavior": "domain",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "telegram",
+      "policy": "Telegram",
+      "sources": [
+        {
+          "id": "blackmatrix-telegram",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/Telegram/Telegram.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-telegram-domain",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/telegram.list",
+          "behavior": "domain",
+          "mode": "union"
+        },
+        {
+          "id": "meta-telegram-ip",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geoip/telegram.list",
+          "behavior": "ipcidr",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "youtube",
+      "policy": "YouTube",
+      "sources": [
+        {
+          "id": "blackmatrix-youtube",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/YouTube/YouTube.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-youtube",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/youtube.list",
+          "behavior": "domain",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "netflix",
+      "policy": "Netflix",
+      "sources": [
+        {
+          "id": "blackmatrix-netflix-domain",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/Netflix/Netflix.yaml",
+          "behavior": "classical"
+        },
+        {
+          "id": "blackmatrix-netflix-ip",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/Netflix/Netflix_IP.yaml",
+          "behavior": "ipcidr"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-netflix-domain",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/netflix.list",
+          "behavior": "domain",
+          "mode": "union"
+        },
+        {
+          "id": "meta-netflix-ip",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geoip/netflix.list",
+          "behavior": "ipcidr",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "global-media",
+      "policy": "国际媒体",
+      "sources": [
+        {
+          "id": "blackmatrix-global-media-residual",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/GlobalMedia/GlobalMedia.yaml",
+          "behavior": "classical"
+        },
+        {
+          "id": "blackmatrix-global-media-domain",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/GlobalMedia/GlobalMedia_Domain.yaml",
+          "behavior": "domain"
+        }
+      ]
+    },
+    {
+      "id": "google-fcm",
+      "policy": "谷歌FCM",
+      "sources": [
+        {
+          "id": "acl4ssr-google-fcm",
+          "type": "github",
+          "repo": "ACL4SSR/ACL4SSR",
+          "ref": "master",
+          "path": "Clash/Ruleset/GoogleFCM.list",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-google-fcm",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/googlefcm.list",
+          "behavior": "domain",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "policy": "节点选择",
+      "sources": [
+        {
+          "id": "blackmatrix-github",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/GitHub/GitHub.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-github",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/github.list",
+          "behavior": "domain",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "bing",
+      "policy": "微软Bing",
+      "sources": [
+        {
+          "id": "acl4ssr-bing",
+          "type": "github",
+          "repo": "ACL4SSR/ACL4SSR",
+          "ref": "master",
+          "path": "Clash/Bing.list",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-bing",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/bing.list",
+          "behavior": "domain",
+          "mode": "audit"
+        }
+      ]
+    },
+    {
+      "id": "onedrive",
+      "policy": "微软服务",
+      "sources": [
+        {
+          "id": "blackmatrix-onedrive",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/OneDrive/OneDrive.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-onedrive",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/onedrive.list",
+          "behavior": "domain",
+          "mode": "union"
+        }
+      ]
+    },
+    {
+      "id": "microsoft",
+      "policy": "微软服务",
+      "sources": [
+        {
+          "id": "blackmatrix-microsoft",
+          "type": "github",
+          "repo": "blackmatrix7/ios_rule_script",
+          "ref": "master",
+          "path": "rule/Clash/Microsoft/Microsoft.yaml",
+          "behavior": "classical"
+        }
+      ],
+      "candidates": [
+        {
+          "id": "meta-microsoft",
+          "type": "github",
+          "repo": "MetaCubeX/meta-rules-dat",
+          "ref": "meta",
+          "path": "geo/geosite/microsoft.list",
+          "behavior": "domain",
+          "mode": "audit"
+        }
+      ]
+    }
+  ]
+}

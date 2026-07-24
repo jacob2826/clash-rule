@@ -1,0 +1,567 @@
+# mihomo 配置模板：使用 rule-providers 组合维护中的上游规则。
+# 使用前把 proxy-providers.subscription.url 替换为你的订阅地址；如客户端已负责注入节点，可仅合并 dns / proxy-groups / rule-providers / rules 部分。
+
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: false
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+geodata-mode: true
+geodata-loader: standard
+geo-auto-update: true
+geo-update-interval: 24
+geox-url:
+  geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
+  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb
+  asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
+
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+
+proxy-providers:
+  subscription:
+    type: http
+    url: https://example.com/your-subscription-url
+    interval: 86400
+    path: ./providers/proxy/subscription.yaml
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 600
+      timeout: 5000
+      lazy: false
+      expected-status: 204
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+    proxies: [自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: 手动选择
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
+    use: [subscription]
+  - name: 自动选择
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+    use: [subscription]
+    exclude-filter: (?i)(traffic|expire|expiry|date|reset|days?\s+left|剩余|到期|过期|流量|重置|官网|套餐|\d+(?:\.\d+)?\s*[kmgt]i?b?\s*[|｜]\s*\d+(?:\.\d+)?\s*[kmgt]i?b?)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: OpenAI
+    type: select
+    icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/OpenAI.png
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
+  - name: Gemini
+    type: select
+    icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/Gemini.png
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
+  - name: Claude
+    type: select
+    icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/Claude.png
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
+  - name: 其他 AI 服务
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AI.png
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
+  - name: TikTok
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok.png
+    proxies: [节点选择, 美国节点, 日本节点, 新加坡节点, 香港节点, 台湾节点, 自动选择, 手动选择, DIRECT]
+  - name: Telegram
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+    proxies: [节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: YouTube
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+    proxies: [节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: Netflix
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
+    proxies: [奈飞节点, 节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: 国际媒体
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
+    proxies: [节点选择, 自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
+  - name: 谷歌FCM
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
+  - name: 微软Bing
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
+  - name: 微软服务
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
+  - name: 苹果服务
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
+  - name: 游戏平台
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
+    proxies: [DIRECT, 节点选择, 美国节点, 香港节点, 台湾节点, 新加坡节点, 日本节点, 韩国节点, 手动选择]
+  - name: 兜底策略
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+    proxies: [节点选择, 自动选择, DIRECT, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择]
+  - name: 香港节点
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+    use: [subscription]
+    filter: (?i)(港|香港|深港|沪港|京港|hk|hkg|hong kong|hongkong)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 台湾节点
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+    use: [subscription]
+    filter: (?i)(台|台湾|台北|新北|彰化|高雄|tw|twn|taiwan|taipei)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 新加坡节点
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+    use: [subscription]
+    filter: (?i)(新加坡|坡|狮城|星|sg|sgp|singapore)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 日本节点
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+    use: [subscription]
+    filter: (?i)(日本|东京|大阪|埼玉|jp|jpn|japan|tokyo|osaka)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 美国节点
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+    use: [subscription]
+    filter: '(?i)(美|美国|美西|美东|\b(?:us|usa|united states|america|los angeles|san jose|seattle|chicago)\b)'
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+  - name: 韩国节点
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+    use: [subscription]
+    filter: (?i)(韩|韓|韩国|kr|korea|kor|seoul|首尔)
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: 奈飞节点
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
+    use: [subscription]
+    filter: (?i)(nf|netflix|media|奈飞|解锁)
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  fake-ip-filter:
+    # 登录、实时音视频、Apple 中继域名不走 fake-ip。
+    - oauth2.googleapis.com
+    - accounts.google.com
+    - +.googleapis.com
+    - +.challenges.cloudflare.com
+    - +.livekit.cloud
+    - apple-relay.apple.com
+    - apple-relay.mask.apple-dns.net
+    - gateway.fe2.apple-dns.net
+    - gateway.icloud.com
+  ipv6: false
+  default-nameserver: &cn_dns
+    - 119.29.29.29
+    - 223.5.5.5
+  proxy-server-nameserver: *cn_dns
+  direct-nameserver: *cn_dns
+  nameserver: *cn_dns
+  fallback: &oversea_dns
+    - https://1.1.1.1/dns-query#节点选择
+    - https://8.8.8.8/dns-query#节点选择
+  nameserver-policy:
+    geosite:private: *cn_dns
+    geosite:cn: *cn_dns
+    geosite:geolocation-!cn: *oversea_dns
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+rule-providers:
+  custom-direct-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/custom-direct-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/custom-direct-domain.txt
+  custom-direct-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/custom-direct-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/custom-direct-residual.list
+  custom-direct-process:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/custom-direct-process.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/custom-direct-process.list
+  apple-ai-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/apple-ai-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/apple-ai-domain.txt
+  openai-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/openai-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/openai-domain.txt
+  openai-ipcidr:
+    type: http
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/openai-ipcidr.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/openai-ipcidr.txt
+  openai-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/openai-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/openai-residual.list
+  gemini-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/gemini-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/gemini-domain.txt
+  gemini-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/gemini-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/gemini-residual.list
+  claude-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/claude-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/claude-domain.txt
+  copilot-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/copilot-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/copilot-domain.txt
+  copilot-ipcidr:
+    type: http
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/copilot-ipcidr.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/copilot-ipcidr.txt
+  copilot-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/copilot-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/copilot-residual.list
+  tiktok-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/tiktok-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/tiktok-domain.txt
+  tiktok-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/tiktok-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/tiktok-residual.list
+  tiktok-process:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/tiktok-process.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/tiktok-process.list
+  telegram-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/telegram-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/telegram-domain.txt
+  telegram-ipcidr:
+    type: http
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/telegram-ipcidr.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/telegram-ipcidr.txt
+  telegram-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/telegram-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/telegram-residual.list
+  telegram-process:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/telegram-process.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/telegram-process.list
+  youtube-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/youtube-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/youtube-domain.txt
+  youtube-ipcidr:
+    type: http
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/youtube-ipcidr.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/youtube-ipcidr.txt
+  youtube-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/youtube-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/youtube-residual.list
+  netflix-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/netflix-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/netflix-domain.txt
+  netflix-ipcidr:
+    type: http
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/netflix-ipcidr.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/netflix-ipcidr.txt
+  netflix-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/netflix-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/netflix-residual.list
+  netflix-process:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/netflix-process.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/netflix-process.list
+  global-media-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/global-media-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/global-media-domain.txt
+  global-media-ipcidr:
+    type: http
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/global-media-ipcidr.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/global-media-ipcidr.txt
+  global-media-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/global-media-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/global-media-residual.list
+  global-media-process:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/global-media-process.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/global-media-process.list
+  google-fcm-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/google-fcm-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/google-fcm-domain.txt
+  google-fcm-ipcidr:
+    type: http
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/google-fcm-ipcidr.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/google-fcm-ipcidr.txt
+  github-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/github-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/github-domain.txt
+  github-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/github-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/github-residual.list
+  bing-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/bing-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/bing-domain.txt
+  onedrive-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/onedrive-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/onedrive-domain.txt
+  onedrive-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/onedrive-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/onedrive-residual.list
+  onedrive-process:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/onedrive-process.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/onedrive-process.list
+  microsoft-domain:
+    type: http
+    behavior: domain
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/microsoft-domain.txt
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/microsoft-domain.txt
+  microsoft-residual:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/microsoft-residual.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/microsoft-residual.list
+  microsoft-process:
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    path: ./providers/rules/v2/microsoft-process.list
+    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/microsoft-process.list
+rules:
+  - RULE-SET,custom-direct-domain,DIRECT
+  - RULE-SET,custom-direct-residual,DIRECT
+  - RULE-SET,custom-direct-process,DIRECT
+  - GEOSITE,private,DIRECT
+  - RULE-SET,openai-domain,OpenAI
+  - RULE-SET,openai-ipcidr,OpenAI,no-resolve
+  - RULE-SET,openai-residual,OpenAI
+  - DOMAIN-SUFFIX,sora.com,OpenAI
+  - RULE-SET,gemini-domain,Gemini
+  - RULE-SET,gemini-residual,Gemini
+  - RULE-SET,claude-domain,Claude
+  - RULE-SET,copilot-domain,其他 AI 服务
+  - RULE-SET,copilot-ipcidr,其他 AI 服务,no-resolve
+  - RULE-SET,copilot-residual,其他 AI 服务
+  - RULE-SET,apple-ai-domain,其他 AI 服务
+  - GEOSITE,category-ai-chat-!cn,其他 AI 服务
+  - GEOSITE,category-ai-!cn,其他 AI 服务
+  - RULE-SET,tiktok-domain,TikTok
+  - RULE-SET,tiktok-residual,TikTok
+  - RULE-SET,tiktok-process,TikTok
+  - RULE-SET,telegram-domain,Telegram
+  - RULE-SET,telegram-ipcidr,Telegram,no-resolve
+  - RULE-SET,telegram-residual,Telegram
+  - RULE-SET,telegram-process,Telegram
+  - RULE-SET,youtube-domain,YouTube
+  - RULE-SET,youtube-ipcidr,YouTube,no-resolve
+  - RULE-SET,youtube-residual,YouTube
+  - RULE-SET,netflix-domain,Netflix
+  - RULE-SET,netflix-ipcidr,Netflix,no-resolve
+  - RULE-SET,netflix-residual,Netflix
+  - RULE-SET,netflix-process,Netflix
+  - GEOSITE,bahamut,台湾节点
+  - GEOSITE,bilibili,DIRECT
+  - RULE-SET,global-media-domain,国际媒体
+  - RULE-SET,global-media-ipcidr,国际媒体,no-resolve
+  - RULE-SET,global-media-residual,国际媒体
+  - RULE-SET,global-media-process,国际媒体
+  - RULE-SET,google-fcm-domain,谷歌FCM
+  - RULE-SET,google-fcm-ipcidr,谷歌FCM,no-resolve
+  - RULE-SET,github-domain,节点选择
+  - RULE-SET,github-residual,节点选择
+  - RULE-SET,bing-domain,微软Bing
+  - RULE-SET,onedrive-domain,微软服务
+  - RULE-SET,onedrive-residual,微软服务
+  - RULE-SET,onedrive-process,微软服务
+  - RULE-SET,microsoft-domain,微软服务
+  - RULE-SET,microsoft-residual,微软服务
+  - RULE-SET,microsoft-process,微软服务
+  - GEOSITE,apple-cn,DIRECT
+  - GEOSITE,apple,苹果服务
+  - GEOSITE,steam@cn,DIRECT
+  - GEOSITE,category-games,游戏平台
+  - GEOSITE,cn,DIRECT
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,兜底策略
