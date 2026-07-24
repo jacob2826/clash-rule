@@ -9,6 +9,18 @@ const current = YAML.parse(await fs.readFile(path.join(ROOT, 'Mihomo.yml'), 'utf
 const v2 = YAML.parse(await fs.readFile(path.join(ROOT, 'mihomo_v2.yml'), 'utf8'));
 const manifest = JSON.parse(await fs.readFile(path.join(ROOT, 'rules/sources.json'), 'utf8'));
 const status = JSON.parse(await fs.readFile(path.join(ROOT, 'rules/status/latest.json'), 'utf8'));
+const PROCESS_RULE_TYPES = new Set([
+  'PROCESS-NAME',
+  'PROCESS-NAME-WILDCARD',
+  'PROCESS-PATH',
+  'PROCESS-PATH-REGEX'
+]);
+const RESIDUAL_RULE_TYPES = new Set([
+  'DOMAIN-KEYWORD',
+  'DOMAIN-REGEX',
+  'DOMAIN-WILDCARD',
+  'IP-ASN'
+]);
 
 for (const key of Object.keys(current)) {
   if (key === 'rule-providers' || key === 'rules') continue;
@@ -49,24 +61,45 @@ for (const [providerId, provider] of Object.entries(ruleProviders)) {
     assert.ok(lines.every((line) => !line.includes(',') && !/\s/.test(line)), `Invalid domain provider: ${providerId}`);
   } else if (provider.behavior === 'ipcidr') {
     assert.ok(lines.every((line) => line.includes('/') && !line.includes(',')), `Invalid ipcidr provider: ${providerId}`);
-  } else if (provider.behavior === 'classical') {
-    assert.ok(lines.every((line) => line.includes(',')), `Invalid classical provider: ${providerId}`);
   } else {
     assert.fail(`Unsupported behavior in mihomo_v2.yml: ${provider.behavior}`);
-  }
-  if (providerId.endsWith('-process')) {
-    assert.equal(provider.behavior, 'classical', `Process provider must be classical: ${providerId}`);
   }
 }
 
 const manifestPolicies = new Map(manifest.providers.map((provider) => [provider.id, provider.policy]));
+const expectedProviderIds = [];
+const expectedInlineRules = [];
 for (const provider of status.providers) {
   assert.equal(provider.policy, manifestPolicies.get(provider.id), `Status policy mismatch for ${provider.id}`);
   for (const [kind, relativePath] of Object.entries(provider.outputs)) {
+    assert.ok(kind === 'domain' || kind === 'ipcidr', `Unexpected external output kind for ${provider.id}: ${kind}`);
     await fs.access(path.join(ROOT, relativePath));
     const expectedId = `${provider.id}-${kind}`;
+    expectedProviderIds.push(expectedId);
     assert.ok(ruleProviders[expectedId], `mihomo_v2.yml is missing generated provider ${expectedId}`);
+  }
+  for (const [kind, relativePath] of Object.entries(provider.compatibilityOutputs || {})) {
+    assert.ok(kind === 'residual' || kind === 'process', `Unexpected compatibility output kind for ${provider.id}: ${kind}`);
+    const text = await fs.readFile(path.join(ROOT, relativePath), 'utf8');
+    const lines = text.split(/\r?\n/).map((line) => line.trim()).filter((line) => line && !line.startsWith('#'));
+    assert.deepEqual(lines, provider.inlineRules?.[kind] || [], `Compatibility output differs from inline ${kind} rules for ${provider.id}`);
+    assert.equal(ruleProviders[`${provider.id}-${kind}`], undefined, `Inline ${kind} rules must not have an active provider for ${provider.id}`);
+  }
+  for (const kind of ['residual', 'process']) {
+    for (const rule of provider.inlineRules?.[kind] || []) {
+      const type = String(rule).split(',')[0];
+      const allowedTypes = kind === 'process' ? PROCESS_RULE_TYPES : RESIDUAL_RULE_TYPES;
+      assert.ok(allowedTypes.has(type), `Unexpected ${kind} inline rule for ${provider.id}: ${rule}`);
+      expectedInlineRules.push(`${rule},${provider.policy}`);
+    }
   }
 }
 
-console.log(`Validated ${Object.keys(ruleProviders).length} V2 rule providers across ${status.providers.length} policies.`);
+assert.deepEqual(Object.keys(ruleProviders), expectedProviderIds, 'V2 external provider order or scope changed');
+const actualInlineRules = (v2.rules || []).filter((rule) => {
+  const type = String(rule).split(',')[0];
+  return PROCESS_RULE_TYPES.has(type) || RESIDUAL_RULE_TYPES.has(type);
+});
+assert.deepEqual(actualInlineRules, expectedInlineRules, 'V2 inline rule order or scope changed');
+
+console.log(`Validated ${expectedProviderIds.length} external V2 rule providers and ${expectedInlineRules.length} inline rules across ${status.providers.length} policies.`);

@@ -7,7 +7,8 @@ original file. Only `rule-providers` and `rules` are rebuilt.
 ## Files
 
 - `sources.json`: fixed allowlist of local and upstream rule sources.
-- `generated/`: deterministic domain, ipcidr, residual and process providers.
+- `generated/`: deterministic domain and ipcidr providers, plus synchronized
+  compatibility mirrors for older V2 residual/process URLs.
 - `state/upstreams.json`: GitHub ETag and content hash state for conditional checks.
 - `status/latest.json`: machine-readable result of the latest successful rebuild.
 - `status/latest.md`: compact human-readable rule and candidate difference report.
@@ -19,8 +20,9 @@ original file. Only `rule-providers` and `rules` are rebuilt.
 - Domain and CIDR rules are converted losslessly.
 - MetaCubeX candidates in `union` mode may add rules but cannot remove source rules.
 - Candidates in `audit` mode are reported without changing output.
-- Keyword, ASN and process rules remain classical because domain/ipcidr providers
-  cannot represent them without changing semantics.
+- Keyword, ASN and process rules are written directly into `mihomo_v2.yml`
+  because domain/ipcidr providers cannot represent them without changing
+  semantics. This avoids maintaining a provider for a handful of rules.
 - Empty sources, HTML/error responses, unknown rule types, malformed YAML and
   files larger than 5 MiB fail the rebuild.
 - Generated files and `mihomo_v2.yml` are committed only after validation.

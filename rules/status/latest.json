@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-07-24T05:38:46.633Z",
+  "generatedAt": "2026-07-24T08:29:21.297Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2551,
@@ -29,9 +29,24 @@
         "all": 22
       },
       "outputs": {
-        "domain": "rules/generated/custom-direct-domain.txt",
+        "domain": "rules/generated/custom-direct-domain.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/custom-direct-residual.list",
         "process": "rules/generated/custom-direct-process.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,oray"
+        ],
+        "process": [
+          "PROCESS-NAME,RustDesk",
+          "PROCESS-NAME,cloudflared",
+          "PROCESS-NAME,tailscale",
+          "PROCESS-NAME,tailscaled",
+          "PROCESS-NAME-WILDCARD,*cloudflared*",
+          "PROCESS-NAME-WILDCARD,*tailscale*"
+        ]
       },
       "candidates": []
     },
@@ -55,6 +70,8 @@
       "outputs": {
         "domain": "rules/generated/apple-ai-domain.txt"
       },
+      "compatibilityOutputs": {},
+      "inlineRules": {},
       "candidates": [
         {
           "id": "meta-apple-intelligence",
@@ -114,8 +131,16 @@
       },
       "outputs": {
         "domain": "rules/generated/openai-domain.txt",
-        "ipcidr": "rules/generated/openai-ipcidr.txt",
+        "ipcidr": "rules/generated/openai-ipcidr.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/openai-residual.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,openai",
+          "IP-ASN,20473"
+        ]
       },
       "candidates": [
         {
@@ -188,8 +213,17 @@
         "all": 45
       },
       "outputs": {
-        "domain": "rules/generated/gemini-domain.txt",
+        "domain": "rules/generated/gemini-domain.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/gemini-residual.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,colab",
+          "DOMAIN-KEYWORD,developerprofiles",
+          "DOMAIN-KEYWORD,generativelanguage"
+        ]
       },
       "candidates": [
         {
@@ -256,6 +290,8 @@
       "outputs": {
         "domain": "rules/generated/claude-domain.txt"
       },
+      "compatibilityOutputs": {},
+      "inlineRules": {},
       "candidates": [
         {
           "id": "meta-anthropic",
@@ -314,8 +350,17 @@
       },
       "outputs": {
         "domain": "rules/generated/copilot-domain.txt",
-        "ipcidr": "rules/generated/copilot-ipcidr.txt",
+        "ipcidr": "rules/generated/copilot-ipcidr.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/copilot-residual.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,openaicom-api",
+          "IP-ASN,14061",
+          "IP-ASN,20473"
+        ]
       },
       "candidates": [
         {
@@ -384,9 +429,20 @@
         "all": 56
       },
       "outputs": {
-        "domain": "rules/generated/tiktok-domain.txt",
+        "domain": "rules/generated/tiktok-domain.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/tiktok-residual.list",
         "process": "rules/generated/tiktok-process.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,musical.ly",
+          "DOMAIN-KEYWORD,tiktok"
+        ],
+        "process": [
+          "PROCESS-NAME,com.zhiliaoapp.musically"
+        ]
       },
       "candidates": [
         {
@@ -460,9 +516,29 @@
       },
       "outputs": {
         "domain": "rules/generated/telegram-domain.txt",
-        "ipcidr": "rules/generated/telegram-ipcidr.txt",
+        "ipcidr": "rules/generated/telegram-ipcidr.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/telegram-residual.list",
         "process": "rules/generated/telegram-process.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,nicegram",
+          "IP-ASN,211157",
+          "IP-ASN,44907",
+          "IP-ASN,59930",
+          "IP-ASN,62014",
+          "IP-ASN,62041"
+        ],
+        "process": [
+          "PROCESS-NAME,Telegram.exe",
+          "PROCESS-NAME,nekox.messenger",
+          "PROCESS-NAME,org.telegram.messenger",
+          "PROCESS-NAME,telegram-desktop",
+          "PROCESS-NAME,tw.nekomimi.nekogram",
+          "PROCESS-NAME,xyz.nextalone.nagram"
+        ]
       },
       "candidates": [
         {
@@ -569,8 +645,15 @@
       },
       "outputs": {
         "domain": "rules/generated/youtube-domain.txt",
-        "ipcidr": "rules/generated/youtube-ipcidr.txt",
+        "ipcidr": "rules/generated/youtube-ipcidr.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/youtube-residual.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,youtube"
+        ]
       },
       "candidates": [
         {
@@ -629,9 +712,22 @@
       },
       "outputs": {
         "domain": "rules/generated/netflix-domain.txt",
-        "ipcidr": "rules/generated/netflix-ipcidr.txt",
+        "ipcidr": "rules/generated/netflix-ipcidr.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/netflix-residual.list",
         "process": "rules/generated/netflix-process.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,apiproxy-device-prod-nlb-",
+          "DOMAIN-KEYWORD,dualstack.apiproxy-",
+          "DOMAIN-KEYWORD,dualstack.ichnaea-web-",
+          "DOMAIN-KEYWORD,netflixdnstest"
+        ],
+        "process": [
+          "PROCESS-NAME,com.netflix.mediaclient"
+        ]
       },
       "candidates": [
         {
@@ -743,9 +839,46 @@
       },
       "outputs": {
         "domain": "rules/generated/global-media-domain.txt",
-        "ipcidr": "rules/generated/global-media-ipcidr.txt",
+        "ipcidr": "rules/generated/global-media-ipcidr.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/global-media-residual.list",
         "process": "rules/generated/global-media-process.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,abematv.akamaized.net",
+          "DOMAIN-KEYWORD,anthropic",
+          "DOMAIN-KEYWORD,apiproxy-device-prod-nlb-",
+          "DOMAIN-KEYWORD,avoddashs",
+          "DOMAIN-KEYWORD,bbcfmt",
+          "DOMAIN-KEYWORD,claude",
+          "DOMAIN-KEYWORD,discovery.uplynk.com",
+          "DOMAIN-KEYWORD,dualstack.apiproxy-",
+          "DOMAIN-KEYWORD,dualstack.ichnaea-web-",
+          "DOMAIN-KEYWORD,hamivideo.cdn.hinet.net",
+          "DOMAIN-KEYWORD,hbogoasia",
+          "DOMAIN-KEYWORD,japonx",
+          "DOMAIN-KEYWORD,japronx",
+          "DOMAIN-KEYWORD,jooxweb-api",
+          "DOMAIN-KEYWORD,netflixdnstest",
+          "DOMAIN-KEYWORD,nivod",
+          "DOMAIN-KEYWORD,nowtv100",
+          "DOMAIN-KEYWORD,olevod",
+          "DOMAIN-KEYWORD,rthklive",
+          "DOMAIN-KEYWORD,spotify",
+          "DOMAIN-KEYWORD,tiktokcdn",
+          "DOMAIN-KEYWORD,ttvnw",
+          "DOMAIN-KEYWORD,tvbanywhere",
+          "DOMAIN-KEYWORD,uk-live",
+          "DOMAIN-KEYWORD,voddazn",
+          "DOMAIN-KEYWORD,youtube"
+        ],
+        "process": [
+          "PROCESS-NAME,com.viu.pad",
+          "PROCESS-NAME,com.viu.phone",
+          "PROCESS-NAME,com.vuclip.viu"
+        ]
       },
       "candidates": []
     },
@@ -770,6 +903,8 @@
         "domain": "rules/generated/google-fcm-domain.txt",
         "ipcidr": "rules/generated/google-fcm-ipcidr.txt"
       },
+      "compatibilityOutputs": {},
+      "inlineRules": {},
       "candidates": [
         {
           "id": "meta-google-fcm",
@@ -833,8 +968,15 @@
         "all": 69
       },
       "outputs": {
-        "domain": "rules/generated/github-domain.txt",
+        "domain": "rules/generated/github-domain.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/github-residual.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,github"
+        ]
       },
       "candidates": [
         {
@@ -904,6 +1046,8 @@
       "outputs": {
         "domain": "rules/generated/bing-domain.txt"
       },
+      "compatibilityOutputs": {},
+      "inlineRules": {},
       "candidates": [
         {
           "id": "meta-bing",
@@ -964,9 +1108,22 @@
         "all": 21
       },
       "outputs": {
-        "domain": "rules/generated/onedrive-domain.txt",
+        "domain": "rules/generated/onedrive-domain.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/onedrive-residual.list",
         "process": "rules/generated/onedrive-process.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,1drv",
+          "DOMAIN-KEYWORD,onedrive",
+          "DOMAIN-KEYWORD,skydrive"
+        ],
+        "process": [
+          "PROCESS-NAME,OneDrive",
+          "PROCESS-NAME,OneDriveUpdater"
+        ]
       },
       "candidates": [
         {
@@ -1021,9 +1178,23 @@
         "all": 670
       },
       "outputs": {
-        "domain": "rules/generated/microsoft-domain.txt",
+        "domain": "rules/generated/microsoft-domain.txt"
+      },
+      "compatibilityOutputs": {
         "residual": "rules/generated/microsoft-residual.list",
         "process": "rules/generated/microsoft-process.list"
+      },
+      "inlineRules": {
+        "residual": [
+          "DOMAIN-KEYWORD,1drv",
+          "DOMAIN-KEYWORD,microsoft",
+          "DOMAIN-KEYWORD,onedrive",
+          "DOMAIN-KEYWORD,skydrive"
+        ],
+        "process": [
+          "PROCESS-NAME,OneDrive",
+          "PROCESS-NAME,OneDriveUpdater"
+        ]
       },
       "candidates": [
         {

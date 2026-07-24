@@ -262,6 +262,8 @@ async function rebuildProviders(manifest, sourceTexts) {
     }
 
     const outputs = {};
+    const compatibilityOutputs = {};
+    const inlineRules = {};
     for (const kind of ['domain', 'ipcidr', 'residual', 'process']) {
       const values = [...target[kind]].sort();
       if (values.length === 0) {
@@ -272,6 +274,18 @@ async function rebuildProviders(manifest, sourceTexts) {
         }
         continue;
       }
+
+      if (kind === 'residual' || kind === 'process') {
+        const outputPath = generatedPath(provider.id, kind);
+        const content = renderGeneratedRules(provider, kind, values);
+        if (await writeIfChanged(outputPath, content)) filesChanged = true;
+        compatibilityOutputs[kind] = path.relative(ROOT, outputPath);
+        inlineRules[kind] = values;
+        totals[kind] += values.length;
+        totals.all += values.length;
+        continue;
+      }
+
       const outputPath = generatedPath(provider.id, kind);
       const content = renderGeneratedRules(provider, kind, values);
       if (await writeIfChanged(outputPath, content)) filesChanged = true;
@@ -286,6 +300,8 @@ async function rebuildProviders(manifest, sourceTexts) {
       baseCounts: bucketCounts(base),
       outputCounts: bucketCounts(target),
       outputs,
+      compatibilityOutputs,
+      inlineRules,
       candidates: candidateDiffs
     });
   }
@@ -442,13 +458,13 @@ async function renderV2Template(status) {
   const providersById = new Map(status.providers.map((provider) => [provider.id, provider]));
   const generatedProviders = {};
   for (const provider of status.providers) {
-    for (const kind of ['domain', 'ipcidr', 'residual', 'process']) {
+    for (const kind of ['domain', 'ipcidr']) {
       const relativePath = provider.outputs[kind];
       if (!relativePath) continue;
       const generatedId = `${provider.id}-${kind}`;
       generatedProviders[generatedId] = {
         type: 'http',
-        behavior: kind === 'domain' ? 'domain' : kind === 'ipcidr' ? 'ipcidr' : 'classical',
+        behavior: kind,
         format: 'text',
         interval: 86400,
         path: `./providers/rules/v2/${path.basename(relativePath)}`,
@@ -475,10 +491,15 @@ async function renderV2Template(status) {
     if (generated.policy !== policy) {
       throw new Error(`Policy mismatch for ${providerId}: ${generated.policy} != ${policy}`);
     }
-    for (const kind of ['domain', 'ipcidr', 'residual', 'process']) {
+    for (const kind of ['domain', 'ipcidr']) {
       if (!generated.outputs[kind]) continue;
       const suffix = kind === 'ipcidr' ? ',no-resolve' : '';
       rules.push(`RULE-SET,${providerId}-${kind},${policy}${suffix}`);
+    }
+    for (const kind of ['residual', 'process']) {
+      for (const inlineRule of generated.inlineRules[kind] || []) {
+        rules.push(`${inlineRule},${policy}`);
+      }
     }
   }
 
