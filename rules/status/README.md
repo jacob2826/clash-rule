@@ -12,7 +12,7 @@ Useful checks:
 
 ```bash
 gh run list --workflow sync-rules.yml --limit 5
-gh run view --log-failed
+gh run view <run-id> --log-failed
 gh run download --name rule-sync-log-<run-id>
 ```
 
