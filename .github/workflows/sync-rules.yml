@@ -38,6 +38,9 @@ jobs:
     env:
       RULE_SYNC_LOG_DIR: rule-sync-log
     steps:
+      - name: Configure Git defaults
+        run: git config --global init.defaultBranch main
+
       - name: Check out repository
         uses: actions/checkout@v7
 
