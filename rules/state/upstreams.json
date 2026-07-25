@@ -315,9 +315,9 @@
       "ref": "meta",
       "path": "geo/geosite/github.list",
       "behavior": "domain",
-      "etag": "\"77ab6117de9e3109a115fe7c038e9a0a955f8814\"",
-      "githubSha": "77ab6117de9e3109a115fe7c038e9a0a955f8814",
-      "sha256": "0ba106b4b36b8a1747f359585a61ef2f90d77d297f805f9aeedc086dd00e1f21",
+      "etag": "\"9b893fb47991bd9fd3b75d48e53761b08ab3e80c\"",
+      "githubSha": "9b893fb47991bd9fd3b75d48e53761b08ab3e80c",
+      "sha256": "c67cfc024b299638337384d19d4b23a5964a80b6c1b311a3c15f283a72eaddde",
       "bytes": 1904
     },
     "acl4ssr-bing": {
@@ -381,9 +381,9 @@
       "ref": "meta",
       "path": "geo/geosite/microsoft.list",
       "behavior": "domain",
-      "etag": "\"74df7784b1ab8fe42e52d135b70b810050e35345\"",
-      "githubSha": "74df7784b1ab8fe42e52d135b70b810050e35345",
-      "sha256": "b4cc0c9986489944381d9bcd25f8a9aa3d432e8fcd17a73bf71a7984123f3090",
+      "etag": "\"9be542d5aa66853f12eda8c34d6eb74e59b3215b\"",
+      "githubSha": "9be542d5aa66853f12eda8c34d6eb74e59b3215b",
+      "sha256": "36fcbc4ab74cdca021a6e41c235eed842caca3e4ca0a49f8e63fa3793ee6092f",
       "bytes": 15481
     }
   }
