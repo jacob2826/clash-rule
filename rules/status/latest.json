@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-07-26T03:52:53.967Z",
+  "generatedAt": "2026-07-27T03:59:36.006Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2551,
@@ -1221,9 +1221,9 @@
               "statics-marketingsites-eas-ms-com.akamaized.net",
               "statics-marketingsites-eus-ms-com.akamaized.net",
               "statics-marketingsites-wcus-ms-com.akamaized.net",
-              "flightsimulator.azureedge.net",
-              "prodforza.blob.core.windows.net",
-              "azure.microsoft.com"
+              "az764295.vo.msecnd.net",
+              "bingsettingssearch.trafficmanager.net",
+              "default.exp-tas.com"
             ],
             "ipcidr": [],
             "residual": [],

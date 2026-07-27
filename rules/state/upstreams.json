@@ -381,9 +381,9 @@
       "ref": "meta",
       "path": "geo/geosite/microsoft.list",
       "behavior": "domain",
-      "etag": "\"c6aada1e1b6129bd5bbeb7903c319a59f748d5e9\"",
-      "githubSha": "c6aada1e1b6129bd5bbeb7903c319a59f748d5e9",
-      "sha256": "d0b568cb00132e22887442bf80a89c041afb8fb9eb859adb562bb52999cd7fb9",
+      "etag": "\"c55accbf758a5233a2957c4f3fa197883e643a10\"",
+      "githubSha": "c55accbf758a5233a2957c4f3fa197883e643a10",
+      "sha256": "cef7cadb65d24ca99c04992e06c319a87874d408839152dc4ff71b962eeeef99",
       "bytes": 15481
     }
   }
