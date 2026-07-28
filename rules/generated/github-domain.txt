@@ -2,7 +2,7 @@
 # Provider: github
 # Policy: 节点选择
 # Behavior: domain
-# Rules: 68
+# Rules: 69
 
 +.atom.io
 +.collector.github.com
@@ -28,6 +28,7 @@
 +.githubnext.com
 +.githubpreview.dev
 +.githubstatus.com
++.githubsupport.com
 +.githubuniverse.com
 +.githubusercontent.com
 +.myoctocat.com

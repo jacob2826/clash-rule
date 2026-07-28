@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-07-27T03:59:36.006Z",
+  "generatedAt": "2026-07-28T03:31:53.121Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 2551,
+    "domain": 2552,
     "ipcidr": 2188,
     "residual": 56,
     "process": 21,
-    "all": 4816
+    "all": 4817
   },
   "providers": [
     {
@@ -961,11 +961,11 @@
         "all": 31
       },
       "outputCounts": {
-        "domain": 68,
+        "domain": 69,
         "ipcidr": 0,
         "residual": 1,
         "process": 0,
-        "all": 69
+        "all": 70
       },
       "outputs": {
         "domain": "rules/generated/github-domain.txt"
@@ -983,7 +983,7 @@
           "id": "meta-github",
           "mode": "union",
           "added": {
-            "domain": 38,
+            "domain": 39,
             "ipcidr": 0,
             "residual": 0,
             "process": 0
@@ -1201,7 +1201,7 @@
           "id": "meta-microsoft",
           "mode": "audit",
           "added": {
-            "domain": 217,
+            "domain": 218,
             "ipcidr": 0,
             "residual": 0,
             "process": 0
@@ -1221,9 +1221,9 @@
               "statics-marketingsites-eas-ms-com.akamaized.net",
               "statics-marketingsites-eus-ms-com.akamaized.net",
               "statics-marketingsites-wcus-ms-com.akamaized.net",
-              "az764295.vo.msecnd.net",
-              "bingsettingssearch.trafficmanager.net",
-              "default.exp-tas.com"
+              "flightsimulator.azureedge.net",
+              "prodforza.blob.core.windows.net",
+              "azure.microsoft.com"
             ],
             "ipcidr": [],
             "residual": [],

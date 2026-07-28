@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-07-27T03:59:36.006Z
+Generated: 2026-07-28T03:31:53.121Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -16,11 +16,11 @@ Generated: 2026-07-27T03:59:36.006Z
 | netflix | Netflix | 33 | 1213 | 4 | 1 | 1251 |
 | global-media | 国际媒体 | 1312 | 924 | 26 | 3 | 2265 |
 | google-fcm | 谷歌FCM | 21 | 26 | 0 | 0 | 47 |
-| github | 节点选择 | 68 | 0 | 1 | 0 | 69 |
+| github | 节点选择 | 69 | 0 | 1 | 0 | 70 |
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 3 | 2 | 21 |
 | microsoft | 微软服务 | 664 | 0 | 4 | 2 | 670 |
-| **Total** |  | **2551** | **2188** | **56** | **21** | **4816** |
+| **Total** |  | **2552** | **2188** | **56** | **21** | **4817** |
 
 ## MetaCubeX candidate differences
 
@@ -38,7 +38,7 @@ Generated: 2026-07-27T03:59:36.006Z
 | netflix | meta-netflix-domain | union | 0 | 9 |
 | netflix | meta-netflix-ip | union | 94 | 1105 |
 | google-fcm | meta-google-fcm | union | 3 | 9 |
-| github | meta-github | union | 38 | 5 |
+| github | meta-github | union | 39 | 5 |
 | bing | meta-bing | audit | 38 | 0 |
 | onedrive | meta-onedrive | union | 3 | 0 |
-| microsoft | meta-microsoft | audit | 217 | 135 |
+| microsoft | meta-microsoft | audit | 218 | 135 |
