@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-07-28T03:31:53.121Z",
+  "generatedAt": "2026-07-29T03:35:11.558Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2552,
-    "ipcidr": 2188,
+    "ipcidr": 2193,
     "residual": 56,
     "process": 21,
-    "all": 4817
+    "all": 4822
   },
   "providers": [
     {
@@ -705,10 +705,10 @@
       },
       "outputCounts": {
         "domain": 33,
-        "ipcidr": 1213,
+        "ipcidr": 1218,
         "residual": 4,
         "process": 1,
-        "all": 1251
+        "all": 1256
       },
       "outputs": {
         "domain": "rules/generated/netflix-domain.txt",
@@ -773,29 +773,29 @@
           "mode": "union",
           "added": {
             "domain": 0,
-            "ipcidr": 94,
+            "ipcidr": 99,
             "residual": 0,
             "process": 0
           },
           "missingFromCandidate": {
             "domain": 0,
-            "ipcidr": 1105,
+            "ipcidr": 1106,
             "residual": 0,
             "process": 0
           },
           "addedSample": {
             "domain": [],
             "ipcidr": [
+              "64.120.128.0/18",
+              "64.120.192.0/19",
+              "64.120.224.0/21",
+              "64.120.234.0/23",
+              "64.120.236.0/22",
+              "64.120.240.0/20",
               "66.197.132.0/22",
               "66.197.136.0/21",
               "66.197.147.0/24",
-              "66.197.148.0/22",
-              "66.197.154.0/23",
-              "66.197.156.0/22",
-              "66.197.160.0/20",
-              "66.197.182.0/23",
-              "66.197.186.0/23",
-              "66.197.188.0/22"
+              "66.197.148.0/22"
             ],
             "residual": [],
             "process": []

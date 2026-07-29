@@ -249,10 +249,10 @@
       "ref": "meta",
       "path": "geo/geoip/netflix.list",
       "behavior": "ipcidr",
-      "etag": "\"0847f73fd5107c5856d524bb5b11be52af70cf70\"",
-      "githubSha": "0847f73fd5107c5856d524bb5b11be52af70cf70",
-      "sha256": "56b9a70c0816ef80455583562cc5458ec1fb3aa166857e3a381104feb5a7c896",
-      "bytes": 2003
+      "etag": "\"a4fc5b13a83c6c7357fc08b089ee15812d42d5df\"",
+      "githubSha": "a4fc5b13a83c6c7357fc08b089ee15812d42d5df",
+      "sha256": "8f226765d2fcb5a6881a838c5c7bba8b70fa56f5c11a283df0db1d4d3e23de98",
+      "bytes": 2063
     },
     "blackmatrix-global-media-residual": {
       "type": "github",
@@ -381,9 +381,9 @@
       "ref": "meta",
       "path": "geo/geosite/microsoft.list",
       "behavior": "domain",
-      "etag": "\"791b44b6050a4927ba365bbbcae4ab52193e956c\"",
-      "githubSha": "791b44b6050a4927ba365bbbcae4ab52193e956c",
-      "sha256": "39f87dd87f23e86894e0360ee2ce2317552440067f1f94edd1147597c61c50d1",
+      "etag": "\"31a332988e0c9810955dde5f9e67e2f939b27a49\"",
+      "githubSha": "31a332988e0c9810955dde5f9e67e2f939b27a49",
+      "sha256": "804ab4e686381daddc5cd1bf93a2f2d75f45494e76cbd88a9c85d8c0e933c735",
       "bytes": 15501
     }
   }

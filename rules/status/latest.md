@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-07-28T03:31:53.121Z
+Generated: 2026-07-29T03:35:11.558Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -13,14 +13,14 @@ Generated: 2026-07-28T03:31:53.121Z
 | tiktok | TikTok | 53 | 0 | 2 | 1 | 56 |
 | telegram | Telegram | 27 | 18 | 6 | 6 | 57 |
 | youtube | YouTube | 181 | 3 | 1 | 0 | 185 |
-| netflix | Netflix | 33 | 1213 | 4 | 1 | 1251 |
+| netflix | Netflix | 33 | 1218 | 4 | 1 | 1256 |
 | global-media | 国际媒体 | 1312 | 924 | 26 | 3 | 2265 |
 | google-fcm | 谷歌FCM | 21 | 26 | 0 | 0 | 47 |
 | github | 节点选择 | 69 | 0 | 1 | 0 | 70 |
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 3 | 2 | 21 |
 | microsoft | 微软服务 | 664 | 0 | 4 | 2 | 670 |
-| **Total** |  | **2552** | **2188** | **56** | **21** | **4817** |
+| **Total** |  | **2552** | **2193** | **56** | **21** | **4822** |
 
 ## MetaCubeX candidate differences
 
@@ -36,7 +36,7 @@ Generated: 2026-07-28T03:31:53.121Z
 | telegram | meta-telegram-ip | union | 8 | 6 |
 | youtube | meta-youtube | union | 2 | 3 |
 | netflix | meta-netflix-domain | union | 0 | 9 |
-| netflix | meta-netflix-ip | union | 94 | 1105 |
+| netflix | meta-netflix-ip | union | 99 | 1106 |
 | google-fcm | meta-google-fcm | union | 3 | 9 |
 | github | meta-github | union | 39 | 5 |
 | bing | meta-bing | audit | 38 | 0 |
