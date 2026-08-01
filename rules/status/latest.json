@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-07-31T03:47:39.062Z",
+  "generatedAt": "2026-08-01T03:47:03.596Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2552,
@@ -1221,9 +1221,9 @@
               "statics-marketingsites-eas-ms-com.akamaized.net",
               "statics-marketingsites-eus-ms-com.akamaized.net",
               "statics-marketingsites-wcus-ms-com.akamaized.net",
-              "github-api.arkoselabs.com",
-              "github-cloud.s3.amazonaws.com",
-              "github-production-release-asset-2e65be.s3.amazonaws.com"
+              "az764295.vo.msecnd.net",
+              "bingsettingssearch.trafficmanager.net",
+              "default.exp-tas.com"
             ],
             "ipcidr": [],
             "residual": [],
