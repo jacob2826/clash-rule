@@ -9,8 +9,8 @@
       "behavior": "classical",
       "etag": null,
       "githubSha": null,
-      "sha256": "cf00c1b7da75892cbe55cab58c4b066efedebe225743c9b49364cc1a707290b6",
-      "bytes": 682
+      "sha256": "8ae37b94c4c83cba4f77a09b377406647a1e7e4e4768c0ca606df42ce1c703de",
+      "bytes": 711
     },
     "apple-ai-local": {
       "type": "local",

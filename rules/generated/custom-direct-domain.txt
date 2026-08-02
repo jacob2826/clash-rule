@@ -2,12 +2,13 @@
 # Provider: custom-direct
 # Policy: DIRECT
 # Behavior: domain
-# Rules: 15
+# Rules: 16
 
 +.auth.wo.cn
 +.cmpassport.com
 +.hostloc.com
 +.id6.me
++.kw.ci
 +.myqnapcloud.cn
 +.myqnapcloud.com
 +.open.e.189.cn

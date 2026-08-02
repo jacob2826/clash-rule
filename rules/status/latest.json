@@ -1,32 +1,32 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-02T03:49:58.249Z",
+  "generatedAt": "2026-08-02T03:57:31.355Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 2553,
+    "domain": 2554,
     "ipcidr": 2193,
     "residual": 56,
     "process": 21,
-    "all": 4823
+    "all": 4824
   },
   "providers": [
     {
       "id": "custom-direct",
       "policy": "DIRECT",
       "baseCounts": {
-        "domain": 15,
+        "domain": 16,
         "ipcidr": 0,
         "residual": 1,
         "process": 6,
-        "all": 22
+        "all": 23
       },
       "outputCounts": {
-        "domain": 15,
+        "domain": 16,
         "ipcidr": 0,
         "residual": 1,
         "process": 6,
-        "all": 22
+        "all": 23
       },
       "outputs": {
         "domain": "rules/generated/custom-direct-domain.txt"

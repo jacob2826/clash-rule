@@ -22,6 +22,9 @@ PROCESS-NAME-WILDCARD,*tailscale*
 # hostloc
 DOMAIN-SUFFIX,hostloc.com
 
+# kw.ci
+DOMAIN-SUFFIX,kw.ci
+
 # RustDesk
 PROCESS-NAME,RustDesk
 DOMAIN-SUFFIX,rustdesk.com
