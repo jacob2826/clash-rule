@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-01T03:47:03.596Z",
+  "generatedAt": "2026-08-02T03:49:58.249Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 2552,
+    "domain": 2553,
     "ipcidr": 2193,
     "residual": 56,
     "process": 21,
-    "all": 4822
+    "all": 4823
   },
   "providers": [
     {
@@ -206,11 +206,11 @@
         "all": 13
       },
       "outputCounts": {
-        "domain": 42,
+        "domain": 43,
         "ipcidr": 0,
         "residual": 3,
         "process": 0,
-        "all": 45
+        "all": 46
       },
       "outputs": {
         "domain": "rules/generated/gemini-domain.txt"
@@ -230,7 +230,7 @@
           "id": "meta-google-gemini",
           "mode": "union",
           "added": {
-            "domain": 32,
+            "domain": 33,
             "ipcidr": 0,
             "residual": 0,
             "process": 0
@@ -1221,9 +1221,9 @@
               "statics-marketingsites-eas-ms-com.akamaized.net",
               "statics-marketingsites-eus-ms-com.akamaized.net",
               "statics-marketingsites-wcus-ms-com.akamaized.net",
-              "az764295.vo.msecnd.net",
-              "bingsettingssearch.trafficmanager.net",
-              "default.exp-tas.com"
+              "azure.microsoft.com",
+              "azuremarketplace.microsoft.com",
+              "location.microsoft.com"
             ],
             "ipcidr": [],
             "residual": [],

@@ -1,13 +1,13 @@
 # Optimized rule status
 
-Generated: 2026-08-01T03:47:03.596Z
+Generated: 2026-08-02T03:49:58.249Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | custom-direct | DIRECT | 15 | 0 | 1 | 6 | 22 |
 | apple-ai | 其他 AI 服务 | 13 | 0 | 0 | 0 | 13 |
 | openai | OpenAI | 42 | 2 | 2 | 0 | 46 |
-| gemini | Gemini | 42 | 0 | 3 | 0 | 45 |
+| gemini | Gemini | 43 | 0 | 3 | 0 | 46 |
 | claude | Claude | 9 | 0 | 0 | 0 | 9 |
 | copilot | 其他 AI 服务 | 52 | 2 | 3 | 0 | 57 |
 | tiktok | TikTok | 53 | 0 | 2 | 1 | 56 |
@@ -20,7 +20,7 @@ Generated: 2026-08-01T03:47:03.596Z
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 3 | 2 | 21 |
 | microsoft | 微软服务 | 664 | 0 | 4 | 2 | 670 |
-| **Total** |  | **2552** | **2193** | **56** | **21** | **4822** |
+| **Total** |  | **2553** | **2193** | **56** | **21** | **4823** |
 
 ## MetaCubeX candidate differences
 
@@ -28,7 +28,7 @@ Generated: 2026-08-01T03:47:03.596Z
 | --- | --- | --- | ---: | ---: |
 | apple-ai | meta-apple-intelligence | audit | 0 | 8 |
 | openai | meta-openai | union | 11 | 20 |
-| gemini | meta-google-gemini | union | 32 | 2 |
+| gemini | meta-google-gemini | union | 33 | 2 |
 | claude | meta-anthropic | union | 5 | 1 |
 | copilot | meta-github-copilot | union | 6 | 46 |
 | tiktok | meta-tiktok | union | 24 | 16 |
