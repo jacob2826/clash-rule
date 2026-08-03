@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-02T03:59:44.915Z",
+  "generatedAt": "2026-08-03T03:51:37.477Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2554,
@@ -1221,9 +1221,9 @@
               "statics-marketingsites-eas-ms-com.akamaized.net",
               "statics-marketingsites-eus-ms-com.akamaized.net",
               "statics-marketingsites-wcus-ms-com.akamaized.net",
-              "azure.microsoft.com",
-              "azuremarketplace.microsoft.com",
-              "location.microsoft.com"
+              "az764295.vo.msecnd.net",
+              "bingsettingssearch.trafficmanager.net",
+              "default.exp-tas.com"
             ],
             "ipcidr": [],
             "residual": [],
