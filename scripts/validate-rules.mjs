@@ -26,6 +26,15 @@ for (const key of Object.keys(current)) {
   if (key === 'rule-providers' || key === 'rules') continue;
   assert.deepEqual(v2[key], current[key], `mihomo_v2.yml changed shared top-level key: ${key}`);
 }
+assert.equal(current['unified-delay'], true, 'Mihomo.yml must enable unified delay');
+assert.deepEqual(
+  current.sniffer?.['skip-domain'],
+  ['Mijia Cloud', 'dlg.io.mi.com'],
+  'Mihomo.yml must preserve sniffer exclusions'
+);
+for (const domain of ['+.lan', 'stun.*.*', 'swscan.apple.com', '+.push.apple.com', '+.msftconnecttest.com']) {
+  assert.ok(current.dns?.['fake-ip-filter']?.includes(domain), `Mihomo.yml fake-ip-filter is missing ${domain}`);
+}
 assert.deepEqual(
   v2['proxy-groups'].map((group) => group.name),
   current['proxy-groups'].map((group) => group.name),

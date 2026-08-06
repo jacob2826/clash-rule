@@ -6,6 +6,7 @@ allow-lan: false
 mode: rule
 log-level: info
 ipv6: false
+unified-delay: true
 
 profile:
   store-selected: true
@@ -26,6 +27,9 @@ sniffer:
   force-dns-mapping: true
   parse-pure-ip: true
   override-destination: false
+  skip-domain:
+    - Mijia Cloud
+    - dlg.io.mi.com
   sniff:
     HTTP:
       ports: [80, 8080-8880]
@@ -184,16 +188,52 @@ dns:
   enable: true
   enhanced-mode: fake-ip
   fake-ip-filter:
-    # 登录、实时音视频、Apple 中继域名不走 fake-ip。
+    # 登录、实时音视频与系统连通性域名不走 fake-ip。
     - oauth2.googleapis.com
     - accounts.google.com
     - +.googleapis.com
     - +.challenges.cloudflare.com
     - +.livekit.cloud
+    # 局域网和保留域名需要保留真实解析结果。
+    - +.lan
+    - +.local
+    - +.localdomain
+    - +.localhost
+    - +.home.arpa
+    - +.example
+    - +.invalid
+    - +.test
+    # NTP 与 STUN 依赖真实地址。
+    - time.*.com
+    - time.*.gov
+    - time.*.edu.cn
+    - time.*.apple.com
+    - ntp.*.com
+    - '*.time.edu.cn'
+    - '*.ntp.org.cn'
+    - +.pool.ntp.org
+    - time1.cloud.tencent.com
+    - stun.*.*
+    - stun.*.*.*
+    # Apple 更新、推送和 Private Relay。
+    - swscan.apple.com
+    - mesu.apple.com
+    - +.push.apple.com
     - apple-relay.apple.com
     - apple-relay.mask.apple-dns.net
     - gateway.fe2.apple-dns.net
     - gateway.icloud.com
+    # 操作系统联网检测。
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+    # 主机游戏平台的 NAT 探测与联机服务。
+    - '*.*.*.srv.nintendo.net'
+    - '*.*.stun.playstation.net'
+    - xbox.*.*.microsoft.com
+    - '*.*.xboxlive.com'
+    - +.ipv6.microsoft.com
+    - teredo.*.*
+    - teredo.*.*.*
   ipv6: false
   default-nameserver: &cn_dns
     - 119.29.29.29
