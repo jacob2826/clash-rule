@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-05T03:29:31.284Z",
+  "generatedAt": "2026-08-06T03:33:12.202Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2554,
@@ -455,7 +455,7 @@
             "process": 0
           },
           "missingFromCandidate": {
-            "domain": 16,
+            "domain": 17,
             "ipcidr": 0,
             "residual": 0,
             "process": 0
@@ -484,11 +484,11 @@
               "trae-api-sg.mchost.guru",
               "+.bytegecko-i18n.com",
               "+.byteintlapi.com",
+              "+.byteoversea.com",
               "+.capcut.com",
               "+.ibytedtos.com",
               "+.ibyteimg.com",
-              "+.ipstatp.com",
-              "+.isnssdk.com"
+              "+.ipstatp.com"
             ],
             "ipcidr": [],
             "residual": [],
@@ -1221,9 +1221,9 @@
               "statics-marketingsites-eas-ms-com.akamaized.net",
               "statics-marketingsites-eus-ms-com.akamaized.net",
               "statics-marketingsites-wcus-ms-com.akamaized.net",
-              "location.microsoft.com",
-              "github-api.arkoselabs.com",
-              "github-cloud.s3.amazonaws.com"
+              "flightsimulator.azureedge.net",
+              "prodforza.blob.core.windows.net",
+              "azure.microsoft.com"
             ],
             "ipcidr": [],
             "residual": [],

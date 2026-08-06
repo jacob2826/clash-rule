@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-08-05T03:29:31.284Z
+Generated: 2026-08-06T03:33:12.202Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -31,7 +31,7 @@ Generated: 2026-08-05T03:29:31.284Z
 | gemini | meta-google-gemini | union | 33 | 2 |
 | claude | meta-anthropic | union | 5 | 1 |
 | copilot | meta-github-copilot | union | 6 | 46 |
-| tiktok | meta-tiktok | union | 24 | 16 |
+| tiktok | meta-tiktok | union | 24 | 17 |
 | telegram | meta-telegram-domain | union | 3 | 6 |
 | telegram | meta-telegram-ip | union | 8 | 6 |
 | youtube | meta-youtube | union | 2 | 3 |

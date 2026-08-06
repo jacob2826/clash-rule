@@ -150,10 +150,10 @@
       "ref": "meta",
       "path": "geo/geosite/tiktok.list",
       "behavior": "domain",
-      "etag": "\"37595f93ee7287d1d15b6a8f69f88f2ab7daa074\"",
-      "githubSha": "37595f93ee7287d1d15b6a8f69f88f2ab7daa074",
-      "sha256": "6018fc4ea48216376927c1fc5f8cf46ffe0293379545a6ae7eabf37931c2842b",
-      "bytes": 748
+      "etag": "\"2f2b033b61c559f2565e9ccea87051345bbecdb3\"",
+      "githubSha": "2f2b033b61c559f2565e9ccea87051345bbecdb3",
+      "sha256": "892f03350bb9c1d5e2fa15b417ac6759f13b12f558208d979d9f4d4cec310003",
+      "bytes": 730
     },
     "blackmatrix-telegram": {
       "type": "github",
@@ -381,9 +381,9 @@
       "ref": "meta",
       "path": "geo/geosite/microsoft.list",
       "behavior": "domain",
-      "etag": "\"23b68cc1bd9ddd042909b80a8cf683886d3547fe\"",
-      "githubSha": "23b68cc1bd9ddd042909b80a8cf683886d3547fe",
-      "sha256": "ab3fbeb19fc71a684a8a049150f5a5426d6fb9a5f908c395dfaf0c702bf3c686",
+      "etag": "\"31a332988e0c9810955dde5f9e67e2f939b27a49\"",
+      "githubSha": "31a332988e0c9810955dde5f9e67e2f939b27a49",
+      "sha256": "804ab4e686381daddc5cd1bf93a2f2d75f45494e76cbd88a9c85d8c0e933c735",
       "bytes": 15501
     }
   }
