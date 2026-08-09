@@ -417,5 +417,109 @@
         }
       ]
     }
-  ]
+  ],
+  "shadowrocket": {
+    "geosites": [
+      {
+        "id": "sr-geosite-private",
+        "name": "private",
+        "policy": "DIRECT",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/private.list",
+        "behavior": "domain"
+      },
+      {
+        "id": "sr-geosite-ai-chat-not-cn",
+        "name": "category-ai-chat-!cn",
+        "policy": "其他 AI 服务",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/category-ai-chat-!cn.list",
+        "behavior": "domain"
+      },
+      {
+        "id": "sr-geosite-ai-not-cn",
+        "name": "category-ai-!cn",
+        "policy": "其他 AI 服务",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/category-ai-!cn.list",
+        "behavior": "domain"
+      },
+      {
+        "id": "sr-geosite-bahamut",
+        "name": "bahamut",
+        "policy": "台湾节点",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/bahamut.list",
+        "behavior": "domain"
+      },
+      {
+        "id": "sr-geosite-bilibili",
+        "name": "bilibili",
+        "policy": "DIRECT",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/bilibili.list",
+        "behavior": "domain"
+      },
+      {
+        "id": "sr-geosite-apple-cn",
+        "name": "apple-cn",
+        "policy": "DIRECT",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/apple-cn.list",
+        "behavior": "domain"
+      },
+      {
+        "id": "sr-geosite-apple",
+        "name": "apple",
+        "policy": "苹果服务",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/apple.list",
+        "behavior": "domain"
+      },
+      {
+        "id": "sr-geosite-steam-cn",
+        "name": "steam@cn",
+        "policy": "DIRECT",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/steam@cn.list",
+        "behavior": "domain"
+      },
+      {
+        "id": "sr-geosite-games",
+        "name": "category-games",
+        "policy": "游戏平台",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/category-games.list",
+        "behavior": "domain"
+      },
+      {
+        "id": "sr-geosite-cn",
+        "name": "cn",
+        "policy": "DIRECT",
+        "type": "github",
+        "repo": "MetaCubeX/meta-rules-dat",
+        "ref": "meta",
+        "path": "geo/geosite/cn.list",
+        "behavior": "domain"
+      }
+    ]
+  }
 }

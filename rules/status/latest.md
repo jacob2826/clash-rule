@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-08-09T02:26:34.866Z
+Generated: 2026-08-09T09:13:07.530Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -42,3 +42,10 @@ Generated: 2026-08-09T02:26:34.866Z
 | bing | meta-bing | audit | 38 | 0 |
 | onedrive | meta-onedrive | union | 3 | 0 |
 | microsoft | meta-microsoft | audit | 218 | 135 |
+
+## Shadowrocket
+
+- Template: `Shadowrocket.template.conf`
+- Provider lists: 16
+- GEOSITE lists: 10
+- Rules: 119697

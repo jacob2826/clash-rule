@@ -15,6 +15,10 @@ const STATUS_JSON_PATH = path.join(ROOT, 'rules/status/latest.json');
 const STATUS_MD_PATH = path.join(ROOT, 'rules/status/latest.md');
 const MIHOMO_PATH = path.join(ROOT, 'Mihomo.yml');
 const MIHOMO_V2_PATH = path.join(ROOT, 'mihomo_v2.yml');
+const SHADOWROCKET_TEMPLATE_PATH = path.join(ROOT, 'Shadowrocket.template.conf');
+const SHADOWROCKET_GENERATED_DIR = path.join(GENERATED_DIR, 'shadowrocket');
+const SHADOWROCKET_SUBSCRIPTION_PLACEHOLDER = '__SUBSCRIPTION_NAME__';
+const PUBLIC_RAW_BASE = 'https://raw.githubusercontent.com/jacob2826/clash-rule/main';
 const LOG_DIR = process.env.RULE_SYNC_LOG_DIR || path.join(os.tmpdir(), 'clash-rule-sync');
 const FORCE = process.argv.includes('--force');
 const MAX_SOURCE_BYTES = 5 * 1024 * 1024;
@@ -43,6 +47,7 @@ const runLog = {
   force: FORCE,
   sources: [],
   providers: [],
+  shadowrocket: null,
   error: null
 };
 
@@ -68,7 +73,10 @@ try {
   } else {
     const sourceTexts = await loadAllSources(allSources, detection.contentCache);
     const build = await rebuildProviders(manifest, sourceTexts);
+    const shadowrocket = await rebuildShadowrocketGeosites(manifest, sourceTexts);
+    if (shadowrocket.filesChanged) build.filesChanged = true;
     runLog.providers = build.providers;
+    runLog.shadowrocket = shadowrocket.summary;
 
     const status = {
       version: 1,
@@ -76,12 +84,14 @@ try {
       generatedAt: new Date().toISOString(),
       sourceManifestVersion: manifest.version,
       totals: build.totals,
-      providers: build.providers
+      providers: build.providers,
+      shadowrocket: shadowrocket.summary
     };
     await writeJson(STATE_PATH, detection.nextState);
     await writeJson(STATUS_JSON_PATH, status);
     await fs.writeFile(STATUS_MD_PATH, renderStatusMarkdown(status), 'utf8');
     if (await renderV2Template(status)) build.filesChanged = true;
+    if (await renderShadowrocketTemplate(status)) build.filesChanged = true;
 
     runLog.status = 'success';
     runLog.result = build.filesChanged ? 'rules_updated' : 'rules_verified';
@@ -141,6 +151,23 @@ function validateManifest(manifest) {
       }
     }
   }
+  const geosites = manifest.shadowrocket?.geosites;
+  if (!Array.isArray(geosites) || geosites.length === 0) {
+    throw new Error('rules/sources.json must contain shadowrocket.geosites');
+  }
+  const geositeNames = new Set();
+  for (const source of geosites) {
+    if (!source.id || sourceIds.has(source.id)) throw new Error(`Duplicate or empty source id: ${source.id}`);
+    sourceIds.add(source.id);
+    if (!source.name || geositeNames.has(source.name)) throw new Error(`Duplicate or empty Shadowrocket geosite: ${source.name}`);
+    geositeNames.add(source.name);
+    if (!source.policy || source.type !== 'github' || source.behavior !== 'domain') {
+      throw new Error(`Shadowrocket geosite ${source.id} must be a GitHub domain source with a policy`);
+    }
+    if (!/^[^/]+\/[^/]+$/.test(source.repo || '') || !source.ref || !source.path) {
+      throw new Error(`GitHub source ${source.id} must define repo, ref and path`);
+    }
+  }
 }
 
 function uniqueSources(manifest) {
@@ -152,6 +179,12 @@ function uniqueSources(manifest) {
         seen.add(source.id);
         result.push(source);
       }
+    }
+  }
+  for (const source of manifest.shadowrocket.geosites) {
+    if (!seen.has(source.id)) {
+      seen.add(source.id);
+      result.push(source);
     }
   }
   return result;
@@ -294,6 +327,11 @@ async function rebuildProviders(manifest, sourceTexts) {
       totals.all += values.length;
     }
 
+    const shadowrocketRules = shadowrocketRulesFromBuckets(target);
+    const shadowrocketOutputPath = path.join(SHADOWROCKET_GENERATED_DIR, `${provider.id}.list`);
+    const shadowrocketContent = renderShadowrocketRuleList(provider.id, provider.policy, shadowrocketRules);
+    if (await writeIfChanged(shadowrocketOutputPath, shadowrocketContent)) filesChanged = true;
+
     providers.push({
       id: provider.id,
       policy: provider.policy,
@@ -302,11 +340,41 @@ async function rebuildProviders(manifest, sourceTexts) {
       outputs,
       compatibilityOutputs,
       inlineRules,
+      shadowrocketOutput: path.relative(ROOT, shadowrocketOutputPath),
+      shadowrocketRuleCount: shadowrocketRules.length,
+      shadowrocketSkippedProcessCount: target.process.size,
       candidates: candidateDiffs
     });
   }
 
   return { providers, totals, filesChanged };
+}
+
+async function rebuildShadowrocketGeosites(manifest, sourceTexts) {
+  const geosites = [];
+  let filesChanged = false;
+  for (const source of manifest.shadowrocket.geosites) {
+    const buckets = parseSource(sourceTexts.get(source.id), source);
+    const rules = shadowrocketRulesFromBuckets(buckets);
+    const outputPath = path.join(SHADOWROCKET_GENERATED_DIR, 'geosite', `${shadowrocketFileId(source.name)}.list`);
+    const content = renderShadowrocketRuleList(`geosite:${source.name}`, source.policy, rules);
+    if (await writeIfChanged(outputPath, content)) filesChanged = true;
+    geosites.push({
+      id: source.id,
+      name: source.name,
+      policy: source.policy,
+      output: path.relative(ROOT, outputPath),
+      ruleCount: rules.length
+    });
+  }
+  return {
+    filesChanged,
+    summary: {
+      template: path.relative(ROOT, SHADOWROCKET_TEMPLATE_PATH),
+      subscriptionPlaceholder: SHADOWROCKET_SUBSCRIPTION_PLACEHOLDER,
+      geosites
+    }
+  };
 }
 
 function parseSource(text, source) {
@@ -445,6 +513,37 @@ function renderGeneratedRules(provider, kind, values) {
   ].join('\n');
 }
 
+function shadowrocketRulesFromBuckets(buckets) {
+  const rules = [];
+  for (const value of [...buckets.domain].sort()) {
+    if (value.startsWith('+.')) rules.push(`DOMAIN-SUFFIX,${value.slice(2)}`);
+    else if (value.startsWith('.')) rules.push(`DOMAIN-SUFFIX,${value.slice(1)}`);
+    else rules.push(`DOMAIN,${value}`);
+  }
+  for (const value of [...buckets.ipcidr].sort()) {
+    rules.push(`${value.includes(':') ? 'IP-CIDR6' : 'IP-CIDR'},${value},no-resolve`);
+  }
+  for (const value of [...buckets.residual].sort()) rules.push(value);
+  return [...new Set(rules)];
+}
+
+function renderShadowrocketRuleList(id, policy, rules) {
+  if (rules.length === 0) throw new Error(`Shadowrocket rule list ${id} is empty`);
+  return [
+    '# Generated by scripts/sync-rules.mjs. Do not edit.',
+    `# Source: ${id}`,
+    `# Policy: ${policy}`,
+    `# Rules: ${rules.length}`,
+    '',
+    ...rules,
+    ''
+  ].join('\n');
+}
+
+function shadowrocketFileId(value) {
+  return String(value).toLowerCase().replace(/!/g, 'not-').replace(/@/g, '-at-').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 async function renderV2Template(status) {
   const originalText = await fs.readFile(MIHOMO_PATH, 'utf8');
   const marker = '\nrule-providers:\n';
@@ -514,6 +613,123 @@ async function renderV2Template(status) {
   );
   const content = originalText.slice(0, markerIndex + 1) + tail;
   return writeIfChanged(MIHOMO_V2_PATH, content);
+}
+
+async function renderShadowrocketTemplate(status) {
+  const original = YAML.parse(await fs.readFile(MIHOMO_PATH, 'utf8'));
+  if (!Array.isArray(original?.['proxy-groups']) || !Array.isArray(original?.rules)) {
+    throw new Error('Mihomo.yml must contain proxy-groups and rules for Shadowrocket output');
+  }
+  const providersById = new Map(status.providers.map((provider) => [provider.id, provider]));
+  const geositesByName = new Map((status.shadowrocket?.geosites || []).map((source) => [source.name, source]));
+  const expandedProviders = new Set();
+  const expandedGeosites = new Set();
+  const rules = [];
+
+  for (const rule of original.rules) {
+    const parts = String(rule).split(',');
+    const type = parts[0];
+    if (type === 'RULE-SET') {
+      const originalProviderId = parts[1];
+      const policy = parts[2];
+      const providerId = originalProviderId === 'anthropic' ? 'claude' : originalProviderId;
+      const provider = providersById.get(providerId);
+      if (!provider) throw new Error(`No Shadowrocket provider mapping for ${originalProviderId}`);
+      if (expandedProviders.has(providerId)) continue;
+      expandedProviders.add(providerId);
+      if (provider.policy !== policy) throw new Error(`Shadowrocket policy mismatch for ${providerId}: ${provider.policy} != ${policy}`);
+      rules.push(`RULE-SET,${PUBLIC_RAW_BASE}/${provider.shadowrocketOutput},${policy}`);
+      continue;
+    }
+    if (type === 'GEOSITE') {
+      const source = geositesByName.get(parts[1]);
+      if (!source) throw new Error(`No Shadowrocket geosite mapping for ${parts[1]}`);
+      if (source.policy !== parts[2]) throw new Error(`Shadowrocket geosite policy mismatch for ${parts[1]}`);
+      expandedGeosites.add(source.name);
+      rules.push(`RULE-SET,${PUBLIC_RAW_BASE}/${source.output},${parts[2]}`);
+      continue;
+    }
+    if (type === 'MATCH') {
+      rules.push(`FINAL,${parts[1]}`);
+      continue;
+    }
+    if (!['DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'IP-CIDR', 'IP-CIDR6', 'IP-ASN', 'GEOIP'].includes(type)) {
+      throw new Error(`Unsupported Shadowrocket top-level rule: ${rule}`);
+    }
+    rules.push(String(rule));
+  }
+
+  if (expandedProviders.size !== providersById.size) {
+    const missing = [...providersById.keys()].filter((id) => !expandedProviders.has(id));
+    throw new Error(`Shadowrocket providers are not referenced by Mihomo.yml rules: ${missing.join(', ')}`);
+  }
+  if (expandedGeosites.size !== geositesByName.size) {
+    const missing = [...geositesByName.keys()].filter((name) => !expandedGeosites.has(name));
+    throw new Error(`Shadowrocket GEOSITE sources are not referenced by Mihomo.yml rules: ${missing.join(', ')}`);
+  }
+
+  const groups = original['proxy-groups'].map(renderShadowrocketGroup);
+  const content = [
+    '# Generated by scripts/sync-rules.mjs. Do not edit.',
+    '# The Worker replaces the subscription placeholder per airport.',
+    '',
+    '[General]',
+    'bypass-system = true',
+    'skip-proxy = 127.0.0.1,localhost,*.local,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16',
+    'tun-excluded-routes = 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16',
+    'dns-server = 119.29.29.29,223.5.5.5',
+    'fallback-dns-server = system',
+    'ipv6 = false',
+    '',
+    '[Proxy Group]',
+    ...groups,
+    '',
+    '[Rule]',
+    ...rules,
+    ''
+  ].join('\n');
+  return writeIfChanged(SHADOWROCKET_TEMPLATE_PATH, content);
+}
+
+function renderShadowrocketGroup(group) {
+  const name = shadowrocketField(group.name, 'proxy group name');
+  if (!['select', 'url-test'].includes(group.type)) throw new Error(`Unsupported Shadowrocket proxy group type: ${group.type}`);
+  const values = [group.type];
+  if (Array.isArray(group.proxies) && group.proxies.length > 0) {
+    values.push(...group.proxies.map((value) => shadowrocketField(value, `proxy group ${name}`)));
+  } else if (Array.isArray(group.use) && group.use.length > 0) {
+    values.push(SHADOWROCKET_SUBSCRIPTION_PLACEHOLDER, 'use=true');
+    const filter = shadowrocketPolicyFilter(group);
+    if (filter) values.push(`policy-regex-filter=${filter}`);
+  } else {
+    throw new Error(`Shadowrocket proxy group ${name} has no proxies or subscription`);
+  }
+  if (group.type === 'url-test') {
+    if (group.interval) values.push(`interval=${Number(group.interval)}`);
+    if (group.tolerance !== undefined) values.push(`tolerance=${Number(group.tolerance)}`);
+    if (group.url) values.push(`url=${shadowrocketField(group.url, `health URL for ${name}`)}`);
+  }
+  return `${name} = ${values.join(',')}`;
+}
+
+function shadowrocketPolicyFilter(group) {
+  if (group.filter && group['exclude-filter']) {
+    const include = String(group.filter).replace(/^\(\?i\)/, '');
+    const exclude = String(group['exclude-filter']).replace(/^\(\?i\)/, '');
+    return shadowrocketField(`(?i)(?=.*(?:${include}))^((?!(?:${exclude})).)*$`, `filter for ${group.name}`);
+  }
+  if (group.filter) return shadowrocketField(group.filter, `filter for ${group.name}`);
+  if (group['exclude-filter']) {
+    const exclude = String(group['exclude-filter']).replace(/^\(\?i\)/, '');
+    return shadowrocketField(`(?i)^((?!(?:${exclude})).)*$`, `filter for ${group.name}`);
+  }
+  return '';
+}
+
+function shadowrocketField(value, label) {
+  const text = String(value || '').trim();
+  if (!text || /[\r\n,]/.test(text)) throw new Error(`Invalid Shadowrocket ${label}`);
+  return text;
 }
 
 async function fetchGithubSource(source, etag) {
@@ -656,6 +872,15 @@ function renderStatusMarkdown(status) {
     }
   }
   lines.push('');
+  lines.push(
+    '## Shadowrocket',
+    '',
+    `- Template: \`${status.shadowrocket.template}\``,
+    `- Provider lists: ${status.providers.length}`,
+    `- GEOSITE lists: ${status.shadowrocket.geosites.length}`,
+    `- Rules: ${status.providers.reduce((sum, provider) => sum + provider.shadowrocketRuleCount, 0) + status.shadowrocket.geosites.reduce((sum, source) => sum + source.ruleCount, 0)}`,
+    ''
+  );
   return lines.join('\n');
 }
 
@@ -669,7 +894,8 @@ function renderRunLog(log) {
     `- Finished: ${log.finishedAt}`,
     `- Force rebuild: ${log.force}`,
     `- Sources checked: ${log.sources.length}`,
-    `- Providers rebuilt: ${log.providers.length}`
+    `- Providers rebuilt: ${log.providers.length}`,
+    `- Shadowrocket GEOSITE lists rebuilt: ${log.shadowrocket?.geosites?.length || 0}`
   ];
   if (log.error) {
     lines.push('', '## Failure', '', `- ${log.error.name}: ${log.error.message}`, '', '```text', log.error.stack || log.error.message, '```');

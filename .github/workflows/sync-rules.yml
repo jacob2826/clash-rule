@@ -17,7 +17,6 @@ on:
       - "AppleAI.list"
       - "Mihomo.yml"
       - "UnBan.list"
-      - "mihomo_v2.yml"
       - "package.json"
       - "package-lock.json"
       - "rules/sources.json"
@@ -77,7 +76,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add mihomo_v2.yml rules/generated rules/state rules/status/latest.json rules/status/latest.md
+          git add mihomo_v2.yml Shadowrocket.template.conf rules/generated rules/state rules/status/latest.json rules/status/latest.md
           if git diff --cached --quiet; then
             echo "No repository changes to commit."
           else

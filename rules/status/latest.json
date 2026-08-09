@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-09T02:26:34.866Z",
+  "generatedAt": "2026-08-09T09:13:07.530Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2554,
@@ -48,6 +48,9 @@
           "PROCESS-NAME-WILDCARD,*tailscale*"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/custom-direct.list",
+      "shadowrocketRuleCount": 17,
+      "shadowrocketSkippedProcessCount": 6,
       "candidates": []
     },
     {
@@ -72,6 +75,9 @@
       },
       "compatibilityOutputs": {},
       "inlineRules": {},
+      "shadowrocketOutput": "rules/generated/shadowrocket/apple-ai.list",
+      "shadowrocketRuleCount": 13,
+      "shadowrocketSkippedProcessCount": 0,
       "candidates": [
         {
           "id": "meta-apple-intelligence",
@@ -142,6 +148,9 @@
           "IP-ASN,20473"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/openai.list",
+      "shadowrocketRuleCount": 46,
+      "shadowrocketSkippedProcessCount": 0,
       "candidates": [
         {
           "id": "meta-openai",
@@ -225,6 +234,9 @@
           "DOMAIN-KEYWORD,generativelanguage"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/gemini.list",
+      "shadowrocketRuleCount": 46,
+      "shadowrocketSkippedProcessCount": 0,
       "candidates": [
         {
           "id": "meta-google-gemini",
@@ -292,6 +304,9 @@
       },
       "compatibilityOutputs": {},
       "inlineRules": {},
+      "shadowrocketOutput": "rules/generated/shadowrocket/claude.list",
+      "shadowrocketRuleCount": 9,
+      "shadowrocketSkippedProcessCount": 0,
       "candidates": [
         {
           "id": "meta-anthropic",
@@ -362,6 +377,9 @@
           "IP-ASN,20473"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/copilot.list",
+      "shadowrocketRuleCount": 57,
+      "shadowrocketSkippedProcessCount": 0,
       "candidates": [
         {
           "id": "meta-github-copilot",
@@ -444,6 +462,9 @@
           "PROCESS-NAME,com.zhiliaoapp.musically"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/tiktok.list",
+      "shadowrocketRuleCount": 55,
+      "shadowrocketSkippedProcessCount": 1,
       "candidates": [
         {
           "id": "meta-tiktok",
@@ -540,6 +561,9 @@
           "PROCESS-NAME,xyz.nextalone.nagram"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/telegram.list",
+      "shadowrocketRuleCount": 51,
+      "shadowrocketSkippedProcessCount": 6,
       "candidates": [
         {
           "id": "meta-telegram-domain",
@@ -655,6 +679,9 @@
           "DOMAIN-KEYWORD,youtube"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/youtube.list",
+      "shadowrocketRuleCount": 185,
+      "shadowrocketSkippedProcessCount": 0,
       "candidates": [
         {
           "id": "meta-youtube",
@@ -729,6 +756,9 @@
           "PROCESS-NAME,com.netflix.mediaclient"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/netflix.list",
+      "shadowrocketRuleCount": 1255,
+      "shadowrocketSkippedProcessCount": 1,
       "candidates": [
         {
           "id": "meta-netflix-domain",
@@ -880,6 +910,9 @@
           "PROCESS-NAME,com.vuclip.viu"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/global-media.list",
+      "shadowrocketRuleCount": 2262,
+      "shadowrocketSkippedProcessCount": 3,
       "candidates": []
     },
     {
@@ -905,6 +938,9 @@
       },
       "compatibilityOutputs": {},
       "inlineRules": {},
+      "shadowrocketOutput": "rules/generated/shadowrocket/google-fcm.list",
+      "shadowrocketRuleCount": 47,
+      "shadowrocketSkippedProcessCount": 0,
       "candidates": [
         {
           "id": "meta-google-fcm",
@@ -978,6 +1014,9 @@
           "DOMAIN-KEYWORD,github"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/github.list",
+      "shadowrocketRuleCount": 70,
+      "shadowrocketSkippedProcessCount": 0,
       "candidates": [
         {
           "id": "meta-github",
@@ -1048,6 +1087,9 @@
       },
       "compatibilityOutputs": {},
       "inlineRules": {},
+      "shadowrocketOutput": "rules/generated/shadowrocket/bing.list",
+      "shadowrocketRuleCount": 3,
+      "shadowrocketSkippedProcessCount": 0,
       "candidates": [
         {
           "id": "meta-bing",
@@ -1125,6 +1167,9 @@
           "PROCESS-NAME,OneDriveUpdater"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/onedrive.list",
+      "shadowrocketRuleCount": 19,
+      "shadowrocketSkippedProcessCount": 2,
       "candidates": [
         {
           "id": "meta-onedrive",
@@ -1196,6 +1241,9 @@
           "PROCESS-NAME,OneDriveUpdater"
         ]
       },
+      "shadowrocketOutput": "rules/generated/shadowrocket/microsoft.list",
+      "shadowrocketRuleCount": 668,
+      "shadowrocketSkippedProcessCount": 2,
       "candidates": [
         {
           "id": "meta-microsoft",
@@ -1249,5 +1297,81 @@
         }
       ]
     }
-  ]
+  ],
+  "shadowrocket": {
+    "template": "Shadowrocket.template.conf",
+    "subscriptionPlaceholder": "__SUBSCRIPTION_NAME__",
+    "geosites": [
+      {
+        "id": "sr-geosite-private",
+        "name": "private",
+        "policy": "DIRECT",
+        "output": "rules/generated/shadowrocket/geosite/private.list",
+        "ruleCount": 130
+      },
+      {
+        "id": "sr-geosite-ai-chat-not-cn",
+        "name": "category-ai-chat-!cn",
+        "policy": "其他 AI 服务",
+        "output": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
+        "ruleCount": 173
+      },
+      {
+        "id": "sr-geosite-ai-not-cn",
+        "name": "category-ai-!cn",
+        "policy": "其他 AI 服务",
+        "output": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
+        "ruleCount": 173
+      },
+      {
+        "id": "sr-geosite-bahamut",
+        "name": "bahamut",
+        "policy": "台湾节点",
+        "output": "rules/generated/shadowrocket/geosite/bahamut.list",
+        "ruleCount": 5
+      },
+      {
+        "id": "sr-geosite-bilibili",
+        "name": "bilibili",
+        "policy": "DIRECT",
+        "output": "rules/generated/shadowrocket/geosite/bilibili.list",
+        "ruleCount": 53
+      },
+      {
+        "id": "sr-geosite-apple-cn",
+        "name": "apple-cn",
+        "policy": "DIRECT",
+        "output": "rules/generated/shadowrocket/geosite/apple-cn.list",
+        "ruleCount": 164
+      },
+      {
+        "id": "sr-geosite-apple",
+        "name": "apple",
+        "policy": "苹果服务",
+        "output": "rules/generated/shadowrocket/geosite/apple.list",
+        "ruleCount": 1790
+      },
+      {
+        "id": "sr-geosite-steam-cn",
+        "name": "steam@cn",
+        "policy": "DIRECT",
+        "output": "rules/generated/shadowrocket/geosite/steam-at-cn.list",
+        "ruleCount": 19
+      },
+      {
+        "id": "sr-geosite-games",
+        "name": "category-games",
+        "policy": "游戏平台",
+        "output": "rules/generated/shadowrocket/geosite/category-games.list",
+        "ruleCount": 1094
+      },
+      {
+        "id": "sr-geosite-cn",
+        "name": "cn",
+        "policy": "DIRECT",
+        "output": "rules/generated/shadowrocket/geosite/cn.list",
+        "ruleCount": 111293
+      }
+    ]
+  }
 }

@@ -25,6 +25,7 @@ An unchanged scheduled run is expected to finish quickly with
 Actions run history to confirm that scheduled checks are still executing.
 
 For automated diagnosis, check `status` first, then `result`, then `error`.
-Source entries include HTTP/ETag decisions and provider entries include output
-counts, so an agent can distinguish an upstream failure from a conversion or
-validation failure without parsing the console log.
+Source entries include HTTP/ETag decisions and provider entries include Mihomo
+and Shadowrocket output counts. The same artifact also reports Shadowrocket
+GEOSITE generation, so an agent can distinguish an upstream failure from a
+conversion or validation failure without parsing the console log.

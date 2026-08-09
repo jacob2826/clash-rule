@@ -9,6 +9,16 @@ const current = YAML.parse(await fs.readFile(path.join(ROOT, 'Mihomo.yml'), 'utf
 const v2 = YAML.parse(await fs.readFile(path.join(ROOT, 'mihomo_v2.yml'), 'utf8'));
 const manifest = JSON.parse(await fs.readFile(path.join(ROOT, 'rules/sources.json'), 'utf8'));
 const status = JSON.parse(await fs.readFile(path.join(ROOT, 'rules/status/latest.json'), 'utf8'));
+const shadowrocketTemplate = await fs.readFile(path.join(ROOT, 'Shadowrocket.template.conf'), 'utf8');
+const SHADOWROCKET_PLACEHOLDER = '__SUBSCRIPTION_NAME__';
+const SHADOWROCKET_RULE_TYPES = new Set([
+  'DOMAIN',
+  'DOMAIN-SUFFIX',
+  'DOMAIN-KEYWORD',
+  'IP-CIDR',
+  'IP-CIDR6',
+  'IP-ASN'
+]);
 const PROCESS_RULE_TYPES = new Set([
   'PROCESS-NAME',
   'PROCESS-NAME-WILDCARD',
@@ -78,6 +88,7 @@ for (const [providerId, provider] of Object.entries(ruleProviders)) {
 const manifestPolicies = new Map(manifest.providers.map((provider) => [provider.id, provider.policy]));
 const expectedProviderIds = [];
 const expectedInlineRules = [];
+const expectedShadowrocketUrls = [];
 for (const provider of status.providers) {
   assert.equal(provider.policy, manifestPolicies.get(provider.id), `Status policy mismatch for ${provider.id}`);
   for (const [kind, relativePath] of Object.entries(provider.outputs)) {
@@ -102,6 +113,16 @@ for (const provider of status.providers) {
       expectedInlineRules.push(`${rule},${provider.policy}`);
     }
   }
+  assert.ok(provider.shadowrocketOutput, `Missing Shadowrocket output for ${provider.id}`);
+  const shadowrocketRules = await validateShadowrocketRuleList(provider.shadowrocketOutput);
+  assert.equal(shadowrocketRules.length, provider.shadowrocketRuleCount, `Shadowrocket count mismatch for ${provider.id}`);
+  assert.equal(
+    shadowrocketRules.length,
+    provider.outputCounts.domain + provider.outputCounts.ipcidr + provider.outputCounts.residual,
+    `Shadowrocket conversion changed supported scope for ${provider.id}`
+  );
+  assert.equal(provider.shadowrocketSkippedProcessCount, provider.outputCounts.process, `Shadowrocket process count mismatch for ${provider.id}`);
+  expectedShadowrocketUrls.push(`https://raw.githubusercontent.com/jacob2826/clash-rule/main/${provider.shadowrocketOutput}`);
 }
 
 assert.deepEqual(Object.keys(ruleProviders), expectedProviderIds, 'V2 external provider order or scope changed');
@@ -111,4 +132,64 @@ const actualInlineRules = (v2.rules || []).filter((rule) => {
 });
 assert.deepEqual(actualInlineRules, expectedInlineRules, 'V2 inline rule order or scope changed');
 
-console.log(`Validated ${expectedProviderIds.length} external V2 rule providers and ${expectedInlineRules.length} inline rules across ${status.providers.length} policies.`);
+assert.equal(status.shadowrocket?.template, 'Shadowrocket.template.conf', 'Unexpected Shadowrocket template path');
+assert.equal(status.shadowrocket?.subscriptionPlaceholder, SHADOWROCKET_PLACEHOLDER, 'Unexpected Shadowrocket subscription placeholder');
+const geositeNames = new Set();
+for (const source of status.shadowrocket?.geosites || []) {
+  assert.ok(!geositeNames.has(source.name), `Duplicate Shadowrocket geosite: ${source.name}`);
+  geositeNames.add(source.name);
+  const rules = await validateShadowrocketRuleList(source.output);
+  assert.equal(rules.length, source.ruleCount, `Shadowrocket GEOSITE count mismatch for ${source.name}`);
+  expectedShadowrocketUrls.push(`https://raw.githubusercontent.com/jacob2826/clash-rule/main/${source.output}`);
+}
+const currentGeosites = (current.rules || [])
+  .map((rule) => String(rule).split(','))
+  .filter(([type]) => type === 'GEOSITE')
+  .map(([, name, policy]) => ({ name, policy }));
+assert.deepEqual(
+  [...(status.shadowrocket?.geosites || [])].map(({ name, policy }) => ({ name, policy })),
+  currentGeosites,
+  'Shadowrocket GEOSITE source scope or order changed'
+);
+
+assert.match(shadowrocketTemplate, /^\[General\]$/m, 'Shadowrocket template is missing [General]');
+assert.match(shadowrocketTemplate, /^\[Proxy Group\]$/m, 'Shadowrocket template is missing [Proxy Group]');
+assert.match(shadowrocketTemplate, /^\[Rule\]$/m, 'Shadowrocket template is missing [Rule]');
+assert.doesNotMatch(shadowrocketTemplate, /^\[Proxy\]$/m, 'Public Shadowrocket template must not contain nodes');
+assert.ok((shadowrocketTemplate.match(new RegExp(SHADOWROCKET_PLACEHOLDER, 'g')) || []).length > 0, 'Shadowrocket template does not reference the subscription placeholder');
+assert.doesNotMatch(shadowrocketTemplate, /(?:token|password|authorization|subscription-userinfo)\s*[=:]/i, 'Shadowrocket template contains a credential-like value');
+for (const urlText of shadowrocketTemplate.match(/https:\/\/[^,\s]+/g) || []) {
+  const url = new URL(urlText);
+  assert.ok(['raw.githubusercontent.com', 'www.gstatic.com'].includes(url.hostname), `Unexpected Shadowrocket URL host: ${url.hostname}`);
+  assert.equal(url.username, '', `Shadowrocket URL contains a username: ${urlText}`);
+  assert.equal(url.password, '', `Shadowrocket URL contains a password: ${urlText}`);
+  assert.equal(url.search, '', `Shadowrocket URL contains a query: ${urlText}`);
+  assert.equal(url.hash, '', `Shadowrocket URL contains a fragment: ${urlText}`);
+}
+for (const url of expectedShadowrocketUrls) {
+  assert.ok(shadowrocketTemplate.includes(`RULE-SET,${url},`), `Shadowrocket template is missing ${url}`);
+}
+
+const shadowrocketGroupNames = [...shadowrocketTemplate.matchAll(/^([^#\[\r\n][^=\r\n]+?)\s*=\s*(?:select|url-test),/gm)].map((match) => match[1].trim());
+assert.deepEqual(
+  shadowrocketGroupNames,
+  current['proxy-groups'].map((group) => group.name),
+  'Shadowrocket user-visible proxy group names or order changed'
+);
+
+console.log(`Validated ${expectedProviderIds.length} external V2 providers, ${expectedInlineRules.length} inline rules and ${expectedShadowrocketUrls.length} Shadowrocket rule lists across ${status.providers.length} policies.`);
+
+async function validateShadowrocketRuleList(relativePath) {
+  assert.match(relativePath, /^rules\/generated\/shadowrocket\/.+\.list$/, `Unexpected Shadowrocket output path: ${relativePath}`);
+  const text = await fs.readFile(path.join(ROOT, relativePath), 'utf8');
+  assert.doesNotMatch(text, /(?:token|password|authorization|subscription-userinfo)\s*[=:]/i, `Credential-like value in ${relativePath}`);
+  const rules = text.split(/\r?\n/).map((line) => line.trim()).filter((line) => line && !line.startsWith('#'));
+  assert.ok(rules.length > 0, `Empty Shadowrocket rule list: ${relativePath}`);
+  for (const rule of rules) {
+    const [type, value] = rule.split(',');
+    assert.ok(SHADOWROCKET_RULE_TYPES.has(type), `Unsupported Shadowrocket rule type in ${relativePath}: ${type}`);
+    assert.ok(value, `Missing Shadowrocket rule value in ${relativePath}: ${rule}`);
+    assert.ok(!PROCESS_RULE_TYPES.has(type), `Process rule leaked into Shadowrocket output: ${rule}`);
+  }
+  return rules;
+}
