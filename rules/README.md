@@ -7,8 +7,7 @@ proxy groups come from the original file.
 ## Files
 
 - `sources.json`: fixed allowlist of local and upstream rule sources.
-- `generated/`: deterministic domain and ipcidr providers, plus synchronized
-  compatibility mirrors for older V2 residual/process URLs.
+- `generated/`: deterministic domain and ipcidr providers.
 - `generated/shadowrocket/`: native classical rule lists for Shadowrocket.
 - `Shadowrocket.template.conf`: node-free public routing template. A private
   delivery service replaces `__SUBSCRIPTION_NAME__` for each subscription.

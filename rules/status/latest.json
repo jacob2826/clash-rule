@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-09T09:14:36.863Z",
+  "generatedAt": "2026-08-09T13:02:22.839Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2554,
@@ -30,10 +30,6 @@
       },
       "outputs": {
         "domain": "rules/generated/custom-direct-domain.txt"
-      },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/custom-direct-residual.list",
-        "process": "rules/generated/custom-direct-process.list"
       },
       "inlineRules": {
         "residual": [
@@ -73,7 +69,6 @@
       "outputs": {
         "domain": "rules/generated/apple-ai-domain.txt"
       },
-      "compatibilityOutputs": {},
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/apple-ai.list",
       "shadowrocketRuleCount": 13,
@@ -138,9 +133,6 @@
       "outputs": {
         "domain": "rules/generated/openai-domain.txt",
         "ipcidr": "rules/generated/openai-ipcidr.txt"
-      },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/openai-residual.list"
       },
       "inlineRules": {
         "residual": [
@@ -224,9 +216,6 @@
       "outputs": {
         "domain": "rules/generated/gemini-domain.txt"
       },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/gemini-residual.list"
-      },
       "inlineRules": {
         "residual": [
           "DOMAIN-KEYWORD,colab",
@@ -302,7 +291,6 @@
       "outputs": {
         "domain": "rules/generated/claude-domain.txt"
       },
-      "compatibilityOutputs": {},
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/claude.list",
       "shadowrocketRuleCount": 9,
@@ -366,9 +354,6 @@
       "outputs": {
         "domain": "rules/generated/copilot-domain.txt",
         "ipcidr": "rules/generated/copilot-ipcidr.txt"
-      },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/copilot-residual.list"
       },
       "inlineRules": {
         "residual": [
@@ -448,10 +433,6 @@
       },
       "outputs": {
         "domain": "rules/generated/tiktok-domain.txt"
-      },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/tiktok-residual.list",
-        "process": "rules/generated/tiktok-process.list"
       },
       "inlineRules": {
         "residual": [
@@ -538,10 +519,6 @@
       "outputs": {
         "domain": "rules/generated/telegram-domain.txt",
         "ipcidr": "rules/generated/telegram-ipcidr.txt"
-      },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/telegram-residual.list",
-        "process": "rules/generated/telegram-process.list"
       },
       "inlineRules": {
         "residual": [
@@ -671,9 +648,6 @@
         "domain": "rules/generated/youtube-domain.txt",
         "ipcidr": "rules/generated/youtube-ipcidr.txt"
       },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/youtube-residual.list"
-      },
       "inlineRules": {
         "residual": [
           "DOMAIN-KEYWORD,youtube"
@@ -740,10 +714,6 @@
       "outputs": {
         "domain": "rules/generated/netflix-domain.txt",
         "ipcidr": "rules/generated/netflix-ipcidr.txt"
-      },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/netflix-residual.list",
-        "process": "rules/generated/netflix-process.list"
       },
       "inlineRules": {
         "residual": [
@@ -871,10 +841,6 @@
         "domain": "rules/generated/global-media-domain.txt",
         "ipcidr": "rules/generated/global-media-ipcidr.txt"
       },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/global-media-residual.list",
-        "process": "rules/generated/global-media-process.list"
-      },
       "inlineRules": {
         "residual": [
           "DOMAIN-KEYWORD,abematv.akamaized.net",
@@ -936,7 +902,6 @@
         "domain": "rules/generated/google-fcm-domain.txt",
         "ipcidr": "rules/generated/google-fcm-ipcidr.txt"
       },
-      "compatibilityOutputs": {},
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/google-fcm.list",
       "shadowrocketRuleCount": 47,
@@ -1005,9 +970,6 @@
       },
       "outputs": {
         "domain": "rules/generated/github-domain.txt"
-      },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/github-residual.list"
       },
       "inlineRules": {
         "residual": [
@@ -1085,7 +1047,6 @@
       "outputs": {
         "domain": "rules/generated/bing-domain.txt"
       },
-      "compatibilityOutputs": {},
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/bing.list",
       "shadowrocketRuleCount": 3,
@@ -1151,10 +1112,6 @@
       },
       "outputs": {
         "domain": "rules/generated/onedrive-domain.txt"
-      },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/onedrive-residual.list",
-        "process": "rules/generated/onedrive-process.list"
       },
       "inlineRules": {
         "residual": [
@@ -1224,10 +1181,6 @@
       },
       "outputs": {
         "domain": "rules/generated/microsoft-domain.txt"
-      },
-      "compatibilityOutputs": {
-        "residual": "rules/generated/microsoft-residual.list",
-        "process": "rules/generated/microsoft-process.list"
       },
       "inlineRules": {
         "residual": [

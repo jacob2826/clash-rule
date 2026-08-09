@@ -295,27 +295,29 @@ async function rebuildProviders(manifest, sourceTexts) {
     }
 
     const outputs = {};
-    const compatibilityOutputs = {};
     const inlineRules = {};
     for (const kind of ['domain', 'ipcidr', 'residual', 'process']) {
       const values = [...target[kind]].sort();
+
+      if (kind === 'residual' || kind === 'process') {
+        const obsoletePath = generatedPath(provider.id, kind);
+        if (await fileExists(obsoletePath)) {
+          await fs.rm(obsoletePath);
+          filesChanged = true;
+        }
+        if (values.length === 0) continue;
+        inlineRules[kind] = values;
+        totals[kind] += values.length;
+        totals.all += values.length;
+        continue;
+      }
+
       if (values.length === 0) {
         const stalePath = generatedPath(provider.id, kind);
         if (await fileExists(stalePath)) {
           await fs.rm(stalePath);
           filesChanged = true;
         }
-        continue;
-      }
-
-      if (kind === 'residual' || kind === 'process') {
-        const outputPath = generatedPath(provider.id, kind);
-        const content = renderGeneratedRules(provider, kind, values);
-        if (await writeIfChanged(outputPath, content)) filesChanged = true;
-        compatibilityOutputs[kind] = path.relative(ROOT, outputPath);
-        inlineRules[kind] = values;
-        totals[kind] += values.length;
-        totals.all += values.length;
         continue;
       }
 
@@ -338,7 +340,6 @@ async function rebuildProviders(manifest, sourceTexts) {
       baseCounts: bucketCounts(base),
       outputCounts: bucketCounts(target),
       outputs,
-      compatibilityOutputs,
       inlineRules,
       shadowrocketOutput: path.relative(ROOT, shadowrocketOutputPath),
       shadowrocketRuleCount: shadowrocketRules.length,

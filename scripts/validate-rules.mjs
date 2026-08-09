@@ -98,14 +98,8 @@ for (const provider of status.providers) {
     expectedProviderIds.push(expectedId);
     assert.ok(ruleProviders[expectedId], `mihomo_v2.yml is missing generated provider ${expectedId}`);
   }
-  for (const [kind, relativePath] of Object.entries(provider.compatibilityOutputs || {})) {
-    assert.ok(kind === 'residual' || kind === 'process', `Unexpected compatibility output kind for ${provider.id}: ${kind}`);
-    const text = await fs.readFile(path.join(ROOT, relativePath), 'utf8');
-    const lines = text.split(/\r?\n/).map((line) => line.trim()).filter((line) => line && !line.startsWith('#'));
-    assert.deepEqual(lines, provider.inlineRules?.[kind] || [], `Compatibility output differs from inline ${kind} rules for ${provider.id}`);
-    assert.equal(ruleProviders[`${provider.id}-${kind}`], undefined, `Inline ${kind} rules must not have an active provider for ${provider.id}`);
-  }
   for (const kind of ['residual', 'process']) {
+    assert.equal(ruleProviders[`${provider.id}-${kind}`], undefined, `Inline ${kind} rules must not have an active provider for ${provider.id}`);
     for (const rule of provider.inlineRules?.[kind] || []) {
       const type = String(rule).split(',')[0];
       const allowedTypes = kind === 'process' ? PROCESS_RULE_TYPES : RESIDUAL_RULE_TYPES;
