@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-08T02:19:31.820Z",
+  "generatedAt": "2026-08-09T02:26:34.866Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2554,
@@ -1221,9 +1221,9 @@
               "statics-marketingsites-eas-ms-com.akamaized.net",
               "statics-marketingsites-eus-ms-com.akamaized.net",
               "statics-marketingsites-wcus-ms-com.akamaized.net",
-              "flightsimulator.azureedge.net",
-              "prodforza.blob.core.windows.net",
-              "azure.microsoft.com"
+              "github-api.arkoselabs.com",
+              "github-cloud.s3.amazonaws.com",
+              "github-production-release-asset-2e65be.s3.amazonaws.com"
             ],
             "ipcidr": [],
             "residual": [],
