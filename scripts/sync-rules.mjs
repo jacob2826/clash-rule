@@ -36,6 +36,10 @@ const RESIDUAL_RULE_TYPES = new Set([
   'DOMAIN-WILDCARD',
   'IP-ASN'
 ]);
+const PROVIDER_ALIASES = new Map([
+  ['telegram-ip', 'telegram'],
+  ['netflix-ip', 'netflix']
+]);
 
 const startedAt = new Date().toISOString();
 const runLog = {
@@ -548,6 +552,10 @@ function shadowrocketFileId(value) {
   return String(value).toLowerCase().replace(/!/g, 'not-').replace(/@/g, '-at-').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 }
 
+function canonicalProviderId(providerId) {
+  return PROVIDER_ALIASES.get(providerId) || providerId;
+}
+
 async function renderV2Template(status) {
   const originalText = await fs.readFile(MIHOMO_PATH, 'utf8');
   const marker = '\nrule-providers:\n';
@@ -586,7 +594,7 @@ async function renderV2Template(status) {
     }
     const originalProviderId = parts[1];
     const policy = parts[2];
-    const providerId = originalProviderId === 'anthropic' ? 'claude' : originalProviderId;
+    const providerId = canonicalProviderId(originalProviderId);
     const generated = providersById.get(providerId);
     if (!generated) throw new Error(`No V2 provider mapping for ${originalProviderId}`);
     if (expandedProviders.has(providerId)) continue;
@@ -636,7 +644,7 @@ async function renderShadowrocketTemplate(status) {
     if (type === 'RULE-SET') {
       const originalProviderId = parts[1];
       const policy = parts[2];
-      const providerId = originalProviderId === 'anthropic' ? 'claude' : originalProviderId;
+      const providerId = canonicalProviderId(originalProviderId);
       const provider = providersById.get(providerId);
       if (!provider) throw new Error(`No Shadowrocket provider mapping for ${originalProviderId}`);
       if (expandedProviders.has(providerId)) continue;
@@ -645,6 +653,7 @@ async function renderShadowrocketTemplate(status) {
       rules.push(`RULE-SET,${PUBLIC_RAW_BASE}/${provider.shadowrocketOutput},${policy}`);
       continue;
     }
+    if (PROCESS_RULE_TYPES.has(type)) continue;
     if (type === 'GEOSITE') {
       const source = geositesByName.get(parts[1]);
       if (!source) throw new Error(`No Shadowrocket geosite mapping for ${parts[1]}`);

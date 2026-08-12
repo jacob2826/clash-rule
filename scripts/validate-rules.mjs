@@ -31,6 +31,10 @@ const RESIDUAL_RULE_TYPES = new Set([
   'DOMAIN-WILDCARD',
   'IP-ASN'
 ]);
+const PROVIDER_ALIASES = new Map([
+  ['telegram-ip', 'telegram'],
+  ['netflix-ip', 'netflix']
+]);
 
 for (const key of Object.keys(current)) {
   if (key === 'rule-providers' || key === 'rules') continue;
@@ -86,8 +90,8 @@ for (const [providerId, provider] of Object.entries(ruleProviders)) {
 }
 
 const manifestPolicies = new Map(manifest.providers.map((provider) => [provider.id, provider.policy]));
+const statusProviders = new Map(status.providers.map((provider) => [provider.id, provider]));
 const expectedProviderIds = [];
-const expectedInlineRules = [];
 const expectedShadowrocketUrls = [];
 for (const provider of status.providers) {
   assert.equal(provider.policy, manifestPolicies.get(provider.id), `Status policy mismatch for ${provider.id}`);
@@ -104,7 +108,6 @@ for (const provider of status.providers) {
       const type = String(rule).split(',')[0];
       const allowedTypes = kind === 'process' ? PROCESS_RULE_TYPES : RESIDUAL_RULE_TYPES;
       assert.ok(allowedTypes.has(type), `Unexpected ${kind} inline rule for ${provider.id}: ${rule}`);
-      expectedInlineRules.push(`${rule},${provider.policy}`);
     }
   }
   assert.ok(provider.shadowrocketOutput, `Missing Shadowrocket output for ${provider.id}`);
@@ -120,6 +123,28 @@ for (const provider of status.providers) {
 }
 
 assert.deepEqual(Object.keys(ruleProviders), expectedProviderIds, 'V2 external provider order or scope changed');
+const expectedInlineRules = [];
+const expandedProviders = new Set();
+for (const rule of current.rules || []) {
+  const parts = String(rule).split(',');
+  const type = parts[0];
+  if (type === 'RULE-SET') {
+    const providerId = PROVIDER_ALIASES.get(parts[1]) || parts[1];
+    if (expandedProviders.has(providerId)) continue;
+    expandedProviders.add(providerId);
+    const provider = statusProviders.get(providerId);
+    assert.ok(provider, `Current template references unknown generated provider: ${parts[1]}`);
+    for (const kind of ['residual', 'process']) {
+      for (const inlineRule of provider.inlineRules?.[kind] || []) {
+        expectedInlineRules.push(`${inlineRule},${provider.policy}`);
+      }
+    }
+    continue;
+  }
+  if (PROCESS_RULE_TYPES.has(type) || RESIDUAL_RULE_TYPES.has(type)) {
+    expectedInlineRules.push(String(rule));
+  }
+}
 const actualInlineRules = (v2.rules || []).filter((rule) => {
   const type = String(rule).split(',')[0];
   return PROCESS_RULE_TYPES.has(type) || RESIDUAL_RULE_TYPES.has(type);

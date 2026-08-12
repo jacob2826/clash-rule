@@ -2,15 +2,12 @@
 # Provider: youtube
 # Policy: YouTube
 # Behavior: domain
-# Rules: 181
+# Rules: 178
 
 +.ads.youtube.com
 +.ggpht.cn
 +.ggpht.com
 +.googlevideo.com
-+.gvt1.com
-+.gvt2.com
-+.video.google.com
 +.wide-youtube.l.google.com
 +.withyoutube.com
 +.youtu.be

@@ -267,39 +267,32 @@ rule-providers:
     url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/AppleAI.list
   openai:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/openai.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.yaml
   gemini:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/gemini.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.yaml
   claude:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/claude.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml
-  anthropic:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    path: ./providers/rules/anthropic.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/anthropic.yaml
   copilot:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/copilot.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github-copilot.yaml
   tiktok:
     type: http
     behavior: domain
@@ -309,25 +302,39 @@ rule-providers:
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.yaml
   telegram:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/telegram.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.yaml
+  telegram-ip:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    interval: 86400
+    path: ./providers/rules/telegram-ip.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.yaml
   youtube:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/youtube.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.yaml
   netflix:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/netflix.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.yaml
+  netflix-ip:
+    type: http
+    behavior: ipcidr
+    format: yaml
+    interval: 86400
+    path: ./providers/rules/netflix-ip.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.yaml
   google-fcm:
     type: http
     behavior: classical
@@ -337,11 +344,11 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
   github:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/github.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.yaml
   bing:
     type: http
     behavior: classical
@@ -351,18 +358,18 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
   onedrive:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/onedrive.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.yaml
   microsoft:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     path: ./providers/rules/microsoft.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.yaml
 
 rules:
   - RULE-SET,custom-direct,DIRECT
@@ -371,21 +378,31 @@ rules:
   - DOMAIN-SUFFIX,sora.com,OpenAI
   - RULE-SET,gemini,Gemini
   - RULE-SET,claude,Claude
-  - RULE-SET,anthropic,Claude
   - RULE-SET,copilot,其他 AI 服务
   - RULE-SET,apple-ai,其他 AI 服务
   - GEOSITE,category-ai-chat-!cn,其他 AI 服务
   - GEOSITE,category-ai-!cn,其他 AI 服务
   - RULE-SET,tiktok,TikTok
   - RULE-SET,telegram,Telegram
+  - RULE-SET,telegram-ip,Telegram,no-resolve
+  - PROCESS-NAME,Telegram.exe,Telegram
+  - PROCESS-NAME,nekox.messenger,Telegram
+  - PROCESS-NAME,org.telegram.messenger,Telegram
+  - PROCESS-NAME,telegram-desktop,Telegram
+  - PROCESS-NAME,tw.nekomimi.nekogram,Telegram
+  - PROCESS-NAME,xyz.nextalone.nagram,Telegram
   - RULE-SET,youtube,YouTube
   - RULE-SET,netflix,Netflix
+  - RULE-SET,netflix-ip,Netflix,no-resolve
+  - PROCESS-NAME,com.netflix.mediaclient,Netflix
   - GEOSITE,bahamut,台湾节点
   - GEOSITE,bilibili,DIRECT
   - RULE-SET,google-fcm,谷歌FCM
   - RULE-SET,github,节点选择
   - RULE-SET,bing,微软Bing
   - RULE-SET,onedrive,微软服务
+  - PROCESS-NAME,OneDrive,微软服务
+  - PROCESS-NAME,OneDriveUpdater,微软服务
   - RULE-SET,microsoft,微软服务
   - GEOSITE,apple-cn,DIRECT
   - GEOSITE,apple,苹果服务

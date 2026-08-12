@@ -2,7 +2,7 @@
 # Provider: gemini
 # Policy: Gemini
 # Behavior: domain
-# Rules: 43
+# Rules: 41
 
 +.ai.studio
 +.aicode.googleapis.com
@@ -11,7 +11,6 @@
 +.aistudio.google.com
 +.antigravity-unleash.goog
 +.antigravity.google
-+.apis.google.com
 +.bard.google.com
 +.deepmind.com
 +.deepmind.google
@@ -43,7 +42,6 @@ antigravity.googleapis.com
 cloudaicompanion.googleapis.com
 cloudcode-pa.googleapis.com
 daily-cloudcode-pa.googleapis.com
-makersuite.google.com
 notebooklm-pa.googleapis.com
 notebooklm.googleapis.com
 webchannel-alkalimakersuite-pa.clients6.google.com

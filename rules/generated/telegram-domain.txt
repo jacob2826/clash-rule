@@ -2,17 +2,14 @@
 # Provider: telegram
 # Policy: Telegram
 # Behavior: domain
-# Rules: 27
+# Rules: 21
 
 +.cdn-telegram.org
 +.comments.app
 +.contest.com
 +.fragment.com
 +.graph.org
-+.legra.ph
-+.mbrx.app
 +.quiz.directory
-+.stel.com
 +.t.me
 +.tdesktop.com
 +.telega.one
@@ -22,12 +19,9 @@
 +.telegram.me
 +.telegram.org
 +.telegram.space
-+.telegramdownload.com
 +.telesco.pe
 +.tg.dev
 +.ton.org
 +.toncenter.com
 +.tx.me
 +.usercontent.dev
-api.imem.app
-api.swiftgram.app

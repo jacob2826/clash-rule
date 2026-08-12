@@ -272,13 +272,6 @@ rule-providers:
     interval: 86400
     path: ./providers/rules/v2/openai-domain.txt
     url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/openai-domain.txt
-  openai-ipcidr:
-    type: http
-    behavior: ipcidr
-    format: text
-    interval: 86400
-    path: ./providers/rules/v2/openai-ipcidr.txt
-    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/openai-ipcidr.txt
   gemini-domain:
     type: http
     behavior: domain
@@ -300,13 +293,6 @@ rule-providers:
     interval: 86400
     path: ./providers/rules/v2/copilot-domain.txt
     url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/copilot-domain.txt
-  copilot-ipcidr:
-    type: http
-    behavior: ipcidr
-    format: text
-    interval: 86400
-    path: ./providers/rules/v2/copilot-ipcidr.txt
-    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/copilot-ipcidr.txt
   tiktok-domain:
     type: http
     behavior: domain
@@ -335,13 +321,6 @@ rule-providers:
     interval: 86400
     path: ./providers/rules/v2/youtube-domain.txt
     url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/youtube-domain.txt
-  youtube-ipcidr:
-    type: http
-    behavior: ipcidr
-    format: text
-    interval: 86400
-    path: ./providers/rules/v2/youtube-ipcidr.txt
-    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/youtube-ipcidr.txt
   netflix-domain:
     type: http
     behavior: domain
@@ -409,32 +388,16 @@ rules:
   - PROCESS-NAME-WILDCARD,*tailscale*,DIRECT
   - GEOSITE,private,DIRECT
   - RULE-SET,openai-domain,OpenAI
-  - RULE-SET,openai-ipcidr,OpenAI,no-resolve
-  - DOMAIN-KEYWORD,openai,OpenAI
-  - IP-ASN,20473,OpenAI
   - DOMAIN-SUFFIX,sora.com,OpenAI
   - RULE-SET,gemini-domain,Gemini
-  - DOMAIN-KEYWORD,colab,Gemini
-  - DOMAIN-KEYWORD,developerprofiles,Gemini
-  - DOMAIN-KEYWORD,generativelanguage,Gemini
   - RULE-SET,claude-domain,Claude
   - RULE-SET,copilot-domain,其他 AI 服务
-  - RULE-SET,copilot-ipcidr,其他 AI 服务,no-resolve
-  - DOMAIN-KEYWORD,openaicom-api,其他 AI 服务
-  - IP-ASN,14061,其他 AI 服务
-  - IP-ASN,20473,其他 AI 服务
   - RULE-SET,apple-ai-domain,其他 AI 服务
   - GEOSITE,category-ai-chat-!cn,其他 AI 服务
   - GEOSITE,category-ai-!cn,其他 AI 服务
   - RULE-SET,tiktok-domain,TikTok
   - RULE-SET,telegram-domain,Telegram
   - RULE-SET,telegram-ipcidr,Telegram,no-resolve
-  - DOMAIN-KEYWORD,nicegram,Telegram
-  - IP-ASN,211157,Telegram
-  - IP-ASN,44907,Telegram
-  - IP-ASN,59930,Telegram
-  - IP-ASN,62014,Telegram
-  - IP-ASN,62041,Telegram
   - PROCESS-NAME,Telegram.exe,Telegram
   - PROCESS-NAME,nekox.messenger,Telegram
   - PROCESS-NAME,org.telegram.messenger,Telegram
@@ -442,35 +405,19 @@ rules:
   - PROCESS-NAME,tw.nekomimi.nekogram,Telegram
   - PROCESS-NAME,xyz.nextalone.nagram,Telegram
   - RULE-SET,youtube-domain,YouTube
-  - RULE-SET,youtube-ipcidr,YouTube,no-resolve
-  - DOMAIN-KEYWORD,youtube,YouTube
   - RULE-SET,netflix-domain,Netflix
   - RULE-SET,netflix-ipcidr,Netflix,no-resolve
-  - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,Netflix
-  - DOMAIN-KEYWORD,dualstack.apiproxy-,Netflix
-  - DOMAIN-KEYWORD,dualstack.ichnaea-web-,Netflix
-  - DOMAIN-KEYWORD,netflixdnstest,Netflix
   - PROCESS-NAME,com.netflix.mediaclient,Netflix
   - GEOSITE,bahamut,台湾节点
   - GEOSITE,bilibili,DIRECT
   - RULE-SET,google-fcm-domain,谷歌FCM
   - RULE-SET,google-fcm-ipcidr,谷歌FCM,no-resolve
   - RULE-SET,github-domain,节点选择
-  - DOMAIN-KEYWORD,github,节点选择
   - RULE-SET,bing-domain,微软Bing
   - RULE-SET,onedrive-domain,微软服务
-  - DOMAIN-KEYWORD,1drv,微软服务
-  - DOMAIN-KEYWORD,onedrive,微软服务
-  - DOMAIN-KEYWORD,skydrive,微软服务
   - PROCESS-NAME,OneDrive,微软服务
   - PROCESS-NAME,OneDriveUpdater,微软服务
   - RULE-SET,microsoft-domain,微软服务
-  - DOMAIN-KEYWORD,1drv,微软服务
-  - DOMAIN-KEYWORD,microsoft,微软服务
-  - DOMAIN-KEYWORD,onedrive,微软服务
-  - DOMAIN-KEYWORD,skydrive,微软服务
-  - PROCESS-NAME,OneDrive,微软服务
-  - PROCESS-NAME,OneDriveUpdater,微软服务
   - GEOSITE,apple-cn,DIRECT
   - GEOSITE,apple,苹果服务
   - GEOSITE,steam@cn,DIRECT

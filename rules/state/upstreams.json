@@ -34,17 +34,6 @@
       "sha256": "3f01d5c8bff62b69e0ea0cae5b96c98bf004bf0a27afe0772a612f5644a61592",
       "bytes": 130
     },
-    "blackmatrix-openai": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/OpenAI/OpenAI.yaml",
-      "behavior": "classical",
-      "etag": "\"d2bcd06cf1f69f67048e9cdb3b3cd2c9db9e6a5d\"",
-      "githubSha": "d2bcd06cf1f69f67048e9cdb3b3cd2c9db9e6a5d",
-      "sha256": "cf66c50e7cfbe0aa0e9e249bfa8897d152ae35b38ab6db2936ef62860b7b61b4",
-      "bytes": 1469
-    },
     "meta-openai": {
       "type": "github",
       "repo": "MetaCubeX/meta-rules-dat",
@@ -55,17 +44,6 @@
       "githubSha": "8fd84560ec19cb174b196ae0c6664bfb1aaf15ec",
       "sha256": "9c3c755ad42fa75196e5d37705d0d5bfff5f60bc0d9a1f017272e70eafde7645",
       "bytes": 522
-    },
-    "blackmatrix-gemini": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/Gemini/Gemini.yaml",
-      "behavior": "classical",
-      "etag": "\"9a340bd0f16f9b55e653e7a48f1a823153776772\"",
-      "githubSha": "9a340bd0f16f9b55e653e7a48f1a823153776772",
-      "sha256": "d76e9822f72a69860b7d3086db61bbbef53014c57e3dc12472150c62a4f6434b",
-      "bytes": 666
     },
     "meta-google-gemini": {
       "type": "github",
@@ -78,28 +56,6 @@
       "sha256": "f818ad4166e3f52d9137e9dd6471a972314ded1f6fc70891104f9e339823e8e9",
       "bytes": 992
     },
-    "blackmatrix-claude": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/Claude/Claude.yaml",
-      "behavior": "classical",
-      "etag": "\"947528f9d2d876072a7c56df7354705b80ec78df\"",
-      "githubSha": "947528f9d2d876072a7c56df7354705b80ec78df",
-      "sha256": "ef21df39005b17dbd84aa65a47162b36fb5e72754cd32384146474ed488df482",
-      "bytes": 265
-    },
-    "blackmatrix-anthropic": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/Anthropic/Anthropic.yaml",
-      "behavior": "classical",
-      "etag": "\"3883b3c6cecd054b1fa0ef3f0e703288eea82692\"",
-      "githubSha": "3883b3c6cecd054b1fa0ef3f0e703288eea82692",
-      "sha256": "af16ff9b3d5d587f93fa1761292401c8cc716fd52e7263f8ced577b90d7507c5",
-      "bytes": 284
-    },
     "meta-anthropic": {
       "type": "github",
       "repo": "MetaCubeX/meta-rules-dat",
@@ -110,17 +66,6 @@
       "githubSha": "1d32e16bc4dfdffd0e9430aedff79efc7d30c709",
       "sha256": "0155b69f43c57d61fa8152ae3372233b0660affd6d2b2c01315290f53a311b7f",
       "bytes": 153
-    },
-    "blackmatrix-copilot": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/Copilot/Copilot.yaml",
-      "behavior": "classical",
-      "etag": "\"c40215e8fa2e3f01155f6813a2dad99852dd6397\"",
-      "githubSha": "c40215e8fa2e3f01155f6813a2dad99852dd6397",
-      "sha256": "6be526fd6a4a2c4d374fd8cadcdae87309865fb79b8f57634823dbcb7d780a5e",
-      "bytes": 1991
     },
     "meta-github-copilot": {
       "type": "github",
@@ -144,17 +89,6 @@
       "sha256": "892f03350bb9c1d5e2fa15b417ac6759f13b12f558208d979d9f4d4cec310003",
       "bytes": 730
     },
-    "blackmatrix-telegram": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/Telegram/Telegram.yaml",
-      "behavior": "classical",
-      "etag": "\"27410e2715f92dd3f49891512bef80c45846d6e4\"",
-      "githubSha": "27410e2715f92dd3f49891512bef80c45846d6e4",
-      "sha256": "e78efc3f18069f1f1e3f88c15cd55f85424367b58ce8474af08c2fdf054704e0",
-      "bytes": 1590
-    },
     "meta-telegram-domain": {
       "type": "github",
       "repo": "MetaCubeX/meta-rules-dat",
@@ -177,17 +111,6 @@
       "sha256": "b0a0a5a4280f2c713a26bf1763317be5aefeda02e4e78dab7c2efbda02663181",
       "bytes": 192
     },
-    "blackmatrix-youtube": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/YouTube/YouTube.yaml",
-      "behavior": "classical",
-      "etag": "\"7ff8c0b8186c6e001a96d8573b400c65c5cfb2d4\"",
-      "githubSha": "7ff8c0b8186c6e001a96d8573b400c65c5cfb2d4",
-      "sha256": "2f84cc9d35c8559ebea4c43aa9b30bb43b36313d70684f23a359f1acabb879bb",
-      "bytes": 5935
-    },
     "meta-youtube": {
       "type": "github",
       "repo": "MetaCubeX/meta-rules-dat",
@@ -198,28 +121,6 @@
       "githubSha": "e7b224efb4879fdf98be72275962a49207fc95da",
       "sha256": "e95f241fa4357918fc1066390c352aad750b571ddea15e3421d30c84e947ac10",
       "bytes": 2743
-    },
-    "blackmatrix-netflix-domain": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/Netflix/Netflix.yaml",
-      "behavior": "classical",
-      "etag": "\"b36e42692ba20c69374b6bcda86c3ac393539e58\"",
-      "githubSha": "b36e42692ba20c69374b6bcda86c3ac393539e58",
-      "sha256": "cfb49b76fabc96887c7da7336ecea9066727c1489d25d677baa4f4e7a79a05f3",
-      "bytes": 1607
-    },
-    "blackmatrix-netflix-ip": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/Netflix/Netflix_IP.yaml",
-      "behavior": "ipcidr",
-      "etag": "\"8c70bd08bd410de101ba6ff322ed5b40dae59f4e\"",
-      "githubSha": "8c70bd08bd410de101ba6ff322ed5b40dae59f4e",
-      "sha256": "765001b9220712ede0c7eb77b0b68e984411dcf5399144383c592c65267b86bf",
-      "bytes": 24643
     },
     "meta-netflix-domain": {
       "type": "github",
@@ -265,17 +166,6 @@
       "sha256": "ff576e511b10883408360734a909a90b7e99224d87b2a80db6e35ffd5d97934c",
       "bytes": 256
     },
-    "blackmatrix-github": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/GitHub/GitHub.yaml",
-      "behavior": "classical",
-      "etag": "\"79c3c1e8a2ce6b9684525ebad8154c8efb5b15d9\"",
-      "githubSha": "79c3c1e8a2ce6b9684525ebad8154c8efb5b15d9",
-      "sha256": "a2641ce2f10857831b600623f97d354e6f8db7b20dff175c5313c2c46e0b6867",
-      "bytes": 1250
-    },
     "meta-github": {
       "type": "github",
       "repo": "MetaCubeX/meta-rules-dat",
@@ -309,17 +199,6 @@
       "sha256": "90bc024d8a231064f65108f99d275b0330fcb2c951e651b6a086723bea55a7fe",
       "bytes": 792
     },
-    "blackmatrix-onedrive": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/OneDrive/OneDrive.yaml",
-      "behavior": "classical",
-      "etag": "\"06ebd36b70d06a55ca02a8751abfcd38e7eb8fa1\"",
-      "githubSha": "06ebd36b70d06a55ca02a8751abfcd38e7eb8fa1",
-      "sha256": "6f5902a52d1a0f48b69f7ebe021c4f14361e2c3f5426388923f2034740e60991",
-      "bytes": 816
-    },
     "meta-onedrive": {
       "type": "github",
       "repo": "MetaCubeX/meta-rules-dat",
@@ -330,17 +209,6 @@
       "githubSha": "b3a8aa845321625c489209aab7a189c4d3a11ad5",
       "sha256": "9c11417141d57b2f1f8d4474602858c65f28185304103afedea6eb5a1182b72a",
       "bytes": 307
-    },
-    "blackmatrix-microsoft": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/Microsoft/Microsoft.yaml",
-      "behavior": "classical",
-      "etag": "\"08766a76b19a158469bdc41855fc1bddaa7068ef\"",
-      "githubSha": "08766a76b19a158469bdc41855fc1bddaa7068ef",
-      "sha256": "a289a1d52394e92ceee26a5c83953cd292609717d39fb2970d189dc7877b2a4d",
-      "bytes": 23208
     },
     "meta-microsoft": {
       "type": "github",

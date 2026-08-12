@@ -2,7 +2,7 @@
 # Provider: claude
 # Policy: Claude
 # Behavior: domain
-# Rules: 9
+# Rules: 8
 
 +.anthropic.com
 +.clau.de
@@ -11,5 +11,4 @@
 +.claudemcpclient.com
 +.claudemcpcontent.com
 +.claudeusercontent.com
-cdn.usefathom.com
 servd-anthropic-website.b-cdn.net
