@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-11T02:25:42.613Z",
+  "generatedAt": "2026-08-12T02:41:30.028Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 2554,
@@ -1222,9 +1222,9 @@
               "statics-marketingsites-eas-ms-com.akamaized.net",
               "statics-marketingsites-eus-ms-com.akamaized.net",
               "statics-marketingsites-wcus-ms-com.akamaized.net",
-              "flightsimulator.azureedge.net",
-              "prodforza.blob.core.windows.net",
-              "azure.microsoft.com"
+              "github-api.arkoselabs.com",
+              "github-cloud.s3.amazonaws.com",
+              "github-production-release-asset-2e65be.s3.amazonaws.com"
             ],
             "ipcidr": [],
             "residual": [],
@@ -1316,14 +1316,14 @@
         "name": "category-games",
         "policy": "游戏平台",
         "output": "rules/generated/shadowrocket/geosite/category-games.list",
-        "ruleCount": 1094
+        "ruleCount": 1123
       },
       {
         "id": "sr-geosite-cn",
         "name": "cn",
         "policy": "DIRECT",
         "output": "rules/generated/shadowrocket/geosite/cn.list",
-        "ruleCount": 111294
+        "ruleCount": 111297
       }
     ]
   }
