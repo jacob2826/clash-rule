@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-12T02:41:30.028Z",
+  "generatedAt": "2026-08-12T14:54:13.705Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 2554,
-    "ipcidr": 2193,
-    "residual": 56,
-    "process": 21,
-    "all": 4824
+    "domain": 1225,
+    "ipcidr": 1269,
+    "residual": 28,
+    "process": 17,
+    "all": 2539
   },
   "providers": [
     {
@@ -418,86 +418,27 @@
       "id": "tiktok",
       "policy": "TikTok",
       "baseCounts": {
-        "domain": 29,
+        "domain": 36,
         "ipcidr": 0,
-        "residual": 2,
-        "process": 1,
-        "all": 32
+        "residual": 0,
+        "process": 0,
+        "all": 36
       },
       "outputCounts": {
-        "domain": 53,
+        "domain": 36,
         "ipcidr": 0,
-        "residual": 2,
-        "process": 1,
-        "all": 56
+        "residual": 0,
+        "process": 0,
+        "all": 36
       },
       "outputs": {
         "domain": "rules/generated/tiktok-domain.txt"
       },
-      "inlineRules": {
-        "residual": [
-          "DOMAIN-KEYWORD,musical.ly",
-          "DOMAIN-KEYWORD,tiktok"
-        ],
-        "process": [
-          "PROCESS-NAME,com.zhiliaoapp.musically"
-        ]
-      },
+      "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/tiktok.list",
-      "shadowrocketRuleCount": 55,
-      "shadowrocketSkippedProcessCount": 1,
-      "candidates": [
-        {
-          "id": "meta-tiktok",
-          "mode": "union",
-          "added": {
-            "domain": 24,
-            "ipcidr": 0,
-            "residual": 0,
-            "process": 0
-          },
-          "missingFromCandidate": {
-            "domain": 17,
-            "ipcidr": 0,
-            "residual": 0,
-            "process": 0
-          },
-          "addedSample": {
-            "domain": [
-              "+.tiktok-minis.com",
-              "+.tiktok-row.net",
-              "+.tiktokcdn-eu.com",
-              "+.tiktokeu-cdn.com",
-              "+.tiktokglobalshopv.com",
-              "+.tiktokminis.us",
-              "+.tiktokrow-cdn.com",
-              "+.tiktokv.eu",
-              "+.tiktokw.eu",
-              "+.tiktokw.us"
-            ],
-            "ipcidr": [],
-            "residual": [],
-            "process": []
-          },
-          "missingSample": {
-            "domain": [
-              "lf16-effectcdn.byteeffecttos-g.com",
-              "lf16-pkgcdn.pitaya-clientai.com",
-              "trae-api-sg.mchost.guru",
-              "+.bytegecko-i18n.com",
-              "+.byteintlapi.com",
-              "+.byteoversea.com",
-              "+.capcut.com",
-              "+.ibytedtos.com",
-              "+.ibyteimg.com",
-              "+.ipstatp.com"
-            ],
-            "ipcidr": [],
-            "residual": [],
-            "process": []
-          }
-        }
-      ]
+      "shadowrocketRuleCount": 36,
+      "shadowrocketSkippedProcessCount": 0,
+      "candidates": []
     },
     {
       "id": "telegram",
@@ -819,67 +760,6 @@
           }
         }
       ]
-    },
-    {
-      "id": "global-media",
-      "policy": "国际媒体",
-      "baseCounts": {
-        "domain": 1312,
-        "ipcidr": 924,
-        "residual": 26,
-        "process": 3,
-        "all": 2265
-      },
-      "outputCounts": {
-        "domain": 1312,
-        "ipcidr": 924,
-        "residual": 26,
-        "process": 3,
-        "all": 2265
-      },
-      "outputs": {
-        "domain": "rules/generated/global-media-domain.txt",
-        "ipcidr": "rules/generated/global-media-ipcidr.txt"
-      },
-      "inlineRules": {
-        "residual": [
-          "DOMAIN-KEYWORD,abematv.akamaized.net",
-          "DOMAIN-KEYWORD,anthropic",
-          "DOMAIN-KEYWORD,apiproxy-device-prod-nlb-",
-          "DOMAIN-KEYWORD,avoddashs",
-          "DOMAIN-KEYWORD,bbcfmt",
-          "DOMAIN-KEYWORD,claude",
-          "DOMAIN-KEYWORD,discovery.uplynk.com",
-          "DOMAIN-KEYWORD,dualstack.apiproxy-",
-          "DOMAIN-KEYWORD,dualstack.ichnaea-web-",
-          "DOMAIN-KEYWORD,hamivideo.cdn.hinet.net",
-          "DOMAIN-KEYWORD,hbogoasia",
-          "DOMAIN-KEYWORD,japonx",
-          "DOMAIN-KEYWORD,japronx",
-          "DOMAIN-KEYWORD,jooxweb-api",
-          "DOMAIN-KEYWORD,netflixdnstest",
-          "DOMAIN-KEYWORD,nivod",
-          "DOMAIN-KEYWORD,nowtv100",
-          "DOMAIN-KEYWORD,olevod",
-          "DOMAIN-KEYWORD,rthklive",
-          "DOMAIN-KEYWORD,spotify",
-          "DOMAIN-KEYWORD,tiktokcdn",
-          "DOMAIN-KEYWORD,ttvnw",
-          "DOMAIN-KEYWORD,tvbanywhere",
-          "DOMAIN-KEYWORD,uk-live",
-          "DOMAIN-KEYWORD,voddazn",
-          "DOMAIN-KEYWORD,youtube"
-        ],
-        "process": [
-          "PROCESS-NAME,com.viu.pad",
-          "PROCESS-NAME,com.viu.phone",
-          "PROCESS-NAME,com.vuclip.viu"
-        ]
-      },
-      "shadowrocketOutput": "rules/generated/shadowrocket/global-media.list",
-      "shadowrocketRuleCount": 2262,
-      "shadowrocketSkippedProcessCount": 3,
-      "candidates": []
     },
     {
       "id": "google-fcm",

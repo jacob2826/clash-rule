@@ -191,11 +191,13 @@ function uniqueSources(manifest) {
 }
 
 async function detectChanges(sources, previousState) {
-  const nextState = { version: 1, sources: { ...(previousState.sources || {}) } };
+  const previousSources = previousState.sources || {};
+  const activeSourceIds = new Set(sources.map((source) => source.id));
+  const nextState = { version: 1, sources: {} };
   const changedSourceIds = [];
   const logEntries = [];
   const contentCache = new Map();
-  let stateChanged = false;
+  let stateChanged = Object.keys(previousSources).some((id) => !activeSourceIds.has(id));
 
   for (const source of sources) {
     const previous = previousState.sources?.[source.id] || null;
@@ -218,6 +220,7 @@ async function detectChanges(sources, previousState) {
     }
 
     if (result.status === 304) {
+      nextState.sources[source.id] = previous;
       logEntries.push({
         id: source.id,
         status: 304,

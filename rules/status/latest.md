@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-08-12T02:41:30.028Z
+Generated: 2026-08-12T14:54:13.705Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -10,17 +10,16 @@ Generated: 2026-08-12T02:41:30.028Z
 | gemini | Gemini | 43 | 0 | 3 | 0 | 46 |
 | claude | Claude | 9 | 0 | 0 | 0 | 9 |
 | copilot | 其他 AI 服务 | 52 | 2 | 3 | 0 | 57 |
-| tiktok | TikTok | 53 | 0 | 2 | 1 | 56 |
+| tiktok | TikTok | 36 | 0 | 0 | 0 | 36 |
 | telegram | Telegram | 27 | 18 | 6 | 6 | 57 |
 | youtube | YouTube | 181 | 3 | 1 | 0 | 185 |
 | netflix | Netflix | 33 | 1218 | 4 | 1 | 1256 |
-| global-media | 国际媒体 | 1312 | 924 | 26 | 3 | 2265 |
 | google-fcm | 谷歌FCM | 21 | 26 | 0 | 0 | 47 |
 | github | 节点选择 | 69 | 0 | 1 | 0 | 70 |
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 3 | 2 | 21 |
 | microsoft | 微软服务 | 664 | 0 | 4 | 2 | 670 |
-| **Total** |  | **2554** | **2193** | **56** | **21** | **4824** |
+| **Total** |  | **1225** | **1269** | **28** | **17** | **2539** |
 
 ## MetaCubeX candidate differences
 
@@ -31,7 +30,6 @@ Generated: 2026-08-12T02:41:30.028Z
 | gemini | meta-google-gemini | union | 33 | 2 |
 | claude | meta-anthropic | union | 5 | 1 |
 | copilot | meta-github-copilot | union | 6 | 46 |
-| tiktok | meta-tiktok | union | 24 | 17 |
 | telegram | meta-telegram-domain | union | 3 | 6 |
 | telegram | meta-telegram-ip | union | 8 | 6 |
 | youtube | meta-youtube | union | 2 | 3 |
@@ -46,6 +44,6 @@ Generated: 2026-08-12T02:41:30.028Z
 ## Shadowrocket
 
 - Template: `Shadowrocket.template.conf`
-- Provider lists: 16
+- Provider lists: 15
 - GEOSITE lists: 10
-- Rules: 119730
+- Rules: 117449

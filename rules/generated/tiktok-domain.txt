@@ -2,23 +2,12 @@
 # Provider: tiktok
 # Policy: TikTok
 # Behavior: domain
-# Rules: 53
+# Rules: 36
 
 +.analytics.tiktok.com
 +.bytedapm.com
-+.bytegecko-i18n.com
-+.byteintlapi.com
-+.byteoversea.com
-+.capcut.com
-+.ibytedtos.com
-+.ibyteimg.com
-+.ipstatp.com
-+.isnssdk.com
-+.marscode.com
 +.muscdn.com
 +.musical.ly
-+.sgpstatp.com
-+.snssdk.com
 +.tik-tokapi.com
 +.tiktok-minis.com
 +.tiktok-row.net
@@ -34,7 +23,6 @@
 +.tiktokeu-cdn.com
 +.tiktokglobalshopv.com
 +.tiktokminis.us
-+.tiktokmusic.app
 +.tiktokrow-cdn.com
 +.tiktokv.com
 +.tiktokv.com.edgekey.net
@@ -43,17 +31,12 @@
 +.tiktokv.us
 +.tiktokw.eu
 +.tiktokw.us
-+.trae.ai
 +.ttcdn-us.com
 +.ttlivecdn.com
 +.ttoverseaus.net
-+.ttwebview.com
 +.ttwstatic.com
-lf16-effectcdn.byteeffecttos-g.com
-lf16-pkgcdn.pitaya-clientai.com
 p16-tiktokcdn-com.akamaized.net
 roovza-launches.appsflyersdk.com
 roovza.inapps.appsflyersdk.com
 roovza.launches.appsflyersdk.com
 roovza.skadsdk.appsflyersdk.com
-trae-api-sg.mchost.guru

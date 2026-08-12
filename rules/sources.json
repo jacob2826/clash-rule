@@ -149,23 +149,12 @@
       "policy": "TikTok",
       "sources": [
         {
-          "id": "blackmatrix-tiktok",
-          "type": "github",
-          "repo": "blackmatrix7/ios_rule_script",
-          "ref": "master",
-          "path": "rule/Clash/TikTok/TikTok.yaml",
-          "behavior": "classical"
-        }
-      ],
-      "candidates": [
-        {
           "id": "meta-tiktok",
           "type": "github",
           "repo": "MetaCubeX/meta-rules-dat",
           "ref": "meta",
           "path": "geo/geosite/tiktok.list",
-          "behavior": "domain",
-          "mode": "union"
+          "behavior": "domain"
         }
       ]
     },
@@ -267,28 +256,6 @@
           "path": "geo/geoip/netflix.list",
           "behavior": "ipcidr",
           "mode": "union"
-        }
-      ]
-    },
-    {
-      "id": "global-media",
-      "policy": "国际媒体",
-      "sources": [
-        {
-          "id": "blackmatrix-global-media-residual",
-          "type": "github",
-          "repo": "blackmatrix7/ios_rule_script",
-          "ref": "master",
-          "path": "rule/Clash/GlobalMedia/GlobalMedia.yaml",
-          "behavior": "classical"
-        },
-        {
-          "id": "blackmatrix-global-media-domain",
-          "type": "github",
-          "repo": "blackmatrix7/ios_rule_script",
-          "ref": "master",
-          "path": "rule/Clash/GlobalMedia/GlobalMedia_Domain.yaml",
-          "behavior": "domain"
         }
       ]
     },

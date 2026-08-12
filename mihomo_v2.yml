@@ -102,10 +102,6 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
     proxies: [奈飞节点, 节点选择, 自动选择, 新加坡节点, 香港节点, 台湾节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
-  - name: 国际媒体
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
-    proxies: [节点选择, 自动选择, 香港节点, 台湾节点, 新加坡节点, 日本节点, 美国节点, 韩国节点, 手动选择, DIRECT]
   - name: 谷歌FCM
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
@@ -360,20 +356,6 @@ rule-providers:
     interval: 86400
     path: ./providers/rules/v2/netflix-ipcidr.txt
     url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/netflix-ipcidr.txt
-  global-media-domain:
-    type: http
-    behavior: domain
-    format: text
-    interval: 86400
-    path: ./providers/rules/v2/global-media-domain.txt
-    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/global-media-domain.txt
-  global-media-ipcidr:
-    type: http
-    behavior: ipcidr
-    format: text
-    interval: 86400
-    path: ./providers/rules/v2/global-media-ipcidr.txt
-    url: https://raw.githubusercontent.com/jacob2826/clash-rule/main/rules/generated/global-media-ipcidr.txt
   google-fcm-domain:
     type: http
     behavior: domain
@@ -445,9 +427,6 @@ rules:
   - GEOSITE,category-ai-chat-!cn,其他 AI 服务
   - GEOSITE,category-ai-!cn,其他 AI 服务
   - RULE-SET,tiktok-domain,TikTok
-  - DOMAIN-KEYWORD,musical.ly,TikTok
-  - DOMAIN-KEYWORD,tiktok,TikTok
-  - PROCESS-NAME,com.zhiliaoapp.musically,TikTok
   - RULE-SET,telegram-domain,Telegram
   - RULE-SET,telegram-ipcidr,Telegram,no-resolve
   - DOMAIN-KEYWORD,nicegram,Telegram
@@ -474,37 +453,6 @@ rules:
   - PROCESS-NAME,com.netflix.mediaclient,Netflix
   - GEOSITE,bahamut,台湾节点
   - GEOSITE,bilibili,DIRECT
-  - RULE-SET,global-media-domain,国际媒体
-  - RULE-SET,global-media-ipcidr,国际媒体,no-resolve
-  - DOMAIN-KEYWORD,abematv.akamaized.net,国际媒体
-  - DOMAIN-KEYWORD,anthropic,国际媒体
-  - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,国际媒体
-  - DOMAIN-KEYWORD,avoddashs,国际媒体
-  - DOMAIN-KEYWORD,bbcfmt,国际媒体
-  - DOMAIN-KEYWORD,claude,国际媒体
-  - DOMAIN-KEYWORD,discovery.uplynk.com,国际媒体
-  - DOMAIN-KEYWORD,dualstack.apiproxy-,国际媒体
-  - DOMAIN-KEYWORD,dualstack.ichnaea-web-,国际媒体
-  - DOMAIN-KEYWORD,hamivideo.cdn.hinet.net,国际媒体
-  - DOMAIN-KEYWORD,hbogoasia,国际媒体
-  - DOMAIN-KEYWORD,japonx,国际媒体
-  - DOMAIN-KEYWORD,japronx,国际媒体
-  - DOMAIN-KEYWORD,jooxweb-api,国际媒体
-  - DOMAIN-KEYWORD,netflixdnstest,国际媒体
-  - DOMAIN-KEYWORD,nivod,国际媒体
-  - DOMAIN-KEYWORD,nowtv100,国际媒体
-  - DOMAIN-KEYWORD,olevod,国际媒体
-  - DOMAIN-KEYWORD,rthklive,国际媒体
-  - DOMAIN-KEYWORD,spotify,国际媒体
-  - DOMAIN-KEYWORD,tiktokcdn,国际媒体
-  - DOMAIN-KEYWORD,ttvnw,国际媒体
-  - DOMAIN-KEYWORD,tvbanywhere,国际媒体
-  - DOMAIN-KEYWORD,uk-live,国际媒体
-  - DOMAIN-KEYWORD,voddazn,国际媒体
-  - DOMAIN-KEYWORD,youtube,国际媒体
-  - PROCESS-NAME,com.viu.pad,国际媒体
-  - PROCESS-NAME,com.viu.phone,国际媒体
-  - PROCESS-NAME,com.vuclip.viu,国际媒体
   - RULE-SET,google-fcm-domain,谷歌FCM
   - RULE-SET,google-fcm-ipcidr,谷歌FCM,no-resolve
   - RULE-SET,github-domain,节点选择

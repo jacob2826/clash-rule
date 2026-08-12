@@ -133,17 +133,6 @@
       "sha256": "daca722f3b2103d5f09a6b62a83d6d063f87e64b54982ad3c9fd093b79dfc644",
       "bytes": 221
     },
-    "blackmatrix-tiktok": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/TikTok/TikTok.yaml",
-      "behavior": "classical",
-      "etag": "\"cb9f71a1a491d9b26ef197fb3141a1d7fb61879c\"",
-      "githubSha": "cb9f71a1a491d9b26ef197fb3141a1d7fb61879c",
-      "sha256": "c93113e0f7d84302868ae8a1a7bfd024dbc03e54c5953f5439d20ca9c04005b7",
-      "bytes": 1258
-    },
     "meta-tiktok": {
       "type": "github",
       "repo": "MetaCubeX/meta-rules-dat",
@@ -253,28 +242,6 @@
       "githubSha": "a4fc5b13a83c6c7357fc08b089ee15812d42d5df",
       "sha256": "8f226765d2fcb5a6881a838c5c7bba8b70fa56f5c11a283df0db1d4d3e23de98",
       "bytes": 2063
-    },
-    "blackmatrix-global-media-residual": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/GlobalMedia/GlobalMedia.yaml",
-      "behavior": "classical",
-      "etag": "\"779471a7578f74aef5f49da74361f3b5fc0a3fba\"",
-      "githubSha": "779471a7578f74aef5f49da74361f3b5fc0a3fba",
-      "sha256": "c284b0870abfe3b3fbb9e601904606ced0c4948c5d9e4febd06df526de708bd7",
-      "bytes": 27690
-    },
-    "blackmatrix-global-media-domain": {
-      "type": "github",
-      "repo": "blackmatrix7/ios_rule_script",
-      "ref": "master",
-      "path": "rule/Clash/GlobalMedia/GlobalMedia_Domain.yaml",
-      "behavior": "domain",
-      "etag": "\"5e434ae5d3f640b93ce01288ca8cda6eaa36b2cb\"",
-      "githubSha": "5e434ae5d3f640b93ce01288ca8cda6eaa36b2cb",
-      "sha256": "a9d9a1975e7967066eeaeb88d580db42d58303f1dfa71f557e48a6be4106810d",
-      "bytes": 30220
     },
     "acl4ssr-google-fcm": {
       "type": "github",
