@@ -216,9 +216,9 @@
       "ref": "meta",
       "path": "geo/geosite/microsoft.list",
       "behavior": "domain",
-      "etag": "\"d018c5adac02493f1e92675f7125a3adb6341540\"",
-      "githubSha": "d018c5adac02493f1e92675f7125a3adb6341540",
-      "sha256": "078bc09f81412b643e2c0ed09166d4810204b07fd84aefba1f0e0bdcee709b29",
+      "etag": "\"215b45ef4f7dab5f3e786941e48daa40824fc95b\"",
+      "githubSha": "215b45ef4f7dab5f3e786941e48daa40824fc95b",
+      "sha256": "47179e4533be58b087cd1f0cab1cecb2a0f11e2fb12d5a317bb3a250f179d0c3",
       "bytes": 15501
     },
     "sr-geosite-private": {
@@ -238,9 +238,9 @@
       "ref": "meta",
       "path": "geo/geosite/category-ai-chat-!cn.list",
       "behavior": "domain",
-      "etag": "\"52692ac4a7e42b358d8ac43933b6b161bd93f567\"",
-      "githubSha": "52692ac4a7e42b358d8ac43933b6b161bd93f567",
-      "sha256": "da67a7cc271d21edca16c528e9acba38e9e9f3a12cf98ac749e37a91e6ab1909",
+      "etag": "\"988a6067fc48c1a2c70192b87fc527f62a9adbef\"",
+      "githubSha": "988a6067fc48c1a2c70192b87fc527f62a9adbef",
+      "sha256": "ab1ecfa0d69ebdf85b3ef694bb6addcf45be3596d78881c4b4d6a9cb9f349782",
       "bytes": 3351
     },
     "sr-geosite-ai-not-cn": {
@@ -249,9 +249,9 @@
       "ref": "meta",
       "path": "geo/geosite/category-ai-!cn.list",
       "behavior": "domain",
-      "etag": "\"52692ac4a7e42b358d8ac43933b6b161bd93f567\"",
-      "githubSha": "52692ac4a7e42b358d8ac43933b6b161bd93f567",
-      "sha256": "da67a7cc271d21edca16c528e9acba38e9e9f3a12cf98ac749e37a91e6ab1909",
+      "etag": "\"988a6067fc48c1a2c70192b87fc527f62a9adbef\"",
+      "githubSha": "988a6067fc48c1a2c70192b87fc527f62a9adbef",
+      "sha256": "ab1ecfa0d69ebdf85b3ef694bb6addcf45be3596d78881c4b4d6a9cb9f349782",
       "bytes": 3351
     },
     "sr-geosite-bahamut": {
@@ -271,9 +271,9 @@
       "ref": "meta",
       "path": "geo/geosite/bilibili.list",
       "behavior": "domain",
-      "etag": "\"dafe62ea5c29aa453df0855f5f4a4491dc4c9a11\"",
-      "githubSha": "dafe62ea5c29aa453df0855f5f4a4491dc4c9a11",
-      "sha256": "54c34457d8079f70a64c89d17330241adbbb9d3f06c247f053b793e8f679aa57",
+      "etag": "\"7f7a03e103adf5c9ab6386e19eeb501292e8c053\"",
+      "githubSha": "7f7a03e103adf5c9ab6386e19eeb501292e8c053",
+      "sha256": "d1d76d33c08b2bfaea6b1f661c87eeb2064f6ebd7c5dbe8e1f2bb8ab5b4acc98",
       "bytes": 778
     },
     "sr-geosite-apple-cn": {
@@ -293,9 +293,9 @@
       "ref": "meta",
       "path": "geo/geosite/apple.list",
       "behavior": "domain",
-      "etag": "\"9dff49298dd37f5fab9bf634466ed2c3bd257240\"",
-      "githubSha": "9dff49298dd37f5fab9bf634466ed2c3bd257240",
-      "sha256": "6fcf989077a66134abca8262bccc61e14c5efefb864c104a7a1affd8f7feb659",
+      "etag": "\"8ef1a38714c3c773e7d19ac23253fc1cdb683563\"",
+      "githubSha": "8ef1a38714c3c773e7d19ac23253fc1cdb683563",
+      "sha256": "f5a4d9ba819cf329032ca424d2e6e63bea9c5024591dc31a65636801b9efd3d9",
       "bytes": 36860
     },
     "sr-geosite-steam-cn": {
@@ -315,9 +315,9 @@
       "ref": "meta",
       "path": "geo/geosite/category-games.list",
       "behavior": "domain",
-      "etag": "\"fd92fd399bfd6b0dcd0644791ad55725d254ac81\"",
-      "githubSha": "fd92fd399bfd6b0dcd0644791ad55725d254ac81",
-      "sha256": "0f9951c273073e37c581d4c254ec37b1626429ff9a83ddf9540a7cc674e1f4c7",
+      "etag": "\"afef1c5ddddc80eaadf505caa1c0ad6661592e7e\"",
+      "githubSha": "afef1c5ddddc80eaadf505caa1c0ad6661592e7e",
+      "sha256": "a5ce5b8463856d5de3b7ed1fae2749ed00dea8b758a925dd87c624dda85a1d4d",
       "bytes": 20167
     },
     "sr-geosite-cn": {
@@ -326,10 +326,10 @@
       "ref": "meta",
       "path": "geo/geosite/cn.list",
       "behavior": "domain",
-      "etag": "\"a07dfa081f9ea62c54c3d959875c116a7dfac762\"",
-      "githubSha": "a07dfa081f9ea62c54c3d959875c116a7dfac762",
-      "sha256": "1de88bc8a57adbd6aa236c281d1a3b18f557a5934ca20b234747068543907b8d",
-      "bytes": 1632808
+      "etag": "\"99ba476874e18ca518cca3d26ad3fb56e0b5f4ba\"",
+      "githubSha": "99ba476874e18ca518cca3d26ad3fb56e0b5f4ba",
+      "sha256": "9b30e3a7b9a3d9919c7e8d2082fc6b3ff25f193a6b21b4daad50381b0f202b1b",
+      "bytes": 1632824
     }
   }
 }
