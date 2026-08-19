@@ -190,6 +190,9 @@ dns:
     - +.googleapis.com
     - +.challenges.cloudflare.com
     - +.livekit.cloud
+    - +.tailscale.com
+    - +.tailscale.io
+    - +.ts.net
     # 局域网和保留域名需要保留真实解析结果。
     - +.lan
     - +.local

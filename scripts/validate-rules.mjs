@@ -46,7 +46,16 @@ assert.deepEqual(
   ['Mijia Cloud', 'dlg.io.mi.com'],
   'Mihomo.yml must preserve sniffer exclusions'
 );
-for (const domain of ['+.lan', 'stun.*.*', 'swscan.apple.com', '+.push.apple.com', '+.msftconnecttest.com']) {
+for (const domain of [
+  '+.lan',
+  'stun.*.*',
+  'swscan.apple.com',
+  '+.push.apple.com',
+  '+.msftconnecttest.com',
+  '+.tailscale.com',
+  '+.tailscale.io',
+  '+.ts.net'
+]) {
   assert.ok(current.dns?.['fake-ip-filter']?.includes(domain), `Mihomo.yml fake-ip-filter is missing ${domain}`);
 }
 assert.deepEqual(
