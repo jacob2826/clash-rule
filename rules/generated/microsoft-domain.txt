@@ -2,7 +2,7 @@
 # Provider: microsoft
 # Policy: 微软服务
 # Behavior: domain
-# Rules: 747
+# Rules: 746
 
 +.1drv.com
 +.21vbc.com
@@ -665,7 +665,6 @@ download.visualstudio.microsoft.com
 dreamspark.download.prss.microsoft.com
 dreamsparkuat.download.prss.microsoft.com
 dtlgalleryint.cloudapp.net
-emoi-cncdn.bing.com
 f.c2r.ts.cdn.office.net
 flightsimulator.azureedge.net
 github-api.arkoselabs.com

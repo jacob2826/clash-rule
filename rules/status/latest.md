@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-08-19T12:54:39.044Z
+Generated: 2026-08-20T01:49:06.298Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -18,8 +18,8 @@ Generated: 2026-08-19T12:54:39.044Z
 | github | 节点选择 | 64 | 0 | 0 | 0 | 64 |
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 0 | 0 | 16 |
-| microsoft | 微软服务 | 747 | 0 | 0 | 0 | 747 |
-| **Total** |  | **1216** | **152** | **1** | **6** | **1375** |
+| microsoft | 微软服务 | 746 | 0 | 0 | 0 | 746 |
+| **Total** |  | **1215** | **152** | **1** | **6** | **1374** |
 
 ## MetaCubeX candidate differences
 
@@ -27,11 +27,11 @@ Generated: 2026-08-19T12:54:39.044Z
 | --- | --- | --- | ---: | ---: |
 | apple-ai | meta-apple-intelligence | audit | 0 | 8 |
 | google-fcm | meta-google-fcm | union | 3 | 9 |
-| bing | meta-bing | audit | 38 | 0 |
+| bing | meta-bing | audit | 37 | 0 |
 
 ## Shadowrocket
 
 - Template: `Shadowrocket.template.conf`
 - Provider lists: 15
 - GEOSITE lists: 10
-- Rules: 116305
+- Rules: 116315

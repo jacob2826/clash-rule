@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-08-19T12:54:39.044Z",
+  "generatedAt": "2026-08-20T01:49:06.298Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1216,
+    "domain": 1215,
     "ipcidr": 152,
     "residual": 1,
     "process": 6,
-    "all": 1375
+    "all": 1374
   },
   "providers": [
     {
@@ -448,7 +448,7 @@
           "id": "meta-bing",
           "mode": "audit",
           "added": {
-            "domain": 38,
+            "domain": 37,
             "ipcidr": 0,
             "residual": 0,
             "process": 0
@@ -515,25 +515,25 @@
       "id": "microsoft",
       "policy": "微软服务",
       "baseCounts": {
-        "domain": 747,
+        "domain": 746,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 747
+        "all": 746
       },
       "outputCounts": {
-        "domain": 747,
+        "domain": 746,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 747
+        "all": 746
       },
       "outputs": {
         "domain": "rules/generated/microsoft-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/microsoft.list",
-      "shadowrocketRuleCount": 747,
+      "shadowrocketRuleCount": 746,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     }
@@ -554,14 +554,14 @@
         "name": "category-ai-chat-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-        "ruleCount": 173
+        "ruleCount": 179
       },
       {
         "id": "sr-geosite-ai-not-cn",
         "name": "category-ai-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-        "ruleCount": 173
+        "ruleCount": 179
       },
       {
         "id": "sr-geosite-bahamut",
@@ -603,7 +603,7 @@
         "name": "category-games",
         "policy": "游戏平台",
         "output": "rules/generated/shadowrocket/geosite/category-games.list",
-        "ruleCount": 1124
+        "ruleCount": 1123
       },
       {
         "id": "sr-geosite-cn",
