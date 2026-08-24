@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-08-23T01:57:51.262Z
+Generated: 2026-08-24T01:56:02.171Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
