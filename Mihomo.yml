@@ -412,5 +412,5 @@ rules:
   - GEOSITE,steam@cn,DIRECT
   - GEOSITE,category-games,游戏平台
   - GEOSITE,cn,DIRECT
-  - GEOIP,CN,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT
   - MATCH,兜底策略

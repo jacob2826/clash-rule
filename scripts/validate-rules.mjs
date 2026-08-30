@@ -63,6 +63,9 @@ assert.deepEqual(
   current['proxy-groups'].map((group) => group.name),
   'User-visible proxy group names or order changed'
 );
+assert.ok(current.rules?.includes('GEOIP,CN,DIRECT'), 'Mihomo.yml must resolve domains for the final CN GEOIP fallback');
+assert.ok(!current.rules?.includes('GEOIP,CN,DIRECT,no-resolve'), 'Mihomo.yml must not disable resolution for the final CN GEOIP fallback');
+assert.ok(v2.rules?.includes('GEOIP,CN,DIRECT'), 'mihomo_v2.yml must resolve domains for the final CN GEOIP fallback');
 
 const ruleProviders = v2['rule-providers'];
 assert.ok(ruleProviders && typeof ruleProviders === 'object', 'mihomo_v2.yml must contain rule-providers');
@@ -183,6 +186,8 @@ assert.deepEqual(
 assert.match(shadowrocketTemplate, /^\[General\]$/m, 'Shadowrocket template is missing [General]');
 assert.match(shadowrocketTemplate, /^\[Proxy Group\]$/m, 'Shadowrocket template is missing [Proxy Group]');
 assert.match(shadowrocketTemplate, /^\[Rule\]$/m, 'Shadowrocket template is missing [Rule]');
+assert.match(shadowrocketTemplate, /^GEOIP,CN,DIRECT$/m, 'Shadowrocket template must resolve domains for the final CN GEOIP fallback');
+assert.doesNotMatch(shadowrocketTemplate, /^GEOIP,CN,DIRECT,no-resolve$/m, 'Shadowrocket template must not disable CN GEOIP resolution');
 assert.doesNotMatch(shadowrocketTemplate, /^\[Proxy\]$/m, 'Public Shadowrocket template must not contain nodes');
 assert.ok((shadowrocketTemplate.match(new RegExp(SHADOWROCKET_PLACEHOLDER, 'g')) || []).length > 0, 'Shadowrocket template does not reference the subscription placeholder');
 assert.doesNotMatch(shadowrocketTemplate, /(?:token|password|authorization|subscription-userinfo)\s*[=:]/i, 'Shadowrocket template contains a credential-like value');
