@@ -211,6 +211,16 @@ assert.match(shadowrocketTemplate, /^\[Proxy Group\]$/m, 'Shadowrocket template 
 assert.match(shadowrocketTemplate, /^\[Rule\]$/m, 'Shadowrocket template is missing [Rule]');
 assert.match(shadowrocketTemplate, /^GEOIP,CN,DIRECT$/m, 'Shadowrocket template must resolve domains for the final CN GEOIP fallback');
 assert.doesNotMatch(shadowrocketTemplate, /^GEOIP,CN,DIRECT,no-resolve$/m, 'Shadowrocket template must not disable CN GEOIP resolution');
+assert.doesNotMatch(shadowrocketTemplate, /^GEOIP,private,/mi, 'Shadowrocket template must not treat private as a MaxMind country code');
+for (const cidr of [
+  '0.0.0.0/8', '10.0.0.0/8', '100.64.0.0/10', '127.0.0.0/8', '169.254.0.0/16',
+  '172.16.0.0/12', '192.0.0.0/24', '192.0.2.0/24', '192.88.99.0/24', '192.168.0.0/16',
+  '198.18.0.0/15', '198.51.100.0/24', '203.0.113.0/24', '224.0.0.0/3',
+  '::/127', 'fc00::/7', 'fe80::/10', 'ff00::/8'
+]) {
+  const type = cidr.includes(':') ? 'IP-CIDR6' : 'IP-CIDR';
+  assert.match(shadowrocketTemplate, new RegExp(`^${type},${cidr.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')},DIRECT,no-resolve$`, 'm'), `Shadowrocket template is missing private range ${cidr}`);
+}
 assert.doesNotMatch(shadowrocketTemplate, /^\[Proxy\]$/m, 'Public Shadowrocket template must not contain nodes');
 assert.ok((shadowrocketTemplate.match(new RegExp(SHADOWROCKET_PLACEHOLDER, 'g')) || []).length > 0, 'Shadowrocket template does not reference the subscription placeholder');
 assert.doesNotMatch(shadowrocketTemplate, /(?:token|password|authorization|subscription-userinfo)\s*[=:]/i, 'Shadowrocket template contains a credential-like value');

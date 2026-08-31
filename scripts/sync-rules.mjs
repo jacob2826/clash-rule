@@ -24,6 +24,26 @@ const FORCE = process.argv.includes('--force');
 const MAX_SOURCE_BYTES = 5 * 1024 * 1024;
 const REQUEST_TIMEOUT_MS = 20_000;
 const GITHUB_API_VERSION = '2022-11-28';
+const PRIVATE_NETWORK_CIDRS = [
+  '0.0.0.0/8',
+  '10.0.0.0/8',
+  '100.64.0.0/10',
+  '127.0.0.0/8',
+  '169.254.0.0/16',
+  '172.16.0.0/12',
+  '192.0.0.0/24',
+  '192.0.2.0/24',
+  '192.88.99.0/24',
+  '192.168.0.0/16',
+  '198.18.0.0/15',
+  '198.51.100.0/24',
+  '203.0.113.0/24',
+  '224.0.0.0/3',
+  '::/127',
+  'fc00::/7',
+  'fe80::/10',
+  'ff00::/8'
+];
 const PROCESS_RULE_TYPES = new Set([
   'PROCESS-NAME',
   'PROCESS-NAME-WILDCARD',
@@ -664,6 +684,17 @@ async function renderShadowrocketTemplate(status) {
     }
     if (type === 'MATCH') {
       rules.push(`FINAL,${parts[1]}`);
+      continue;
+    }
+    if (type === 'GEOIP' && parts[1]?.toLowerCase() === 'private') {
+      const policy = parts[2] || 'DIRECT';
+      const suffix = parts.slice(3);
+      rules.push(...PRIVATE_NETWORK_CIDRS.map((cidr) => [
+        cidr.includes(':') ? 'IP-CIDR6' : 'IP-CIDR',
+        cidr,
+        policy,
+        ...suffix
+      ].join(',')));
       continue;
     }
     if (!['DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD', 'IP-CIDR', 'IP-CIDR6', 'IP-ASN', 'GEOIP'].includes(type)) {
