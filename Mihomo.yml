@@ -234,18 +234,20 @@ dns:
     - teredo.*.*
     - teredo.*.*.*
   ipv6: false
-  default-nameserver: &cn_dns
+  default-nameserver:
     - 119.29.29.29
     - 223.5.5.5
-  proxy-server-nameserver: *cn_dns
-  direct-nameserver: *cn_dns
-  nameserver: *cn_dns
+  nameserver: &cn_doh
+    - 'https://doh.pub/dns-query#DIRECT'
+    - 'https://dns.alidns.com/dns-query#DIRECT'
+  proxy-server-nameserver: *cn_doh
+  direct-nameserver: *cn_doh
   fallback: &oversea_dns
-    - https://1.1.1.1/dns-query#节点选择
-    - https://8.8.8.8/dns-query#节点选择
+    - 'https://1.1.1.1/dns-query#节点选择'
+    - 'https://8.8.8.8/dns-query#节点选择'
   nameserver-policy:
-    geosite:private: *cn_dns
-    geosite:cn: *cn_dns
+    geosite:private: *cn_doh
+    geosite:cn: *cn_doh
     geosite:geolocation-!cn: *oversea_dns
   fallback-filter:
     geoip: true
@@ -412,5 +414,6 @@ rules:
   - GEOSITE,steam@cn,DIRECT
   - GEOSITE,category-games,游戏平台
   - GEOSITE,cn,DIRECT
+  - GEOIP,private,DIRECT,no-resolve
   - GEOIP,CN,DIRECT
   - MATCH,兜底策略

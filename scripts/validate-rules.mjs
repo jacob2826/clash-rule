@@ -58,6 +58,23 @@ for (const domain of [
 ]) {
   assert.ok(current.dns?.['fake-ip-filter']?.includes(domain), `Mihomo.yml fake-ip-filter is missing ${domain}`);
 }
+const expectedCnDoh = [
+  'https://doh.pub/dns-query#DIRECT',
+  'https://dns.alidns.com/dns-query#DIRECT'
+];
+const expectedOverseaDoh = [
+  'https://1.1.1.1/dns-query#节点选择',
+  'https://8.8.8.8/dns-query#节点选择'
+];
+assert.deepEqual(current.dns?.['default-nameserver'], ['119.29.29.29', '223.5.5.5'], 'Mihomo.yml must retain IP bootstrap DNS');
+assert.deepEqual(current.dns?.nameserver, expectedCnDoh, 'Mihomo.yml must use direct domestic DoH');
+assert.deepEqual(current.dns?.['proxy-server-nameserver'], expectedCnDoh, 'Mihomo.yml proxy node DNS must use direct domestic DoH');
+assert.deepEqual(current.dns?.['direct-nameserver'], expectedCnDoh, 'Mihomo.yml direct DNS must use direct domestic DoH');
+assert.deepEqual(current.dns?.['nameserver-policy']?.['geosite:private'], expectedCnDoh, 'Mihomo.yml must preserve private DNS policy');
+assert.deepEqual(current.dns?.['nameserver-policy']?.['geosite:cn'], expectedCnDoh, 'Mihomo.yml must use domestic DoH for CN domains');
+assert.deepEqual(current.dns?.['nameserver-policy']?.['geosite:geolocation-!cn'], expectedOverseaDoh, 'Mihomo.yml must use proxied overseas DoH for non-CN domains');
+assert.deepEqual(current.dns?.fallback, expectedOverseaDoh, 'Mihomo.yml must preserve overseas fallback');
+assert.equal(current.dns?.['fallback-filter']?.geoip, true, 'Mihomo.yml must preserve DNS fallback filtering');
 assert.deepEqual(
   v2['proxy-groups'].map((group) => group.name),
   current['proxy-groups'].map((group) => group.name),
@@ -66,6 +83,12 @@ assert.deepEqual(
 assert.ok(current.rules?.includes('GEOIP,CN,DIRECT'), 'Mihomo.yml must resolve domains for the final CN GEOIP fallback');
 assert.ok(!current.rules?.includes('GEOIP,CN,DIRECT,no-resolve'), 'Mihomo.yml must not disable resolution for the final CN GEOIP fallback');
 assert.ok(v2.rules?.includes('GEOIP,CN,DIRECT'), 'mihomo_v2.yml must resolve domains for the final CN GEOIP fallback');
+for (const [name, config] of [['Mihomo.yml', current], ['mihomo_v2.yml', v2]]) {
+  const privateIndex = config.rules?.indexOf('GEOIP,private,DIRECT,no-resolve') ?? -1;
+  const cnIndex = config.rules?.indexOf('GEOIP,CN,DIRECT') ?? -1;
+  assert.ok(privateIndex >= 0, `${name} must direct private GeoIP ranges without DNS resolution`);
+  assert.ok(privateIndex < cnIndex, `${name} private GeoIP rule must precede the final CN GeoIP fallback`);
+}
 
 const ruleProviders = v2['rule-providers'];
 assert.ok(ruleProviders && typeof ruleProviders === 'object', 'mihomo_v2.yml must contain rule-providers');
