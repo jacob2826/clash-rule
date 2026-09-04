@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-09-03T04:19:07.474Z",
+  "generatedAt": "2026-09-04T04:31:43.403Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 1215,
-    "ipcidr": 152,
+    "ipcidr": 158,
     "residual": 1,
     "process": 6,
-    "all": 1374
+    "all": 1380
   },
   "providers": [
     {
@@ -301,17 +301,17 @@
       "policy": "Netflix",
       "baseCounts": {
         "domain": 24,
-        "ipcidr": 114,
+        "ipcidr": 120,
         "residual": 0,
         "process": 0,
-        "all": 138
+        "all": 144
       },
       "outputCounts": {
         "domain": 24,
-        "ipcidr": 114,
+        "ipcidr": 120,
         "residual": 0,
         "process": 0,
-        "all": 138
+        "all": 144
       },
       "outputs": {
         "domain": "rules/generated/netflix-domain.txt",
@@ -319,7 +319,7 @@
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/netflix.list",
-      "shadowrocketRuleCount": 138,
+      "shadowrocketRuleCount": 144,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
@@ -610,7 +610,7 @@
         "name": "cn",
         "policy": "DIRECT",
         "output": "rules/generated/shadowrocket/geosite/cn.list",
-        "ruleCount": 111097
+        "ruleCount": 110984
       }
     ]
   }
