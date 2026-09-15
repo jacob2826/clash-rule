@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-09-14T04:50:35.502Z",
+  "generatedAt": "2026-09-15T04:50:10.290Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1215,
+    "domain": 1216,
     "ipcidr": 158,
     "residual": 1,
     "process": 6,
-    "all": 1380
+    "all": 1381
   },
   "providers": [
     {
@@ -221,25 +221,25 @@
       "id": "tiktok",
       "policy": "TikTok",
       "baseCounts": {
-        "domain": 36,
+        "domain": 37,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 36
+        "all": 37
       },
       "outputCounts": {
-        "domain": 36,
+        "domain": 37,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 36
+        "all": 37
       },
       "outputs": {
         "domain": "rules/generated/tiktok-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/tiktok.list",
-      "shadowrocketRuleCount": 36,
+      "shadowrocketRuleCount": 37,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
