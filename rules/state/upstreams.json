@@ -172,9 +172,9 @@
       "ref": "meta",
       "path": "geo/geosite/github.list",
       "behavior": "domain",
-      "etag": "\"6d2a9f3f4dd0013173d16ae830fc5ec90a1a7484\"",
-      "githubSha": "6d2a9f3f4dd0013173d16ae830fc5ec90a1a7484",
-      "sha256": "f5d67e6e0c8799bd292c8a012d579c8af37ee6a0af771299dd6500db4d1202fd",
+      "etag": "\"bad6d745e673adf14065741df9251ec43b5eec8e\"",
+      "githubSha": "bad6d745e673adf14065741df9251ec43b5eec8e",
+      "sha256": "a7c82a082fdd3f2a7051a75dbb1a2fee64e69db2f7001094187d2349563cb93f",
       "bytes": 1924
     },
     "acl4ssr-bing": {
@@ -216,9 +216,9 @@
       "ref": "meta",
       "path": "geo/geosite/microsoft.list",
       "behavior": "domain",
-      "etag": "\"81be93657b0a7042d1ce448146e3c1de0ad77aa7\"",
-      "githubSha": "81be93657b0a7042d1ce448146e3c1de0ad77aa7",
-      "sha256": "00d86090e2ccc8b21e37204f9680007a92aee31d5466edaab4182dab0beb1fdc",
+      "etag": "\"56c5a55d0ac7b690eb42b12b1e86f6322b496f98\"",
+      "githubSha": "56c5a55d0ac7b690eb42b12b1e86f6322b496f98",
+      "sha256": "3d6a65350065901cc3b62e6bec2e348e78a5d1417985a95f88ae8b5e396407a1",
       "bytes": 15481
     },
     "sr-geosite-private": {
@@ -238,9 +238,9 @@
       "ref": "meta",
       "path": "geo/geosite/category-ai-chat-!cn.list",
       "behavior": "domain",
-      "etag": "\"6f3141d851c47126ef361287c07efaa81d6d9f4f\"",
-      "githubSha": "6f3141d851c47126ef361287c07efaa81d6d9f4f",
-      "sha256": "db23dba9f35e15789543209371361cf7b3ff8f0361cd72c2bc4e5de4d9f30ed0",
+      "etag": "\"24e5427eeeb228dfc76dd589c5167ef3a846653d\"",
+      "githubSha": "24e5427eeeb228dfc76dd589c5167ef3a846653d",
+      "sha256": "1fabd06135603c732bbdf3834474ecc528a82785691bf627a39ab06f8d883693",
       "bytes": 3431
     },
     "sr-geosite-ai-not-cn": {
@@ -249,9 +249,9 @@
       "ref": "meta",
       "path": "geo/geosite/category-ai-!cn.list",
       "behavior": "domain",
-      "etag": "\"6f3141d851c47126ef361287c07efaa81d6d9f4f\"",
-      "githubSha": "6f3141d851c47126ef361287c07efaa81d6d9f4f",
-      "sha256": "db23dba9f35e15789543209371361cf7b3ff8f0361cd72c2bc4e5de4d9f30ed0",
+      "etag": "\"24e5427eeeb228dfc76dd589c5167ef3a846653d\"",
+      "githubSha": "24e5427eeeb228dfc76dd589c5167ef3a846653d",
+      "sha256": "1fabd06135603c732bbdf3834474ecc528a82785691bf627a39ab06f8d883693",
       "bytes": 3431
     },
     "sr-geosite-bahamut": {
@@ -271,9 +271,9 @@
       "ref": "meta",
       "path": "geo/geosite/bilibili.list",
       "behavior": "domain",
-      "etag": "\"dafe62ea5c29aa453df0855f5f4a4491dc4c9a11\"",
-      "githubSha": "dafe62ea5c29aa453df0855f5f4a4491dc4c9a11",
-      "sha256": "54c34457d8079f70a64c89d17330241adbbb9d3f06c247f053b793e8f679aa57",
+      "etag": "\"7f7a03e103adf5c9ab6386e19eeb501292e8c053\"",
+      "githubSha": "7f7a03e103adf5c9ab6386e19eeb501292e8c053",
+      "sha256": "d1d76d33c08b2bfaea6b1f661c87eeb2064f6ebd7c5dbe8e1f2bb8ab5b4acc98",
       "bytes": 778
     },
     "sr-geosite-apple-cn": {
@@ -293,9 +293,9 @@
       "ref": "meta",
       "path": "geo/geosite/apple.list",
       "behavior": "domain",
-      "etag": "\"37242389d9a4d6212d88a7f5687aa957c57b3637\"",
-      "githubSha": "37242389d9a4d6212d88a7f5687aa957c57b3637",
-      "sha256": "bd4065a7ff7bfbf593235b3105b229d7c8573b5bbbff07bb10ae5f487dc131c2",
+      "etag": "\"186eb854c91d7e45c423645c17861bb854a6eba8\"",
+      "githubSha": "186eb854c91d7e45c423645c17861bb854a6eba8",
+      "sha256": "f2cc29a257633d3504f4be74b4a1640f02632da063c68fce80b57aa348635323",
       "bytes": 36860
     },
     "sr-geosite-steam-cn": {
@@ -315,9 +315,9 @@
       "ref": "meta",
       "path": "geo/geosite/category-games.list",
       "behavior": "domain",
-      "etag": "\"dbfe91a4566077e7f0243dba49b9b04a4d08fc88\"",
-      "githubSha": "dbfe91a4566077e7f0243dba49b9b04a4d08fc88",
-      "sha256": "4b6fd10c1acc620eb0174bf300c8b4a58f5227b0bca1b41fdb7e567cb60771f2",
+      "etag": "\"2e949d8a9408f62d01cf8f472be014e971b7319e\"",
+      "githubSha": "2e949d8a9408f62d01cf8f472be014e971b7319e",
+      "sha256": "03ae92f6bf03f878182822a3b5a45e8c0dc6959c28a5b939be9a7890e62e4207",
       "bytes": 20137
     },
     "sr-geosite-cn": {
