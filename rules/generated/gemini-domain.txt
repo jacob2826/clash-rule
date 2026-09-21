@@ -2,7 +2,7 @@
 # Provider: gemini
 # Policy: Gemini
 # Behavior: domain
-# Rules: 41
+# Rules: 43
 
 +.ai.studio
 +.aicode.googleapis.com
@@ -15,6 +15,7 @@
 +.deepmind.com
 +.deepmind.google
 +.flow.google
++.flow.google.com
 +.geller-pa.googleapis.com
 +.gemini.google
 +.gemini.google.com
@@ -26,6 +27,7 @@
 +.labs.google
 +.labs.google.com
 +.makersuite.google.com
++.notebook.google
 +.notebook.google.com
 +.notebooklm.google
 +.notebooklm.google.com
