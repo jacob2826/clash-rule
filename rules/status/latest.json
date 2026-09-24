@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-09-23T04:41:02.463Z",
+  "generatedAt": "2026-09-24T04:43:49.655Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 1218,
@@ -610,7 +610,7 @@
         "name": "cn",
         "policy": "DIRECT",
         "output": "rules/generated/shadowrocket/geosite/cn.list",
-        "ruleCount": 111030
+        "ruleCount": 111031
       }
     ]
   }
