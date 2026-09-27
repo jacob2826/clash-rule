@@ -78,6 +78,10 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/Gemini.png
     proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
+  - name: Muse
+    type: select
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AI.png
+    proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
   - name: Claude
     type: select
     icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/Claude.png
@@ -382,6 +386,8 @@ rules:
   - RULE-SET,openai,OpenAI
   - DOMAIN-SUFFIX,sora.com,OpenAI
   - RULE-SET,gemini,Gemini
+  - DOMAIN-SUFFIX,muse.ai,Muse
+  - DOMAIN,hatch.metaaivm.com,Muse
   - RULE-SET,claude,Claude
   - RULE-SET,copilot,其他 AI 服务
   - RULE-SET,apple-ai,其他 AI 服务
