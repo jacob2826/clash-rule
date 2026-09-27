@@ -80,7 +80,7 @@ proxy-groups:
     proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
   - name: Muse
     type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AI.png
+    icon: https://raw.githubusercontent.com/jacob2826/clash-rule/main/icons/Muse.png
     proxies: [新加坡节点, 美国节点, 日本节点, 台湾节点, 香港节点, 韩国节点, 节点选择, 自动选择, 手动选择, DIRECT]
   - name: Claude
     type: select
