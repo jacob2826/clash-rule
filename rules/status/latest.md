@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-09-30T05:27:45.812Z
+Generated: 2026-10-01T05:46:39.587Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -13,13 +13,13 @@ Generated: 2026-09-30T05:27:45.812Z
 | tiktok | TikTok | 37 | 0 | 0 | 0 | 37 |
 | telegram | Telegram | 21 | 12 | 0 | 0 | 33 |
 | youtube | YouTube | 178 | 0 | 0 | 0 | 178 |
-| netflix | Netflix | 24 | 120 | 0 | 0 | 144 |
+| netflix | Netflix | 24 | 122 | 0 | 0 | 146 |
 | google-fcm | 谷歌FCM | 21 | 26 | 0 | 0 | 47 |
 | github | 节点选择 | 64 | 0 | 0 | 0 | 64 |
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 0 | 0 | 16 |
 | microsoft | 微软服务 | 746 | 0 | 0 | 0 | 746 |
-| **Total** |  | **1221** | **158** | **1** | **6** | **1386** |
+| **Total** |  | **1221** | **160** | **1** | **6** | **1388** |
 
 ## MetaCubeX candidate differences
 
@@ -34,4 +34,4 @@ Generated: 2026-09-30T05:27:45.812Z
 - Template: `Shadowrocket.template.conf`
 - Provider lists: 15
 - GEOSITE lists: 10
-- Rules: 116263
+- Rules: 116265

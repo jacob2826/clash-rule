@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-09-30T05:27:45.812Z",
+  "generatedAt": "2026-10-01T05:46:39.587Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 1221,
-    "ipcidr": 158,
+    "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1386
+    "all": 1388
   },
   "providers": [
     {
@@ -301,17 +301,17 @@
       "policy": "Netflix",
       "baseCounts": {
         "domain": 24,
-        "ipcidr": 120,
+        "ipcidr": 122,
         "residual": 0,
         "process": 0,
-        "all": 144
+        "all": 146
       },
       "outputCounts": {
         "domain": 24,
-        "ipcidr": 120,
+        "ipcidr": 122,
         "residual": 0,
         "process": 0,
-        "all": 144
+        "all": 146
       },
       "outputs": {
         "domain": "rules/generated/netflix-domain.txt",
@@ -319,7 +319,7 @@
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/netflix.list",
-      "shadowrocketRuleCount": 144,
+      "shadowrocketRuleCount": 146,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
