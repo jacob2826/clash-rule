@@ -2,12 +2,13 @@
 # Provider: claude
 # Policy: Claude
 # Behavior: domain
-# Rules: 8
+# Rules: 9
 
 +.anthropic.com
 +.clau.de
 +.claude.ai
 +.claude.com
++.claude.dev
 +.claudemcpclient.com
 +.claudemcpcontent.com
 +.claudeusercontent.com

@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-02T05:30:56.855Z",
+  "generatedAt": "2026-10-03T05:13:19.641Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1221,
+    "domain": 1222,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1388
+    "all": 1389
   },
   "providers": [
     {
@@ -169,25 +169,25 @@
       "id": "claude",
       "policy": "Claude",
       "baseCounts": {
-        "domain": 8,
+        "domain": 9,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 8
+        "all": 9
       },
       "outputCounts": {
-        "domain": 8,
+        "domain": 9,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 8
+        "all": 9
       },
       "outputs": {
         "domain": "rules/generated/claude-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/claude.list",
-      "shadowrocketRuleCount": 8,
+      "shadowrocketRuleCount": 9,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
@@ -554,14 +554,14 @@
         "name": "category-ai-chat-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-        "ruleCount": 187
+        "ruleCount": 188
       },
       {
         "id": "sr-geosite-ai-not-cn",
         "name": "category-ai-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-        "ruleCount": 187
+        "ruleCount": 188
       },
       {
         "id": "sr-geosite-bahamut",
