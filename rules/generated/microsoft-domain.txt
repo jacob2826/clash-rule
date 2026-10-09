@@ -2,7 +2,7 @@
 # Provider: microsoft
 # Policy: 微软服务
 # Behavior: domain
-# Rules: 746
+# Rules: 747
 
 +.1drv.com
 +.21vbc.com
@@ -152,6 +152,7 @@
 +.browser.events.data.msn.cn
 +.browser.events.data.msn.com
 +.c-msedge.net
++.cafe.github.com
 +.callersbane.com
 +.cegid-cloud.cn
 +.centralvalidation.com

@@ -2,9 +2,10 @@
 # Provider: github
 # Policy: 节点选择
 # Behavior: domain
-# Rules: 64
+# Rules: 65
 
 +.atom.io
++.cafe.github.com
 +.collector.github.com
 +.dependabot.com
 +.gh.io

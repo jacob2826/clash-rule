@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-10-08T05:57:11.452Z
+Generated: 2026-10-09T06:03:21.123Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -15,11 +15,11 @@ Generated: 2026-10-08T05:57:11.452Z
 | youtube | YouTube | 178 | 0 | 0 | 0 | 178 |
 | netflix | Netflix | 24 | 122 | 0 | 0 | 146 |
 | google-fcm | 谷歌FCM | 21 | 26 | 0 | 0 | 47 |
-| github | 节点选择 | 64 | 0 | 0 | 0 | 64 |
+| github | 节点选择 | 65 | 0 | 0 | 0 | 65 |
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 0 | 0 | 16 |
-| microsoft | 微软服务 | 746 | 0 | 0 | 0 | 746 |
-| **Total** |  | **1222** | **160** | **1** | **6** | **1389** |
+| microsoft | 微软服务 | 747 | 0 | 0 | 0 | 747 |
+| **Total** |  | **1224** | **160** | **1** | **6** | **1391** |
 
 ## MetaCubeX candidate differences
 
@@ -34,4 +34,4 @@ Generated: 2026-10-08T05:57:11.452Z
 - Template: `Shadowrocket.template.conf`
 - Provider lists: 15
 - GEOSITE lists: 10
-- Rules: 116268
+- Rules: 116270

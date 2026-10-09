@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-08T05:57:11.452Z",
+  "generatedAt": "2026-10-09T06:03:21.123Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1222,
+    "domain": 1224,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1389
+    "all": 1391
   },
   "providers": [
     {
@@ -397,25 +397,25 @@
       "id": "github",
       "policy": "节点选择",
       "baseCounts": {
-        "domain": 64,
+        "domain": 65,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 64
+        "all": 65
       },
       "outputCounts": {
-        "domain": 64,
+        "domain": 65,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 64
+        "all": 65
       },
       "outputs": {
         "domain": "rules/generated/github-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/github.list",
-      "shadowrocketRuleCount": 64,
+      "shadowrocketRuleCount": 65,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
@@ -515,25 +515,25 @@
       "id": "microsoft",
       "policy": "微软服务",
       "baseCounts": {
-        "domain": 746,
+        "domain": 747,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 746
+        "all": 747
       },
       "outputCounts": {
-        "domain": 746,
+        "domain": 747,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 746
+        "all": 747
       },
       "outputs": {
         "domain": "rules/generated/microsoft-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/microsoft.list",
-      "shadowrocketRuleCount": 746,
+      "shadowrocketRuleCount": 747,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     }
