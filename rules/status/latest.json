@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-09T06:03:21.123Z",
+  "generatedAt": "2026-10-10T05:46:14.787Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 1224,
@@ -554,14 +554,14 @@
         "name": "category-ai-chat-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-        "ruleCount": 188
+        "ruleCount": 189
       },
       {
         "id": "sr-geosite-ai-not-cn",
         "name": "category-ai-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-        "ruleCount": 188
+        "ruleCount": 189
       },
       {
         "id": "sr-geosite-bahamut",
@@ -610,7 +610,7 @@
         "name": "cn",
         "policy": "DIRECT",
         "output": "rules/generated/shadowrocket/geosite/cn.list",
-        "ruleCount": 111224
+        "ruleCount": 111595
       }
     ]
   }
