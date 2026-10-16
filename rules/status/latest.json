@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-15T04:31:47.915Z",
+  "generatedAt": "2026-10-16T04:25:44.855Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 1224,
@@ -603,14 +603,14 @@
         "name": "category-games",
         "policy": "游戏平台",
         "output": "rules/generated/shadowrocket/geosite/category-games.list",
-        "ruleCount": 1123
+        "ruleCount": 1124
       },
       {
         "id": "sr-geosite-cn",
         "name": "cn",
         "policy": "DIRECT",
         "output": "rules/generated/shadowrocket/geosite/cn.list",
-        "ruleCount": 110821
+        "ruleCount": 110534
       }
     ]
   }
