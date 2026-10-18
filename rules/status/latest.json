@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-17T04:19:57.322Z",
+  "generatedAt": "2026-10-18T04:25:27.806Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1224,
+    "domain": 1225,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1391
+    "all": 1392
   },
   "providers": [
     {
@@ -117,25 +117,25 @@
       "id": "openai",
       "policy": "OpenAI",
       "baseCounts": {
-        "domain": 22,
+        "domain": 23,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 22
+        "all": 23
       },
       "outputCounts": {
-        "domain": 22,
+        "domain": 23,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 22
+        "all": 23
       },
       "outputs": {
         "domain": "rules/generated/openai-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/openai.list",
-      "shadowrocketRuleCount": 22,
+      "shadowrocketRuleCount": 23,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
@@ -547,21 +547,21 @@
         "name": "private",
         "policy": "DIRECT",
         "output": "rules/generated/shadowrocket/geosite/private.list",
-        "ruleCount": 130
+        "ruleCount": 132
       },
       {
         "id": "sr-geosite-ai-chat-not-cn",
         "name": "category-ai-chat-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-        "ruleCount": 189
+        "ruleCount": 192
       },
       {
         "id": "sr-geosite-ai-not-cn",
         "name": "category-ai-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-        "ruleCount": 189
+        "ruleCount": 192
       },
       {
         "id": "sr-geosite-bahamut",
@@ -603,14 +603,14 @@
         "name": "category-games",
         "policy": "游戏平台",
         "output": "rules/generated/shadowrocket/geosite/category-games.list",
-        "ruleCount": 1124
+        "ruleCount": 1127
       },
       {
         "id": "sr-geosite-cn",
         "name": "cn",
         "policy": "DIRECT",
         "output": "rules/generated/shadowrocket/geosite/cn.list",
-        "ruleCount": 110534
+        "ruleCount": 110446
       }
     ]
   }

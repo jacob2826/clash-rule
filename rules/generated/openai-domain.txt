@@ -2,7 +2,7 @@
 # Provider: openai
 # Policy: OpenAI
 # Behavior: domain
-# Rules: 22
+# Rules: 23
 
 +.chat.com
 +.chatgpt.com
@@ -15,6 +15,7 @@
 +.oaiusercontent.com
 +.openai.com
 +.openai.com.cdn.cloudflare.net
++.openai.org
 +.sora.com
 +.turn.livekit.cloud
 browser-intake-datadoghq.com
