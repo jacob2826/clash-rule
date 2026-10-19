@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-10-18T04:25:27.806Z
+Generated: 2026-10-19T04:34:21.416Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -18,8 +18,8 @@ Generated: 2026-10-18T04:25:27.806Z
 | github | 节点选择 | 65 | 0 | 0 | 0 | 65 |
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 0 | 0 | 16 |
-| microsoft | 微软服务 | 747 | 0 | 0 | 0 | 747 |
-| **Total** |  | **1225** | **160** | **1** | **6** | **1392** |
+| microsoft | 微软服务 | 744 | 0 | 0 | 0 | 744 |
+| **Total** |  | **1222** | **160** | **1** | **6** | **1389** |
 
 ## MetaCubeX candidate differences
 
@@ -34,4 +34,4 @@ Generated: 2026-10-18T04:25:27.806Z
 - Template: `Shadowrocket.template.conf`
 - Provider lists: 15
 - GEOSITE lists: 10
-- Rules: 115507
+- Rules: 115501

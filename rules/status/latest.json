@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-18T04:25:27.806Z",
+  "generatedAt": "2026-10-19T04:34:21.416Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1225,
+    "domain": 1222,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1392
+    "all": 1389
   },
   "providers": [
     {
@@ -515,25 +515,25 @@
       "id": "microsoft",
       "policy": "微软服务",
       "baseCounts": {
-        "domain": 747,
+        "domain": 744,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 747
+        "all": 744
       },
       "outputCounts": {
-        "domain": 747,
+        "domain": 744,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 747
+        "all": 744
       },
       "outputs": {
         "domain": "rules/generated/microsoft-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/microsoft.list",
-      "shadowrocketRuleCount": 747,
+      "shadowrocketRuleCount": 744,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     }
@@ -603,7 +603,7 @@
         "name": "category-games",
         "policy": "游戏平台",
         "output": "rules/generated/shadowrocket/geosite/category-games.list",
-        "ruleCount": 1127
+        "ruleCount": 1124
       },
       {
         "id": "sr-geosite-cn",
