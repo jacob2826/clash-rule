@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-10-19T04:34:21.416Z
+Generated: 2026-10-20T04:43:10.260Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -34,4 +34,4 @@ Generated: 2026-10-19T04:34:21.416Z
 - Template: `Shadowrocket.template.conf`
 - Provider lists: 15
 - GEOSITE lists: 10
-- Rules: 115501
+- Rules: 115503
