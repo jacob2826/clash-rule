@@ -2,14 +2,24 @@
 # Provider: claude
 # Policy: Claude
 # Behavior: domain
-# Rules: 9
+# Rules: 19
 
++.ant.dev
 +.anthropic.com
++.anthropic.team
++.antspace.dev
++.chatbotclaude.com
 +.clau.de
 +.claude.ai
++.claude.app
 +.claude.com
 +.claude.dev
++.claude.new
++.claude.site
++.claudeacademy.com
 +.claudemcpclient.com
 +.claudemcpcontent.com
++.claudepages.dev
++.claudestudio.com
 +.claudeusercontent.com
 servd-anthropic-website.b-cdn.net

@@ -2,7 +2,7 @@
 # Provider: openai
 # Policy: OpenAI
 # Behavior: domain
-# Rules: 23
+# Rules: 24
 
 +.chat.com
 +.chatgpt.com
@@ -20,6 +20,7 @@
 +.turn.livekit.cloud
 browser-intake-datadoghq.com
 o33249.ingest.sentry.io
+o33249.ingest.us.sentry.io
 openai.qualtrics.com
 openaiapi-site.azureedge.net
 openaiassets.blob.core.windows.net
