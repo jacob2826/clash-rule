@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-24T04:30:28.382Z",
+  "generatedAt": "2026-10-25T04:35:09.628Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 1233,
@@ -589,7 +589,7 @@
         "name": "apple",
         "policy": "苹果服务",
         "output": "rules/generated/shadowrocket/geosite/apple.list",
-        "ruleCount": 1790
+        "ruleCount": 1789
       },
       {
         "id": "sr-geosite-steam-cn",
@@ -603,7 +603,7 @@
         "name": "category-games",
         "policy": "游戏平台",
         "output": "rules/generated/shadowrocket/geosite/category-games.list",
-        "ruleCount": 1131
+        "ruleCount": 1137
       },
       {
         "id": "sr-geosite-cn",
