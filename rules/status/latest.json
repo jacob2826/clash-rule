@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-26T04:40:19.702Z",
+  "generatedAt": "2026-10-27T04:57:50.219Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1233,
+    "domain": 1243,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1400
+    "all": 1410
   },
   "providers": [
     {
@@ -143,25 +143,25 @@
       "id": "gemini",
       "policy": "Gemini",
       "baseCounts": {
-        "domain": 46,
+        "domain": 49,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 46
+        "all": 49
       },
       "outputCounts": {
-        "domain": 46,
+        "domain": 49,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 46
+        "all": 49
       },
       "outputs": {
         "domain": "rules/generated/gemini-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/gemini.list",
-      "shadowrocketRuleCount": 46,
+      "shadowrocketRuleCount": 49,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
@@ -515,25 +515,25 @@
       "id": "microsoft",
       "policy": "微软服务",
       "baseCounts": {
-        "domain": 744,
+        "domain": 751,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 744
+        "all": 751
       },
       "outputCounts": {
-        "domain": 744,
+        "domain": 751,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 744
+        "all": 751
       },
       "outputs": {
         "domain": "rules/generated/microsoft-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/microsoft.list",
-      "shadowrocketRuleCount": 744,
+      "shadowrocketRuleCount": 751,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     }
@@ -554,14 +554,14 @@
         "name": "category-ai-chat-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-        "ruleCount": 204
+        "ruleCount": 207
       },
       {
         "id": "sr-geosite-ai-not-cn",
         "name": "category-ai-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-        "ruleCount": 204
+        "ruleCount": 207
       },
       {
         "id": "sr-geosite-bahamut",
