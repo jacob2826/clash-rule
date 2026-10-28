@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-27T04:57:50.219Z",
+  "generatedAt": "2026-10-28T05:33:56.457Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 1243,
@@ -554,14 +554,14 @@
         "name": "category-ai-chat-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-        "ruleCount": 207
+        "ruleCount": 213
       },
       {
         "id": "sr-geosite-ai-not-cn",
         "name": "category-ai-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-        "ruleCount": 207
+        "ruleCount": 213
       },
       {
         "id": "sr-geosite-bahamut",
@@ -589,7 +589,7 @@
         "name": "apple",
         "policy": "苹果服务",
         "output": "rules/generated/shadowrocket/geosite/apple.list",
-        "ruleCount": 1789
+        "ruleCount": 1791
       },
       {
         "id": "sr-geosite-steam-cn",
@@ -610,7 +610,7 @@
         "name": "cn",
         "policy": "DIRECT",
         "output": "rules/generated/shadowrocket/geosite/cn.list",
-        "ruleCount": 110175
+        "ruleCount": 110177
       }
     ]
   }
