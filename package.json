@@ -4,7 +4,10 @@
   "type": "module",
   "scripts": {
     "rules:sync": "node scripts/sync-rules.mjs --force",
-    "rules:check": "node scripts/validate-rules.mjs"
+    "rules:check": "node scripts/validate-rules.mjs",
+    "release:build": "node scripts/release.mjs",
+    "release:publish": "node scripts/release.mjs --publish",
+    "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
     "yaml": "2.9.0"

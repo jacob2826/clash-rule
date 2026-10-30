@@ -11,8 +11,9 @@ proxy groups come from the original file.
 - `generated/shadowrocket/`: native classical rule lists for Shadowrocket.
 - `Shadowrocket.template.conf`: node-free public routing template. A private
   delivery service replaces `__SUBSCRIPTION_NAME__` for each subscription.
-- `state/upstreams.json`: GitHub ETag and content hash state for conditional checks.
-- `status/latest.json`: machine-readable result of the latest successful rebuild.
+- `state/upstreams.json`: conditional-check state, restored from the Action cache.
+- `release-manifest.json`: content-addressed public delivery files and SHA-256 hashes.
+- `status/latest.json`: machine-readable result of the latest content-changing rebuild.
 - `status/latest.md`: compact human-readable rule and candidate difference report.
 - `status/README.md`: Action health and diagnostic log instructions.
 
@@ -46,3 +47,21 @@ npm run rules:check
 
 Every scheduled run creates downloadable JSON and text diagnostic logs, including
 the full error stack on failure.
+
+## Delivery releases
+
+The existing workflow checks upstreams every six hours. Check timestamps and ETags
+remain in the Action cache and diagnostic artifacts; unchanged deliverable content
+does not create a commit or a release. The last content-change report stays intact.
+Template, referenced rule or icon changes produce a new deterministic release ID.
+
+Configure repository secrets `SUB_RELEASE_URL` and `SUB_RELEASE_SECRET` to publish
+to a private delivery service. Neither value belongs in this repository. Publication
+compares the active manifest and uploads only changed or missing files after validation
+and commit. `release.log` in the existing diagnostic artifact reports the release ID,
+upload count or failure without exposing the endpoint or credentials.
+
+```bash
+npm test
+npm run release:build
+```

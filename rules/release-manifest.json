@@ -1,0 +1,266 @@
+{
+  "version": 1,
+  "releaseId": "68e7ac356ff5e37aa771ec11f87f6deac9f0abe3f8bd486659bacb2412645e0c",
+  "files": [
+    {
+      "path": "AppleAI.list",
+      "sha256": "5041c45f8d964a15b871abc84fc7f7f61750cc087eb019a4afb4161a3bb78940",
+      "bytes": 431
+    },
+    {
+      "path": "Mihomo.yml",
+      "sha256": "8e55c20e22cf98ead485974d6e01f47b6ceb0ed10cf74b2b441c7bcb75c5605a",
+      "bytes": 15748
+    },
+    {
+      "path": "Shadowrocket.template.conf",
+      "sha256": "0f75259ee77b113802d25a1871658ff922ae20cbae5c637521981eb52c970a58",
+      "bytes": 8356
+    },
+    {
+      "path": "UnBan.list",
+      "sha256": "8ae37b94c4c83cba4f77a09b377406647a1e7e4e4768c0ca606df42ce1c703de",
+      "bytes": 711
+    },
+    {
+      "path": "icons/Claude.png",
+      "sha256": "0ac52b8dc472b99f20eafd993912c3457e59becc39ac999a68d69e3d5b805d9c",
+      "bytes": 1961
+    },
+    {
+      "path": "icons/Gemini.png",
+      "sha256": "21a7090181b615b9b78eecbe1786c9ca3189e5e83ff8bf8028f910bc002d59bd",
+      "bytes": 18276
+    },
+    {
+      "path": "icons/Muse.png",
+      "sha256": "0031b030ef6488d8384708a1494c709eaf9c0fc9c184c3a8e74a0ac643ff0263",
+      "bytes": 11595
+    },
+    {
+      "path": "icons/OpenAI.png",
+      "sha256": "6c6ea341a074676e4bb5ddea0a3542648c79494ea0ac53144730f29fec5e2054",
+      "bytes": 2124
+    },
+    {
+      "path": "mihomo_v2.yml",
+      "sha256": "f81f31c57ee044b8a4020efbb56703644508c2712b416d45d48dd35d8e8735c5",
+      "bytes": 16824
+    },
+    {
+      "path": "rules/generated/apple-ai-domain.txt",
+      "sha256": "62a8744521af5f8ba29cba1ee0ead5132e7a8bf1ab00f670743e211bf512aef5",
+      "bytes": 454
+    },
+    {
+      "path": "rules/generated/bing-domain.txt",
+      "sha256": "b83943b38786cfcb49e781105118097aa1f19988e0dcfced5f1aa47709daa2e3",
+      "bytes": 182
+    },
+    {
+      "path": "rules/generated/claude-domain.txt",
+      "sha256": "b08c82859e85291df7c46f931079f321641a61cb8cefdaacd60d7c364631a8fc",
+      "bytes": 446
+    },
+    {
+      "path": "rules/generated/copilot-domain.txt",
+      "sha256": "918ebc41cee5e8a02dcf3cb5d237a77f28b468df3a77cf5fcfa489e2ccff4a7e",
+      "bytes": 352
+    },
+    {
+      "path": "rules/generated/custom-direct-domain.txt",
+      "sha256": "29a5fa62846c95119e4cf629d76f617477e9961ed02f448a34dd23f32d4c0166",
+      "bytes": 345
+    },
+    {
+      "path": "rules/generated/gemini-domain.txt",
+      "sha256": "9b6b749d652d2ae16e9b1639646813ee61d5f91849a169c9e55b7489ca44df8d",
+      "bytes": 1358
+    },
+    {
+      "path": "rules/generated/github-domain.txt",
+      "sha256": "13105fd57da6c41e1311fbb0ae895ebc3f8e1e4565318475ffc3efe76aecdb9a",
+      "bytes": 2069
+    },
+    {
+      "path": "rules/generated/google-fcm-domain.txt",
+      "sha256": "bcb60cd503240517834861ac9a7ba79901280c9e12a3aab1982e30b15157f18d",
+      "bytes": 658
+    },
+    {
+      "path": "rules/generated/google-fcm-ipcidr.txt",
+      "sha256": "0cf7cb96342b79ae7f56bebde3ebe021a34dd9a63040ef2b58c40677c8473635",
+      "bytes": 598
+    },
+    {
+      "path": "rules/generated/microsoft-domain.txt",
+      "sha256": "3ad907b51259cff6c61fdd03f25d6e92808a3f08f972b39e7661a6520106e1df",
+      "bytes": 15728
+    },
+    {
+      "path": "rules/generated/netflix-domain.txt",
+      "sha256": "cb915651c849bc6bba01a442d2065b37e2be7b2f123828e7216ebda04db934d3",
+      "bytes": 577
+    },
+    {
+      "path": "rules/generated/netflix-ipcidr.txt",
+      "sha256": "72df2df7e059efaf54c3dc3f1ed5d21843e282f48d9ea18d52e2d458de083c3d",
+      "bytes": 2368
+    },
+    {
+      "path": "rules/generated/onedrive-domain.txt",
+      "sha256": "812b93635e00dc8bc1a8071084086606920eb00a4b1e1f80a43701d3b9444b7e",
+      "bytes": 436
+    },
+    {
+      "path": "rules/generated/openai-domain.txt",
+      "sha256": "0ac58a81cbb23ac5f70326878adb48a79e5fce45bf3316fb49a8d9b982bb492c",
+      "bytes": 683
+    },
+    {
+      "path": "rules/generated/shadowrocket/apple-ai.list",
+      "sha256": "b9c0bf7e4bca2979ae2802ba4f554ecc673d7960598301b9a5778ef23fb49387",
+      "bytes": 529
+    },
+    {
+      "path": "rules/generated/shadowrocket/bing.list",
+      "sha256": "aa4ad719773ae66433149261471b08cc69a45112cc87ed4591c840b6b3d17e7b",
+      "bytes": 197
+    },
+    {
+      "path": "rules/generated/shadowrocket/claude.list",
+      "sha256": "36734a5fcfae15499cf95f0f491690cb701c02aae4a880e3158fee4316f19f50",
+      "bytes": 648
+    },
+    {
+      "path": "rules/generated/shadowrocket/copilot.list",
+      "sha256": "fc4c050178573cde9d6dde7af163e20609c4e18bf8dabe21f691b203c5b2293e",
+      "bytes": 378
+    },
+    {
+      "path": "rules/generated/shadowrocket/custom-direct.list",
+      "sha256": "bd8593f20a07c52738872555c786f64fd6b5f76d2f8f3319fe3343cefc0a2ba5",
+      "bytes": 536
+    },
+    {
+      "path": "rules/generated/shadowrocket/gemini.list",
+      "sha256": "53284593515faf9fb35dcac272eb68181dcea3fa53dc56f77e92dbc09898f47c",
+      "bytes": 1845
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/apple-cn.list",
+      "sha256": "faabd791a37e897a69eedefcba3d2cfd2243ec1d13a676ab8b1833be7a41e9e3",
+      "bytes": 5360
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/apple.list",
+      "sha256": "c153acd4d06bb93c85b41d8301b026ca6ea012fec8780110ce1fb529825b35c2",
+      "bytes": 57206
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/bahamut.list",
+      "sha256": "bc4b13d94409d6c8b5a6e223e4bd057520066a9e383e08001d1fa3d9b83cffef",
+      "bytes": 268
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/bilibili.list",
+      "sha256": "939af28b2128681e8b45e6e08fbcd96ce9369e3e7bd0d72196fab9a3a8590912",
+      "bytes": 1519
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
+      "sha256": "362e5cf58e468f7f63ab70924b3e0dc13713a6f7fac15b8f5ebc68413c0c6309",
+      "bytes": 6612
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
+      "sha256": "2bf6943f59170c38fbc7a8ecc3d74157b4f3dd1b91a6b302b3c11ea7a8045534",
+      "bytes": 6607
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/category-games.list",
+      "sha256": "5f03b175a0f7f1a1543061d4ae790135492ed666cde9b99dd8b49c177e2ab06f",
+      "bytes": 33704
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/cn.list",
+      "sha256": "6e64895091a051a67fe60b5a146c5e8317e303bc7b1fc348ce4994ba3a9cca21",
+      "bytes": 2935823
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/private.list",
+      "sha256": "1c6b67b4af1d5fbf41be9adee6dc3b4eb4c869fe46ff7724168357b5f4484f76",
+      "bytes": 4365
+    },
+    {
+      "path": "rules/generated/shadowrocket/geosite/steam-at-cn.list",
+      "sha256": "7f472bb854e78bb70fe375d4cf90b62eb2413523efb5ad0737f8dc784efc709d",
+      "bytes": 730
+    },
+    {
+      "path": "rules/generated/shadowrocket/github.list",
+      "sha256": "8c2242dd0ef6e9809c0cdf0830a76803577b8c9aadc0dd22c0ff3a0b161804b2",
+      "bytes": 2668
+    },
+    {
+      "path": "rules/generated/shadowrocket/google-fcm.list",
+      "sha256": "b60279f3213d77358c80008b18f2cb737c233ffec1b2cfc3c4b85873dd30723e",
+      "bytes": 1749
+    },
+    {
+      "path": "rules/generated/shadowrocket/microsoft.list",
+      "sha256": "876828e7868820ac0dc17a6632b58a3f1d885ed2e6f9572fe4ee801a6b945064",
+      "bytes": 24139
+    },
+    {
+      "path": "rules/generated/shadowrocket/netflix.list",
+      "sha256": "7a9b4e3eb3be1850485d9ae264f575a4cc9d70a961aa69caa0092352d80c0ffd",
+      "bytes": 5494
+    },
+    {
+      "path": "rules/generated/shadowrocket/onedrive.list",
+      "sha256": "58f3bde22f1931c9e9b2f096dfb2a3b0fc5d0b24bca2964e0b4832ecdd7f4dbb",
+      "bytes": 607
+    },
+    {
+      "path": "rules/generated/shadowrocket/openai.list",
+      "sha256": "238a4c2a0a39e0c43cf58f32b15bfd40cd86e7b9dd2ba9de2397d2200a0dd1a7",
+      "bytes": 900
+    },
+    {
+      "path": "rules/generated/shadowrocket/telegram.list",
+      "sha256": "c603e905f1041e6207cba850bd4cf3d2397b34418d0a68eb7101e0a766012b5f",
+      "bytes": 1074
+    },
+    {
+      "path": "rules/generated/shadowrocket/tiktok.list",
+      "sha256": "8625727c03e8f85a15530298aa847686eae31a959be51cb3cea05ef53aa766f7",
+      "bytes": 1287
+    },
+    {
+      "path": "rules/generated/shadowrocket/youtube.list",
+      "sha256": "dc1221ebf724bc31e1937d9b3f96a22717063dbd7d187fb4ca78c357bc39afcf",
+      "bytes": 4977
+    },
+    {
+      "path": "rules/generated/telegram-domain.txt",
+      "sha256": "a1a9d0a03297ee6359f2c1f0b6e2593188e69bc9e556ccfa6e9e186223e0537b",
+      "bytes": 418
+    },
+    {
+      "path": "rules/generated/telegram-ipcidr.txt",
+      "sha256": "1e58d69c38f8cd7ded3080ef1889dbe9ebc85a6eb7d2b8d1df7622dd1fb317dd",
+      "bytes": 317
+    },
+    {
+      "path": "rules/generated/tiktok-domain.txt",
+      "sha256": "086032d6d95b4bcbf6383f2332dde0d921c2650e69ba3f0b81377a118ca84cfa",
+      "bytes": 894
+    },
+    {
+      "path": "rules/generated/youtube-domain.txt",
+      "sha256": "812ded7ba70e87254afb37aeb342cbd1bb7f61adf4b70467267e670c883c8c64",
+      "bytes": 2867
+    }
+  ]
+}

@@ -112,10 +112,12 @@ try {
       shadowrocket: shadowrocket.summary
     };
     await writeJson(STATE_PATH, detection.nextState);
-    await writeJson(STATUS_JSON_PATH, status);
-    await fs.writeFile(STATUS_MD_PATH, renderStatusMarkdown(status), 'utf8');
     if (await renderV2Template(status)) build.filesChanged = true;
     if (await renderShadowrocketTemplate(status)) build.filesChanged = true;
+    if (build.filesChanged || !await readJsonIfPresent(STATUS_JSON_PATH, null)) {
+      await writeJson(STATUS_JSON_PATH, status);
+      await fs.writeFile(STATUS_MD_PATH, renderStatusMarkdown(status), 'utf8');
+    }
 
     runLog.status = 'success';
     runLog.result = build.filesChanged ? 'rules_updated' : 'rules_verified';
