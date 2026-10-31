@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "releaseId": "68e7ac356ff5e37aa771ec11f87f6deac9f0abe3f8bd486659bacb2412645e0c",
+  "releaseId": "cf1a20c4ea756f9fafcd780fbef61f4e369c97ac76a3ef87318d486b97895d8f",
   "files": [
     {
       "path": "AppleAI.list",
@@ -94,8 +94,8 @@
     },
     {
       "path": "rules/generated/microsoft-domain.txt",
-      "sha256": "3ad907b51259cff6c61fdd03f25d6e92808a3f08f972b39e7661a6520106e1df",
-      "bytes": 15728
+      "sha256": "ac6359a673286e24f2cfab459f8761b01ac392a9a045b4df6d2bc796d5a83dca",
+      "bytes": 15762
     },
     {
       "path": "rules/generated/netflix-domain.txt",
@@ -179,8 +179,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-games.list",
-      "sha256": "5f03b175a0f7f1a1543061d4ae790135492ed666cde9b99dd8b49c177e2ab06f",
-      "bytes": 33704
+      "sha256": "fc2e3b4541d2c6d8caba70d059e17c779e6d2eaae6ed4b7e8b253add26902cee",
+      "bytes": 33732
     },
     {
       "path": "rules/generated/shadowrocket/geosite/cn.list",
@@ -209,8 +209,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/microsoft.list",
-      "sha256": "876828e7868820ac0dc17a6632b58a3f1d885ed2e6f9572fe4ee801a6b945064",
-      "bytes": 24139
+      "sha256": "abb30e4705d5a83434a5968a4e1ef0af8a5da396299a8cffcca444fac5d32e9f",
+      "bytes": 24197
     },
     {
       "path": "rules/generated/shadowrocket/netflix.list",
@@ -234,8 +234,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/tiktok.list",
-      "sha256": "8625727c03e8f85a15530298aa847686eae31a959be51cb3cea05ef53aa766f7",
-      "bytes": 1287
+      "sha256": "6653ae2db796b77d7a3e8a65c08652cc721078dd8e36df4dac0c274386445579",
+      "bytes": 1377
     },
     {
       "path": "rules/generated/shadowrocket/youtube.list",
@@ -254,8 +254,8 @@
     },
     {
       "path": "rules/generated/tiktok-domain.txt",
-      "sha256": "086032d6d95b4bcbf6383f2332dde0d921c2650e69ba3f0b81377a118ca84cfa",
-      "bytes": 894
+      "sha256": "2f40af828072dd19c8e4d53fec64467a422db375b09af90c659cf66d146862fd",
+      "bytes": 948
     },
     {
       "path": "rules/generated/youtube-domain.txt",

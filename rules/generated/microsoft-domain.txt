@@ -2,7 +2,7 @@
 # Provider: microsoft
 # Policy: 微软服务
 # Behavior: domain
-# Rules: 751
+# Rules: 753
 
 +.1drv.com
 +.21vbc.com
@@ -137,6 +137,7 @@
 +.bingapistatistics.com
 +.bingparachute.com
 +.bingsandbox.com
++.bingstatic.com
 +.bingvisualsearch.com
 +.bingworld.com
 +.blazor.net
@@ -438,6 +439,7 @@
 +.msfteducation.ca
 +.msftncsi.com
 +.msftnet.org
++.msftstatic.com
 +.msgamesresearch.com
 +.msgamestudios.com
 +.mshome.net

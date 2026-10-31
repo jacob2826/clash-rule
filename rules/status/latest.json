@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-10-30T05:41:06.621Z",
+  "generatedAt": "2026-10-31T05:33:03.130Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1243,
+    "domain": 1248,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1410
+    "all": 1415
   },
   "providers": [
     {
@@ -221,25 +221,25 @@
       "id": "tiktok",
       "policy": "TikTok",
       "baseCounts": {
-        "domain": 37,
+        "domain": 40,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 37
+        "all": 40
       },
       "outputCounts": {
-        "domain": 37,
+        "domain": 40,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 37
+        "all": 40
       },
       "outputs": {
         "domain": "rules/generated/tiktok-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/tiktok.list",
-      "shadowrocketRuleCount": 37,
+      "shadowrocketRuleCount": 40,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
@@ -448,7 +448,7 @@
           "id": "meta-bing",
           "mode": "audit",
           "added": {
-            "domain": 37,
+            "domain": 38,
             "ipcidr": 0,
             "residual": 0,
             "process": 0
@@ -463,7 +463,7 @@
             "domain": [
               "location.microsoft.com",
               "+.bing",
-              "+.masalladeloslimites.com",
+              "+.flipwithsurface.com",
               "+.microsoftpartnersolutions.com",
               "+.bing123.com",
               "+.bingagencyawards.com",
@@ -515,25 +515,25 @@
       "id": "microsoft",
       "policy": "微软服务",
       "baseCounts": {
-        "domain": 751,
+        "domain": 753,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 751
+        "all": 753
       },
       "outputCounts": {
-        "domain": 751,
+        "domain": 753,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 751
+        "all": 753
       },
       "outputs": {
         "domain": "rules/generated/microsoft-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/microsoft.list",
-      "shadowrocketRuleCount": 751,
+      "shadowrocketRuleCount": 753,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     }
@@ -603,7 +603,7 @@
         "name": "category-games",
         "policy": "游戏平台",
         "output": "rules/generated/shadowrocket/geosite/category-games.list",
-        "ruleCount": 1137
+        "ruleCount": 1138
       },
       {
         "id": "sr-geosite-cn",
