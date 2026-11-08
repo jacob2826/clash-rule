@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "releaseId": "082165914b98a1bc7f08ab17667a80aa847c440b0ca0b575b6f9cb165564aca0",
+  "releaseId": "3389fd18f82e1da16be79a89a91df619c49e0d7ae7a5f06b0c396e1c3784a6d0",
   "files": [
     {
       "path": "AppleAI.list",
@@ -59,13 +59,13 @@
     },
     {
       "path": "rules/generated/claude-domain.txt",
-      "sha256": "b08c82859e85291df7c46f931079f321641a61cb8cefdaacd60d7c364631a8fc",
-      "bytes": 446
+      "sha256": "5300db4491356da9f77e57916ce2705b3c85606a8bc66ce902e06d9d5c058883",
+      "bytes": 510
     },
     {
       "path": "rules/generated/copilot-domain.txt",
-      "sha256": "918ebc41cee5e8a02dcf3cb5d237a77f28b468df3a77cf5fcfa489e2ccff4a7e",
-      "bytes": 352
+      "sha256": "2e053a4a2aad4c2c33a49f69fc8394813d3294f4b3b816fbe908f98764c4fbc8",
+      "bytes": 403
     },
     {
       "path": "rules/generated/custom-direct-domain.txt",
@@ -79,8 +79,8 @@
     },
     {
       "path": "rules/generated/github-domain.txt",
-      "sha256": "13105fd57da6c41e1311fbb0ae895ebc3f8e1e4565318475ffc3efe76aecdb9a",
-      "bytes": 2069
+      "sha256": "5c4a248234c14d4dd1698a80c948eb93b33baa077181c57960fe565d5a110e2a",
+      "bytes": 2120
     },
     {
       "path": "rules/generated/google-fcm-domain.txt",
@@ -94,8 +94,8 @@
     },
     {
       "path": "rules/generated/microsoft-domain.txt",
-      "sha256": "ac6359a673286e24f2cfab459f8761b01ac392a9a045b4df6d2bc796d5a83dca",
-      "bytes": 15762
+      "sha256": "2f9a3c1f18b3d29ec7855cf59df0fa3550575e34c3760e7ae5e64afb6ae79070",
+      "bytes": 15813
     },
     {
       "path": "rules/generated/netflix-domain.txt",
@@ -129,13 +129,13 @@
     },
     {
       "path": "rules/generated/shadowrocket/claude.list",
-      "sha256": "36734a5fcfae15499cf95f0f491690cb701c02aae4a880e3158fee4316f19f50",
-      "bytes": 648
+      "sha256": "e2679287d78d57e68f86ba79bd1a5b3cd7743df7fe2cb51e01344aa84196076c",
+      "bytes": 726
     },
     {
       "path": "rules/generated/shadowrocket/copilot.list",
-      "sha256": "fc4c050178573cde9d6dde7af163e20609c4e18bf8dabe21f691b203c5b2293e",
-      "bytes": 378
+      "sha256": "c59392052bb1057810d63421f836c940c5964c96f3fb6e3ec0cdac117fb30588",
+      "bytes": 436
     },
     {
       "path": "rules/generated/shadowrocket/custom-direct.list",
@@ -169,13 +169,13 @@
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-      "sha256": "362e5cf58e468f7f63ab70924b3e0dc13713a6f7fac15b8f5ebc68413c0c6309",
-      "bytes": 6612
+      "sha256": "3bce77c92bf7d570918bafcb3511467b0bb8a47211dd5bfc27c0e14460ba63dc",
+      "bytes": 6774
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-      "sha256": "2bf6943f59170c38fbc7a8ecc3d74157b4f3dd1b91a6b302b3c11ea7a8045534",
-      "bytes": 6607
+      "sha256": "0ad1e35886f911be1be62f8f4dc8d34436c4797105fce61f7558ab500b548e43",
+      "bytes": 6769
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-games.list",
@@ -199,8 +199,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/github.list",
-      "sha256": "8c2242dd0ef6e9809c0cdf0830a76803577b8c9aadc0dd22c0ff3a0b161804b2",
-      "bytes": 2668
+      "sha256": "9dcf0085787d199c8f4379302ed70fc979090a439415606a3370c74594c34ed1",
+      "bytes": 2726
     },
     {
       "path": "rules/generated/shadowrocket/google-fcm.list",
@@ -209,8 +209,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/microsoft.list",
-      "sha256": "abb30e4705d5a83434a5968a4e1ef0af8a5da396299a8cffcca444fac5d32e9f",
-      "bytes": 24197
+      "sha256": "0defd3392353829a26abe7b556ef1658d73ac16a33aaa8cb904d226db40ccac2",
+      "bytes": 24255
     },
     {
       "path": "rules/generated/shadowrocket/netflix.list",

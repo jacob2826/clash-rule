@@ -2,7 +2,7 @@
 # Provider: claude
 # Policy: Claude
 # Behavior: domain
-# Rules: 19
+# Rules: 21
 
 +.ant.dev
 +.anthropic.com
@@ -22,4 +22,6 @@
 +.claudepages.dev
 +.claudestudio.com
 +.claudeusercontent.com
+http-intake.logs.us5.datadoghq.com
+o1158394.ingest.us.sentry.io
 servd-anthropic-website.b-cdn.net

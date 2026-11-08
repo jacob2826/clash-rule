@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-11-07T05:53:00.448Z",
+  "generatedAt": "2026-11-08T05:55:19.615Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1248,
+    "domain": 1253,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1415
+    "all": 1420
   },
   "providers": [
     {
@@ -169,25 +169,25 @@
       "id": "claude",
       "policy": "Claude",
       "baseCounts": {
-        "domain": 19,
+        "domain": 21,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 19
+        "all": 21
       },
       "outputCounts": {
-        "domain": 19,
+        "domain": 21,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 19
+        "all": 21
       },
       "outputs": {
         "domain": "rules/generated/claude-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/claude.list",
-      "shadowrocketRuleCount": 19,
+      "shadowrocketRuleCount": 21,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
@@ -195,25 +195,25 @@
       "id": "copilot",
       "policy": "其他 AI 服务",
       "baseCounts": {
-        "domain": 6,
+        "domain": 7,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 6
+        "all": 7
       },
       "outputCounts": {
-        "domain": 6,
+        "domain": 7,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 6
+        "all": 7
       },
       "outputs": {
         "domain": "rules/generated/copilot-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/copilot.list",
-      "shadowrocketRuleCount": 6,
+      "shadowrocketRuleCount": 7,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
@@ -397,25 +397,25 @@
       "id": "github",
       "policy": "节点选择",
       "baseCounts": {
-        "domain": 65,
+        "domain": 66,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 65
+        "all": 66
       },
       "outputCounts": {
-        "domain": 65,
+        "domain": 66,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 65
+        "all": 66
       },
       "outputs": {
         "domain": "rules/generated/github-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/github.list",
-      "shadowrocketRuleCount": 65,
+      "shadowrocketRuleCount": 66,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     },
@@ -515,25 +515,25 @@
       "id": "microsoft",
       "policy": "微软服务",
       "baseCounts": {
-        "domain": 753,
+        "domain": 754,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 753
+        "all": 754
       },
       "outputCounts": {
-        "domain": 753,
+        "domain": 754,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 753
+        "all": 754
       },
       "outputs": {
         "domain": "rules/generated/microsoft-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/microsoft.list",
-      "shadowrocketRuleCount": 753,
+      "shadowrocketRuleCount": 754,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     }
@@ -554,14 +554,14 @@
         "name": "category-ai-chat-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-        "ruleCount": 213
+        "ruleCount": 217
       },
       {
         "id": "sr-geosite-ai-not-cn",
         "name": "category-ai-!cn",
         "policy": "其他 AI 服务",
         "output": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-        "ruleCount": 213
+        "ruleCount": 217
       },
       {
         "id": "sr-geosite-bahamut",

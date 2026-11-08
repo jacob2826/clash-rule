@@ -2,7 +2,7 @@
 # Provider: copilot
 # Policy: 其他 AI 服务
 # Behavior: domain
-# Rules: 6
+# Rules: 7
 
 +.githubcopilot.com
 copilot-proxy.githubusercontent.com
@@ -10,3 +10,4 @@ copilot-telemetry-service.githubusercontent.com
 copilot-telemetry.githubusercontent.com
 copilot-workspace.githubnext.com
 copilotprodattachments.blob.core.windows.net
+production-copilot-host-westus.webpubsub.azure.com
