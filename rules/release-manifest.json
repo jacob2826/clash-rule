@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "releaseId": "3389fd18f82e1da16be79a89a91df619c49e0d7ae7a5f06b0c396e1c3784a6d0",
+  "releaseId": "9089484cf903bbe352a91f3c8847e97a29826c0c7207eb86a4e71728d8165f5a",
   "files": [
     {
       "path": "AppleAI.list",
@@ -94,8 +94,8 @@
     },
     {
       "path": "rules/generated/microsoft-domain.txt",
-      "sha256": "2f9a3c1f18b3d29ec7855cf59df0fa3550575e34c3760e7ae5e64afb6ae79070",
-      "bytes": 15813
+      "sha256": "9904c37d48fc6b23c5396343006b5404eda5f65f2769aeb29877fb40aae039aa",
+      "bytes": 15909
     },
     {
       "path": "rules/generated/netflix-domain.txt",
@@ -154,8 +154,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/geosite/apple.list",
-      "sha256": "1cecd1c43d4fe7094799268edd7c88e1a0270b86df893cbf52d6f5e6f699023f",
-      "bytes": 57236
+      "sha256": "a24ef9001349322d6f384642b4af70c7ca4ecffd8333e1a8333af4ca06520d8e",
+      "bytes": 57373
     },
     {
       "path": "rules/generated/shadowrocket/geosite/bahamut.list",
@@ -209,8 +209,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/microsoft.list",
-      "sha256": "0defd3392353829a26abe7b556ef1658d73ac16a33aaa8cb904d226db40ccac2",
-      "bytes": 24255
+      "sha256": "a59ed43cea45f34a75aff1a48946796d96d113c0ad08a00949f15238bb32abfc",
+      "bytes": 24372
     },
     {
       "path": "rules/generated/shadowrocket/netflix.list",

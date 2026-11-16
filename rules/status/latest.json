@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-11-08T05:55:19.615Z",
+  "generatedAt": "2026-11-16T06:19:39.784Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1253,
+    "domain": 1256,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1420
+    "all": 1423
   },
   "providers": [
     {
@@ -515,25 +515,25 @@
       "id": "microsoft",
       "policy": "微软服务",
       "baseCounts": {
-        "domain": 754,
+        "domain": 757,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 754
+        "all": 757
       },
       "outputCounts": {
-        "domain": 754,
+        "domain": 757,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 754
+        "all": 757
       },
       "outputs": {
         "domain": "rules/generated/microsoft-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/microsoft.list",
-      "shadowrocketRuleCount": 754,
+      "shadowrocketRuleCount": 757,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     }
@@ -589,7 +589,7 @@
         "name": "apple",
         "policy": "苹果服务",
         "output": "rules/generated/shadowrocket/geosite/apple.list",
-        "ruleCount": 1792
+        "ruleCount": 1796
       },
       {
         "id": "sr-geosite-steam-cn",
