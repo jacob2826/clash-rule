@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "releaseId": "9089484cf903bbe352a91f3c8847e97a29826c0c7207eb86a4e71728d8165f5a",
+  "releaseId": "a911be6d6cf7a1c66b4ead37f89f15af26d201153d68e43f6106f5022c04d6f8",
   "files": [
     {
       "path": "AppleAI.list",
@@ -179,8 +179,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-games.list",
-      "sha256": "870058e327ed33eeeb302d8b1c3478e2991620d980b934d87d447f5d5309ff79",
-      "bytes": 31505
+      "sha256": "55213d7d89f1ccce0c9c1c354fb34f1e9cd0f8faecf41c42c28324f8ecef39b5",
+      "bytes": 31531
     },
     {
       "path": "rules/generated/shadowrocket/geosite/cn.list",
