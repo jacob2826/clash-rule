@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "releaseId": "a911be6d6cf7a1c66b4ead37f89f15af26d201153d68e43f6106f5022c04d6f8",
+  "releaseId": "daa19d2c3889c77a75123084d9ef526938ac4bb72a2e4e8bd74a12e223f47a2b",
   "files": [
     {
       "path": "AppleAI.list",
@@ -169,13 +169,13 @@
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-      "sha256": "3bce77c92bf7d570918bafcb3511467b0bb8a47211dd5bfc27c0e14460ba63dc",
-      "bytes": 6774
+      "sha256": "d410ed95d58aee1fd897c8faa4b2ccc34a21a8ff3e869bd8cca64640a06dc44e",
+      "bytes": 6814
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-      "sha256": "0ad1e35886f911be1be62f8f4dc8d34436c4797105fce61f7558ab500b548e43",
-      "bytes": 6769
+      "sha256": "dfb9bdf3580cb0652264f0ed8be03f2b944aadbed6859353d47b4668cb451d07",
+      "bytes": 6809
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-games.list",
