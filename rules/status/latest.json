@@ -1,7 +1,7 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-11-19T07:17:17.254Z",
+  "generatedAt": "2026-11-21T06:58:55.343Z",
   "sourceManifestVersion": 1,
   "totals": {
     "domain": 1256,
@@ -589,7 +589,7 @@
         "name": "apple",
         "policy": "苹果服务",
         "output": "rules/generated/shadowrocket/geosite/apple.list",
-        "ruleCount": 1796
+        "ruleCount": 1666
       },
       {
         "id": "sr-geosite-steam-cn",

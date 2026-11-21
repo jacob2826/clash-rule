@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "releaseId": "225d0a024afe9a5078851b12364d4320623880f6def78d27457f232e83e5f3f6",
+  "releaseId": "9d1a654372e43239e69946025c616b564bd7f9eb72cac184e48a2628ed233773",
   "files": [
     {
       "path": "AppleAI.list",
@@ -154,8 +154,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/geosite/apple.list",
-      "sha256": "a24ef9001349322d6f384642b4af70c7ca4ecffd8333e1a8333af4ca06520d8e",
-      "bytes": 57373
+      "sha256": "9cae40817f176c1f5135e1a06203c64453c8068d644ad82cc343b91b699ea48e",
+      "bytes": 53348
     },
     {
       "path": "rules/generated/shadowrocket/geosite/bahamut.list",
