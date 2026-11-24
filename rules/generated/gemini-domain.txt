@@ -2,7 +2,7 @@
 # Provider: gemini
 # Policy: Gemini
 # Behavior: domain
-# Rules: 49
+# Rules: 50
 
 +.ai.studio
 +.aicode.googleapis.com
@@ -20,6 +20,7 @@
 +.gemini.google
 +.gemini.google.com
 +.gemini.gstatic.com
++.gemma.ai
 +.generativeai.google
 +.generativelanguage.googleapis.com
 +.jules.google

@@ -1,13 +1,13 @@
 # Optimized rule status
 
-Generated: 2026-11-21T06:58:55.343Z
+Generated: 2026-11-24T09:47:51.019Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | custom-direct | DIRECT | 16 | 0 | 1 | 6 | 23 |
 | apple-ai | 其他 AI 服务 | 13 | 0 | 0 | 0 | 13 |
 | openai | OpenAI | 24 | 0 | 0 | 0 | 24 |
-| gemini | Gemini | 49 | 0 | 0 | 0 | 49 |
+| gemini | Gemini | 50 | 0 | 0 | 0 | 50 |
 | claude | Claude | 21 | 0 | 0 | 0 | 21 |
 | copilot | 其他 AI 服务 | 7 | 0 | 0 | 0 | 7 |
 | tiktok | TikTok | 40 | 0 | 0 | 0 | 40 |
@@ -19,7 +19,7 @@ Generated: 2026-11-21T06:58:55.343Z
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 0 | 0 | 16 |
 | microsoft | 微软服务 | 757 | 0 | 0 | 0 | 757 |
-| **Total** |  | **1256** | **160** | **1** | **6** | **1423** |
+| **Total** |  | **1257** | **160** | **1** | **6** | **1424** |
 
 ## MetaCubeX candidate differences
 
@@ -34,4 +34,4 @@ Generated: 2026-11-21T06:58:55.343Z
 - Template: `Shadowrocket.template.conf`
 - Provider lists: 15
 - GEOSITE lists: 10
-- Rules: 115132
+- Rules: 115139

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "releaseId": "9d1a654372e43239e69946025c616b564bd7f9eb72cac184e48a2628ed233773",
+  "releaseId": "b258a517693a8e0f7dd2f8cf83690cfc3fab640a531eacf764a6d3edf418cea4",
   "files": [
     {
       "path": "AppleAI.list",
@@ -74,8 +74,8 @@
     },
     {
       "path": "rules/generated/gemini-domain.txt",
-      "sha256": "9b6b749d652d2ae16e9b1639646813ee61d5f91849a169c9e55b7489ca44df8d",
-      "bytes": 1358
+      "sha256": "6d868dbd66f7a5487c245f40a46e5d8cf1a5096297f78f0470f241c666fdcff7",
+      "bytes": 1369
     },
     {
       "path": "rules/generated/github-domain.txt",
@@ -144,8 +144,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/gemini.list",
-      "sha256": "53284593515faf9fb35dcac272eb68181dcea3fa53dc56f77e92dbc09898f47c",
-      "bytes": 1845
+      "sha256": "c6a6241d8bcb33286ced6903b4ae6d63a038449e6b7e2164a55370befe3daa63",
+      "bytes": 1868
     },
     {
       "path": "rules/generated/shadowrocket/geosite/apple-cn.list",
@@ -169,18 +169,18 @@
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-ai-chat-not-cn.list",
-      "sha256": "d410ed95d58aee1fd897c8faa4b2ccc34a21a8ff3e869bd8cca64640a06dc44e",
-      "bytes": 6814
+      "sha256": "c52a151a7eaa6ee5facd7c6ef72b82e6840c9c1a5c942e70107abf883ded3da6",
+      "bytes": 6837
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-ai-not-cn.list",
-      "sha256": "dfb9bdf3580cb0652264f0ed8be03f2b944aadbed6859353d47b4668cb451d07",
-      "bytes": 6809
+      "sha256": "09ba80beb569c83938d837e44d5cccf8656cf2e015af1054f2291d120564231f",
+      "bytes": 6832
     },
     {
       "path": "rules/generated/shadowrocket/geosite/category-games.list",
-      "sha256": "5aadeee5682d96c530190c64bf55131470cd84216248fcf13f42bb3cd684ae5f",
-      "bytes": 31576
+      "sha256": "f097b2c4a5ae9b5d3db044d832fd2d04f88e84ba423fa1b46201447ace88bf2b",
+      "bytes": 31703
     },
     {
       "path": "rules/generated/shadowrocket/geosite/cn.list",
