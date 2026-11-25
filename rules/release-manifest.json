@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "releaseId": "b258a517693a8e0f7dd2f8cf83690cfc3fab640a531eacf764a6d3edf418cea4",
+  "releaseId": "8a8e1d4da335791b171b9c0282015559921cc4a342eac950cca7014c00ab724f",
   "files": [
     {
       "path": "AppleAI.list",
@@ -19,8 +19,8 @@
     },
     {
       "path": "UnBan.list",
-      "sha256": "8ae37b94c4c83cba4f77a09b377406647a1e7e4e4768c0ca606df42ce1c703de",
-      "bytes": 711
+      "sha256": "cf00c1b7da75892cbe55cab58c4b066efedebe225743c9b49364cc1a707290b6",
+      "bytes": 682
     },
     {
       "path": "icons/Claude.png",
@@ -69,8 +69,8 @@
     },
     {
       "path": "rules/generated/custom-direct-domain.txt",
-      "sha256": "29a5fa62846c95119e4cf629d76f617477e9961ed02f448a34dd23f32d4c0166",
-      "bytes": 345
+      "sha256": "29e7ffb2d9d2ac70f573dced62dd322783b612903b1fd80f6c74502f14110420",
+      "bytes": 337
     },
     {
       "path": "rules/generated/gemini-domain.txt",
@@ -139,8 +139,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/custom-direct.list",
-      "sha256": "bd8593f20a07c52738872555c786f64fd6b5f76d2f8f3319fe3343cefc0a2ba5",
-      "bytes": 536
+      "sha256": "20e6c95005d5237eaa4e5046c7a35e6758b9ff164a3d2befb78f365c43c465f3",
+      "bytes": 516
     },
     {
       "path": "rules/generated/shadowrocket/gemini.list",

@@ -1,32 +1,32 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-11-24T09:47:51.019Z",
+  "generatedAt": "2026-11-25T06:16:22.923Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1257,
+    "domain": 1256,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1424
+    "all": 1423
   },
   "providers": [
     {
       "id": "custom-direct",
       "policy": "DIRECT",
       "baseCounts": {
-        "domain": 16,
+        "domain": 15,
         "ipcidr": 0,
         "residual": 1,
         "process": 6,
-        "all": 23
+        "all": 22
       },
       "outputCounts": {
-        "domain": 16,
+        "domain": 15,
         "ipcidr": 0,
         "residual": 1,
         "process": 6,
-        "all": 23
+        "all": 22
       },
       "outputs": {
         "domain": "rules/generated/custom-direct-domain.txt"
@@ -45,7 +45,7 @@
         ]
       },
       "shadowrocketOutput": "rules/generated/shadowrocket/custom-direct.list",
-      "shadowrocketRuleCount": 17,
+      "shadowrocketRuleCount": 16,
       "shadowrocketSkippedProcessCount": 6,
       "candidates": []
     },

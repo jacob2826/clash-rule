@@ -1,10 +1,10 @@
 # Optimized rule status
 
-Generated: 2026-11-24T09:47:51.019Z
+Generated: 2026-11-25T06:16:22.923Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| custom-direct | DIRECT | 16 | 0 | 1 | 6 | 23 |
+| custom-direct | DIRECT | 15 | 0 | 1 | 6 | 22 |
 | apple-ai | 其他 AI 服务 | 13 | 0 | 0 | 0 | 13 |
 | openai | OpenAI | 24 | 0 | 0 | 0 | 24 |
 | gemini | Gemini | 50 | 0 | 0 | 0 | 50 |
@@ -19,7 +19,7 @@ Generated: 2026-11-24T09:47:51.019Z
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 0 | 0 | 16 |
 | microsoft | 微软服务 | 757 | 0 | 0 | 0 | 757 |
-| **Total** |  | **1257** | **160** | **1** | **6** | **1424** |
+| **Total** |  | **1256** | **160** | **1** | **6** | **1423** |
 
 ## MetaCubeX candidate differences
 
