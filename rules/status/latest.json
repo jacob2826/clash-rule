@@ -1,14 +1,14 @@
 {
   "version": 1,
   "status": "success",
-  "generatedAt": "2026-11-25T06:16:22.923Z",
+  "generatedAt": "2026-11-27T08:18:34.245Z",
   "sourceManifestVersion": 1,
   "totals": {
-    "domain": 1256,
+    "domain": 1257,
     "ipcidr": 160,
     "residual": 1,
     "process": 6,
-    "all": 1423
+    "all": 1424
   },
   "providers": [
     {
@@ -515,25 +515,25 @@
       "id": "microsoft",
       "policy": "微软服务",
       "baseCounts": {
-        "domain": 757,
+        "domain": 758,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 757
+        "all": 758
       },
       "outputCounts": {
-        "domain": 757,
+        "domain": 758,
         "ipcidr": 0,
         "residual": 0,
         "process": 0,
-        "all": 757
+        "all": 758
       },
       "outputs": {
         "domain": "rules/generated/microsoft-domain.txt"
       },
       "inlineRules": {},
       "shadowrocketOutput": "rules/generated/shadowrocket/microsoft.list",
-      "shadowrocketRuleCount": 757,
+      "shadowrocketRuleCount": 758,
       "shadowrocketSkippedProcessCount": 0,
       "candidates": []
     }

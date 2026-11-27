@@ -1,6 +1,6 @@
 # Optimized rule status
 
-Generated: 2026-11-25T06:16:22.923Z
+Generated: 2026-11-27T08:18:34.245Z
 
 | Provider | Policy | Domain | IP CIDR | Residual | Process | Total |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
@@ -18,8 +18,8 @@ Generated: 2026-11-25T06:16:22.923Z
 | github | 节点选择 | 66 | 0 | 0 | 0 | 66 |
 | bing | 微软Bing | 3 | 0 | 0 | 0 | 3 |
 | onedrive | 微软服务 | 16 | 0 | 0 | 0 | 16 |
-| microsoft | 微软服务 | 757 | 0 | 0 | 0 | 757 |
-| **Total** |  | **1256** | **160** | **1** | **6** | **1423** |
+| microsoft | 微软服务 | 758 | 0 | 0 | 0 | 758 |
+| **Total** |  | **1257** | **160** | **1** | **6** | **1424** |
 
 ## MetaCubeX candidate differences
 

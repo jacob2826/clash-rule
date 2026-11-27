@@ -2,7 +2,7 @@
 # Provider: microsoft
 # Policy: 微软服务
 # Behavior: domain
-# Rules: 757
+# Rules: 758
 
 +.1drv.com
 +.21vbc.com
@@ -641,6 +641,7 @@
 +.xboxstudios.com
 +.xbx.lv
 +.yammer.com
+aurora-customization-usw2.lithium.com
 az764295.vo.msecnd.net
 azure.microsoft.com
 azuremarketplace.microsoft.com

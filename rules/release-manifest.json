@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "releaseId": "8a8e1d4da335791b171b9c0282015559921cc4a342eac950cca7014c00ab724f",
+  "releaseId": "1a40ecd7407e14b6de7c194fb0c99b5cdada0d525a2165612c4e5ab34377b3de",
   "files": [
     {
       "path": "AppleAI.list",
@@ -94,8 +94,8 @@
     },
     {
       "path": "rules/generated/microsoft-domain.txt",
-      "sha256": "9904c37d48fc6b23c5396343006b5404eda5f65f2769aeb29877fb40aae039aa",
-      "bytes": 15909
+      "sha256": "5c8dfe3b7654a611bd0fec02144da88d36a8b8359b29ad127bba0a6a5493816d",
+      "bytes": 15947
     },
     {
       "path": "rules/generated/netflix-domain.txt",
@@ -209,8 +209,8 @@
     },
     {
       "path": "rules/generated/shadowrocket/microsoft.list",
-      "sha256": "a59ed43cea45f34a75aff1a48946796d96d113c0ad08a00949f15238bb32abfc",
-      "bytes": 24372
+      "sha256": "9e36b937aa6d082546b100189119f928e9b44aa04ce17d889f01bf7a1d658be8",
+      "bytes": 24417
     },
     {
       "path": "rules/generated/shadowrocket/netflix.list",
